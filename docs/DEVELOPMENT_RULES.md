@@ -190,8 +190,6 @@ For collaborative projects:
 - Do not claim ownership of work performed by teammates.
 - Do not remove the collaborative context merely to make the project sound stronger.
 
-This rule is particularly important for LMS-OC.
-
 ---
 
 # 9. Project Status Must Be Accurate

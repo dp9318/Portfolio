@@ -332,7 +332,6 @@ Initial featured candidates:
 
 - AQIconic
 - AI Food Analyzer
-- LMS-OC
 - Video Game Sales Analysis
 
 ### Additional Projects
@@ -373,7 +372,6 @@ If detailed project pages are introduced, use a predictable route such as:
 ```text
 /projects/aqiconic
 /projects/ai-food-analyzer
-/projects/lms
 ```
 
 The route should be generated from project data rather than duplicating entire page implementations.

@@ -144,7 +144,7 @@ Project descriptions may use first person when describing Dipankar's direct cont
 
 ### Important Project Attribution Rule
 
-For **LMS-OC**, do not imply that Dipankar independently built the entire system. Clearly distinguish his contribution from team/project-level work.
+For collaborative projects, do not imply that Dipankar independently built the entire system. Clearly distinguish his contribution from team/project-level work.
 
 For projects where Dipankar was the primary builder, first-person contribution statements are acceptable where useful.
 
@@ -249,45 +249,7 @@ Do not imply medical certification, commercial deployment, or production-level a
 
 ---
 
-# 8. Featured Project 3 — LMS-OC
-
-**Name:** Loan Management System (LMS-OC)  
-**Type:** Web application / backend system / database project  
-**Status:** In Progress / Academic Project
-
-### Short Description
-
-An Indian loan-management application developed as an academic software project, combining a web frontend with a Spring Boot backend and database-driven functionality.
-
-### Important Attribution
-
-This is a collaborative/team project.
-
-The portfolio must clearly identify Dipankar's own contribution instead of claiming sole ownership of the whole system.
-
-### Known Technical Context
-
-- Spring Boot
-- Java
-- REST APIs
-- Database-backed application architecture
-- Vite-based frontend
-
-Additional technologies may be included only when confirmed in the project repository.
-
-### Dipankar's Contribution
-
-Use the final repository/project record to populate the exact contribution before publishing.
-
-Do not invent specific modules, features, or ownership.
-
-### Portfolio Emphasis
-
-Use this project to demonstrate application architecture, backend development, database work, collaboration, and learning through a larger software project.
-
----
-
-# 9. Featured Project 4 — Video Game Sales Analysis
+# 8. Featured Project 3 — Video Game Sales Analysis
 
 **Name:** Video Game Sales Analysis (1971–2024)  
 **Type:** Data analytics / visualization  

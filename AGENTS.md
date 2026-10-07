@@ -183,7 +183,7 @@ Do not "fill in the blanks" creatively.
 
 Respect actual ownership and contribution.
 
-Especially for collaborative projects such as LMS-OC:
+For collaborative projects:
 
 - Do not imply sole authorship.
 - Distinguish Dipankar's contribution from team-level work.

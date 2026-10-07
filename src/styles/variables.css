@@ -1,0 +1,243 @@
+/* Design System Variables */
+/* ========================================================================== */
+
+/* Color System */
+/* ========================================================================== */
+
+/* Neutral Palette */
+:root {
+  /* Base Colors */
+  --color-white: #ffffff;
+  --color-black: #0a0a0a;
+
+  /* Grayscale - Warm Neutral */
+  --color-gray-50: #fafafa;
+  --color-gray-100: #f4f4f4;
+  --color-gray-200: #e7e7e7;
+  --color-gray-300: #d4d4d4;
+  --color-gray-400: #a3a3a3;
+  --color-gray-500: #737373;
+  --color-gray-600: #525252;
+  --color-gray-700: #404040;
+  --color-gray-800: #262626;
+  --color-gray-900: #171717;
+  --color-gray-950: #0a0a0a;
+
+  /* Semantic Color Aliases */
+  --color-background: var(--color-gray-50);
+  --color-surface: var(--color-white);
+  --color-surface-elevated: var(--color-white);
+  --color-border: var(--color-gray-200);
+  --color-border-strong: var(--color-gray-300);
+
+  --color-text-primary: var(--color-gray-950);
+  --color-text-secondary: var(--color-gray-600);
+  --color-text-muted: var(--color-gray-500);
+  --color-text-inverse: var(--color-white);
+
+  /* Accent Color - Restrained Blue */
+  --color-accent: #2563eb;
+  --color-accent-hover: #1d4ed8;
+  --color-accent-light: #dbeafe;
+  --color-accent-focus: #93c5fd;
+
+  /* Status Colors */
+  --color-status-completed: #059669;
+  --color-status-completed-bg: #ecfdf5;
+  --color-status-in-progress: #2563eb;
+  --color-status-in-progress-bg: #eff6ff;
+  --color-status-prototype: #d97706;
+  --color-status-prototype-bg: #fffbeb;
+  --color-status-experimental: #7c3aed;
+  --color-status-experimental-bg: #f5f3ff;
+  --color-status-learning: #0891b2;
+  --color-status-learning-bg: #f0fdfa;
+}
+
+/* Typography */
+/* ========================================================================== */
+:root {
+  /* Font Stack - System-first, modern sans-serif */
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+
+  /* Font Sizes - Fluid scale using clamp */
+  --text-xs: 0.75rem;      /* 12px */
+  --text-sm: 0.875rem;     /* 14px */
+  --text-base: 1rem;       /* 16px */
+  --text-lg: 1.125rem;     /* 18px */
+  --text-xl: 1.25rem;      /* 20px */
+  --text-2xl: 1.5rem;      /* 24px */
+  --text-3xl: 1.875rem;    /* 30px */
+  --text-4xl: 2.25rem;     /* 36px */
+  --text-5xl: 3rem;        /* 48px */
+  --text-6xl: 3.75rem;     /* 60px */
+
+  /* Fluid Display Sizes */
+  --text-display-sm: clamp(2.5rem, 5vw, 3.5rem);     /* 40-56px */
+  --text-display-md: clamp(3rem, 6vw, 4.5rem);       /* 48-72px */
+  --text-display-lg: clamp(3.5rem, 8vw, 6rem);       /* 56-96px */
+
+  /* Line Heights */
+  --leading-tight: 1.1;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 2;
+
+  /* Font Weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Typography Scale - Semantic Tokens */
+  --text-display: var(--text-display-md);
+  --text-h1: var(--text-5xl);
+  --text-h2: var(--text-4xl);
+  --text-h3: var(--text-3xl);
+  --text-h4: var(--text-2xl);
+  --text-h5: var(--text-xl);
+  --text-h6: var(--text-lg);
+  --text-body: var(--text-base);
+  --text-body-lg: var(--text-lg);
+  --text-caption: var(--text-sm);
+  --text-caption-sm: var(--text-xs);
+  --text-label: var(--text-sm);
+  --text-label-sm: var(--text-xs);
+}
+
+/* Spacing System */
+/* ========================================================================== */
+:root {
+  --space-0: 0;
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  --space-24: 6rem;     /* 96px */
+
+  /* Section Spacing */
+  --section-padding-y: var(--space-16);
+  --section-padding-y-lg: var(--space-24);
+  --section-padding-y-sm: var(--space-12);
+
+  /* Component Spacing */
+  --component-gap: var(--space-4);
+  --component-gap-lg: var(--space-6);
+  --component-gap-xl: var(--space-8);
+}
+
+/* Layout & Container */
+/* ========================================================================== */
+:root {
+  --container-max-width: 1200px;
+  --container-max-width-narrow: 800px;
+  --container-padding-x: var(--space-4);
+  --container-padding-x-md: var(--space-6);
+  --container-padding-x-lg: var(--space-8);
+
+  /* Navbar */
+  --navbar-height: 64px;
+
+  /* Grid */
+  --grid-gap: var(--space-6);
+  --grid-gap-sm: var(--space-4);
+  --grid-gap-lg: var(--space-8);
+
+  /* Column Counts */
+  --grid-cols-1: 1;
+  --grid-cols-2: 2;
+  --grid-cols-3: 3;
+  --grid-cols-4: 4;
+}
+
+/* Border Radius */
+/* ========================================================================== */
+:root {
+  --radius-none: 0;
+  --radius-sm: 0.25rem;    /* 4px */
+  --radius-md: 0.375rem;   /* 6px */
+  --radius-lg: 0.5rem;     /* 8px */
+  --radius-xl: 0.75rem;    /* 12px */
+  --radius-2xl: 1rem;      /* 16px */
+  --radius-full: 9999px;
+}
+
+/* Shadows */
+/* ========================================================================== */
+:root {
+  --shadow-none: none;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+/* Transitions */
+/* ========================================================================== */
+:root {
+  --transition-fast: 150ms ease;
+  --transition-normal: 200ms ease;
+  --transition-slow: 300ms ease;
+}
+
+/* Breakpoints - Mobile First */
+/* ========================================================================== */
+:root {
+  --bp-sm: 480px;    /* Small mobile */
+  --bp-md: 640px;    /* Large mobile */
+  --bp-lg: 768px;    /* Tablet */
+  --bp-xl: 1024px;   /* Desktop */
+  --bp-2xl: 1280px;  /* Large desktop */
+  --bp-3xl: 1536px;  /* Wide desktop */
+}
+
+/* Z-Index Scale */
+/* ========================================================================== */
+:root {
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-fixed: 300;
+  --z-modal-backdrop: 400;
+  --z-modal: 500;
+  --z-popover: 600;
+  --z-tooltip: 700;
+  --z-toast: 800;
+}
+
+/* Focus Styles */
+/* ========================================================================== */
+:root {
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 2px;
+  --focus-ring-color: var(--color-accent-focus);
+}
+
+/* Reduced Motion */
+/* ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-fast: 0ms;
+    --transition-normal: 0ms;
+    --transition-slow: 0ms;
+  }
+}
+
+/* Media Query Helpers (for reference in JS if needed) */
+/* ========================================================================== */
+/*
+  @media (min-width: 480px)  { }  --bp-sm
+  @media (min-width: 640px)  { }  --bp-md
+  @media (min-width: 768px)  { }  --bp-lg
+  @media (min-width: 1024px) { }  --bp-xl
+  @media (min-width: 1280px) { }  --bp-2xl
+  @media (min-width: 1536px) { }  --bp-3xl
+*/
