@@ -3,6 +3,21 @@
 
 import type { Project, ProjectsData, ProjectStatus } from './types';
 
+// Project Image Assets
+import aqiconic01 from '../assets/images/projects/aqiconic/aqiconic01.png';
+import aqiconic02 from '../assets/images/projects/aqiconic/aqiconic02.png';
+import aqiconic03 from '../assets/images/projects/aqiconic/aqiconic03.png';
+import aqiconic04 from '../assets/images/projects/aqiconic/aqiconic04.png';
+
+import aiFoodAnalyzerTest01 from '../assets/images/projects/ai-food-analyzer/ai-food-analyzer-test01.png';
+
+import salesOverYears from '../assets/images/projects/video-game-sales-analysis/sales-over-years.png';
+import consoleGenre from '../assets/images/projects/video-game-sales-analysis/console-genre.png';
+import regionAndPopularity from '../assets/images/projects/video-game-sales-analysis/region-and-popularity.png';
+import topTiles from '../assets/images/projects/video-game-sales-analysis/top-tiles.png';
+
+import epicGamesClone01 from '../assets/images/projects/epic-games-clone/epic-games-clone01.png';
+
 /* Helper to create status with consistent typing */
 const status = {
   completed: 'completed' as ProjectStatus,
@@ -43,13 +58,8 @@ const aqiconic: Project = {
   repositoryUrl: 'https://github.com/dp9318/AQIconic',
   demoUrl: undefined,
   documentationUrl: undefined,
-  images: [
-    '/src/assets/images/projects/aqiconic/aqiconic01.png',
-    '/src/assets/images/projects/aqiconic/aqiconic02.png',
-    '/src/assets/images/projects/aqiconic/aqiconic03.png',
-    '/src/assets/images/projects/aqiconic/aqiconic04.png',
-  ],
-  thumbnail: '/src/assets/images/projects/aqiconic/aqiconic01.png',
+  images: [aqiconic01, aqiconic02, aqiconic03, aqiconic04],
+  thumbnail: aqiconic01,
   startDate: '2024',
   endDate: undefined,
   isCollaborative: true,
@@ -84,10 +94,8 @@ const aiFoodAnalyzer: Project = {
   repositoryUrl: 'https://github.com/dp9318/AI-Food-Analyzer',
   demoUrl: undefined,
   documentationUrl: undefined,
-  images: [
-    '/src/assets/images/projects/ai-food-analyzer/ai-food-analyzer-test01.png',
-  ],
-  thumbnail: '/src/assets/images/projects/ai-food-analyzer/ai-food-analyzer-test01.png',
+  images: [aiFoodAnalyzerTest01],
+  thumbnail: aiFoodAnalyzerTest01,
   startDate: '2024',
   endDate: undefined,
   isCollaborative: true,
@@ -121,13 +129,8 @@ const videoGameSales: Project = {
   repositoryUrl: 'https://github.com/dp9318/Game-Sales-Analysis-1971-2024-',
   demoUrl: undefined,
   documentationUrl: undefined,
-  images: [
-    '/src/assets/images/projects/video-game-sales-analysis/sales-over-years.png',
-    '/src/assets/images/projects/video-game-sales-analysis/console-genre.png',
-    '/src/assets/images/projects/video-game-sales-analysis/region-and-popularity.png',
-    '/src/assets/images/projects/video-game-sales-analysis/top-tiles.png',
-  ],
-  thumbnail: '/src/assets/images/projects/video-game-sales-analysis/sales-over-years.png',
+  images: [salesOverYears, consoleGenre, regionAndPopularity, topTiles],
+  thumbnail: salesOverYears,
   startDate: '2024',
   endDate: '2024',
   isCollaborative: false,
@@ -163,10 +166,8 @@ const epicGamesClone: Project = {
   repositoryUrl: 'https://github.com/dp9318/Epic-Games-Clone',
   demoUrl: undefined,
   documentationUrl: undefined,
-  images: [
-    '/src/assets/images/projects/epic-games-clone/epic-games-clone01.png',
-  ],
-  thumbnail: '/src/assets/images/projects/epic-games-clone/epic-games-clone01.png',
+  images: [epicGamesClone01],
+  thumbnail: epicGamesClone01,
   startDate: '2024',
   endDate: undefined,
   isCollaborative: false,

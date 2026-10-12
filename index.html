@@ -9,6 +9,18 @@
     <meta property="og:description" content="Software engineering portfolio of Dipankar Kumar, showcasing application development, systems integration, data projects, and ongoing technical exploration." />
     <meta property="og:type" content="website" />
     <title>Dipankar Kumar — Software Engineer</title>
+    <script>
+      (function () {
+        var storageKey = 'portfolio-theme';
+        var theme = localStorage.getItem(storageKey);
+        var root = document.documentElement;
+        if (theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          root.setAttribute('data-theme', 'dark');
+        } else {
+          root.removeAttribute('data-theme');
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

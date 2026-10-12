@@ -1,7 +1,7 @@
 /* Projects Section */
 /* ========================================================================== */
 
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { Section, Heading, Card, Tag } from '../../components/ui';
 import { ProjectDetailModal } from '../../components/projects';
 import { projectsData } from '../../data';
@@ -14,13 +14,26 @@ export function ProjectsSection() {
     setSelectedProject(project);
   };
 
+  const handleCloseModal = useCallback(() => {
+    setSelectedProject(null);
+  }, []);
+
   const renderProjectCard = (project: Project) => (
     <Card
       key={project.id}
       className="project-card"
       hoverable
+      role="button"
+      tabIndex={0}
+      aria-haspopup="dialog"
+      aria-label={`View details for ${project.name}`}
       onClick={() => handleProjectClick(project)}
-      style={{ cursor: 'pointer' }}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          handleProjectClick(project);
+        }
+      }}
     >
       {project.thumbnail && (
         <div className="project-card-image">
@@ -34,6 +47,11 @@ export function ProjectsSection() {
           <Tag variant={`status-${project.status}` as any} size="sm">
             {formatStatus(project.status)}
           </Tag>
+          {project.isCollaborative && (
+            <Tag variant="info" size="sm">
+              Collaborative
+            </Tag>
+          )}
           <Tag variant="default" size="sm">
             {project.category}
           </Tag>
@@ -42,6 +60,14 @@ export function ProjectsSection() {
           {project.technologies.map((tech) => (
             <span key={tech}>{tech}</span>
           ))}
+        </div>
+        <div className="project-card-action">
+          <span className="project-card-cta">
+            View Details
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </span>
         </div>
       </div>
     </Card>
@@ -59,7 +85,7 @@ export function ProjectsSection() {
 
         {/* Additional Projects */}
         {projectsData.additional.length > 0 && (
-          <div className="mt-8">
+          <div className="additional-projects-wrapper">
             <Heading level={3} variant="subsection">
               Additional Projects
             </Heading>
@@ -72,7 +98,7 @@ export function ProjectsSection() {
         <ProjectDetailModal
           project={selectedProject}
           isOpen={selectedProject !== null}
-          onClose={() => setSelectedProject(null)}
+          onClose={handleCloseModal}
         />
       </Section>
     </>

@@ -16,7 +16,14 @@ export function SkillsSection() {
         {skills.map((group: SkillGroup) => (
           <Card key={group.category} className="skill-group" variant="default">
             <CardContent>
-              <h3 className="skill-group-label">{group.label}</h3>
+              <div className="skill-group-header">
+                <h3 className="skill-group-label">{group.label}</h3>
+                {group.note && (
+                  <Tag variant="status-learning" size="sm" className="skill-group-note">
+                    {group.note}
+                  </Tag>
+                )}
+              </div>
               <ul className="skill-list">
                 {group.skills.map((skill) => (
                   <li key={skill.name} className="skill-item">

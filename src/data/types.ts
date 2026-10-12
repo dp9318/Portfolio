@@ -38,6 +38,7 @@ export interface Profile {
   profilePhoto?: string; // path to image
   resumeUrl: string;
   socialLinks: SocialLink[];
+  discordHandle?: string;
 }
 
 /* Projects */

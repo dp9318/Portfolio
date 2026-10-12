@@ -14,71 +14,72 @@ export interface ProjectDetailModalProps {
 export function ProjectDetailModal({ project, isOpen, onClose }: ProjectDetailModalProps) {
   const modalRef = useRef<HTMLDivElement>(null);
   const previousActiveElement = useRef<HTMLElement | null>(null);
+  const onCloseRef = useRef(onClose);
+  onCloseRef.current = onClose;
 
-  // Handle focus management and keyboard navigation
+  // Handle focus management, body scroll lock, and keyboard navigation
   useEffect(() => {
     if (!isOpen) return;
 
-    // Store the previously focused element
+    // Store the triggering element to restore focus when modal closes
     previousActiveElement.current = document.activeElement as HTMLElement;
 
-    // Prevent body scroll
+    // Lock body scroll and preserve previous overflow state
+    const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
 
-    // Focus the modal after a brief delay to allow render
-    const timer = setTimeout(() => {
-      modalRef.current?.focus();
-    }, 0);
+    // Focus the first interactive element (close button) or modal container
+    const focusTimer = setTimeout(() => {
+      if (!modalRef.current) return;
+      const focusables = modalRef.current.querySelectorAll<HTMLElement>(
+        'button, a[href], [tabindex]:not([tabindex="-1"])'
+      );
+      if (focusables.length > 0) {
+        focusables[0].focus();
+      } else {
+        modalRef.current.focus();
+      }
+    }, 50);
 
-    // Handle escape key
+    // Keyboard navigation: Escape key to close, Tab key trap
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
-        onClose();
+        event.stopPropagation();
+        onCloseRef.current();
+        return;
+      }
+
+      if (event.key === 'Tab' && modalRef.current) {
+        const focusables = modalRef.current.querySelectorAll<HTMLElement>(
+          'button, a[href], [tabindex]:not([tabindex="-1"])'
+        );
+        if (focusables.length === 0) return;
+
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+
+        if (event.shiftKey) {
+          if (document.activeElement === first || document.activeElement === modalRef.current) {
+            event.preventDefault();
+            last.focus();
+          }
+        } else {
+          if (document.activeElement === last) {
+            event.preventDefault();
+            first.focus();
+          }
+        }
       }
     };
 
     document.addEventListener('keydown', handleKeyDown);
 
     return () => {
-      clearTimeout(timer);
-      document.body.style.overflow = '';
+      clearTimeout(focusTimer);
+      document.body.style.overflow = originalOverflow;
       document.removeEventListener('keydown', handleKeyDown);
-      // Restore focus to trigger element
+      // Restore focus to triggering element
       previousActiveElement.current?.focus();
-    };
-  }, [isOpen, onClose]);
-
-  // Trap focus within modal
-  useEffect(() => {
-    if (!isOpen || !modalRef.current) return;
-
-    const focusableElements = modalRef.current.querySelectorAll<HTMLElement>(
-      'a[href], button, [tabindex]:not([tabindex="-1"])'
-    );
-    const firstElement = focusableElements[0];
-    const lastElement = focusableElements[focusableElements.length - 1];
-
-    const handleTab = (event: KeyboardEvent) => {
-      if (event.key !== 'Tab') return;
-
-      if (event.shiftKey) {
-        if (document.activeElement === firstElement) {
-          event.preventDefault();
-          lastElement?.focus();
-        }
-      } else {
-        if (document.activeElement === lastElement) {
-          event.preventDefault();
-          firstElement?.focus();
-        }
-      }
-    };
-
-    modalRef.current.addEventListener('keydown', handleTab);
-    firstElement?.focus();
-
-    return () => {
-      modalRef.current?.removeEventListener('keydown', handleTab);
     };
   }, [isOpen]);
 
@@ -107,6 +108,7 @@ export function ProjectDetailModal({ project, isOpen, onClose }: ProjectDetailMo
           <header className="modal-header">
             <h2 id="modal-title" className="modal-title">{project.name}</h2>
             <button
+              type="button"
               className="modal-close"
               onClick={onClose}
               aria-label="Close project details"
@@ -123,6 +125,23 @@ export function ProjectDetailModal({ project, isOpen, onClose }: ProjectDetailMo
               <section className="modal-section">
                 <h3 className="modal-section-title">Overview</h3>
                 <p className="modal-text">{project.description}</p>
+              </section>
+            )}
+
+            {(project.images && project.images.length > 0) && (
+              <section className="modal-section">
+                <h3 className="modal-section-title">Screenshots</h3>
+                <div className="modal-images">
+                  {project.images.map((img, idx) => (
+                    <div key={idx} className="modal-image-item">
+                      <img
+                        src={img}
+                        alt={`${project.name} screenshot ${idx + 1}`}
+                        loading="lazy"
+                      />
+                    </div>
+                  ))}
+                </div>
               </section>
             )}
 
@@ -175,6 +194,11 @@ export function ProjectDetailModal({ project, isOpen, onClose }: ProjectDetailMo
                 <Tag variant={`status-${project.status}` as any} size="md">
                   {formatStatus(project.status)}
                 </Tag>
+                {project.isCollaborative && (
+                  <Tag variant="info" size="md">
+                    Collaborative Project
+                  </Tag>
+                )}
                 <Tag variant="default" size="md">
                   {project.category}
                 </Tag>
@@ -188,28 +212,31 @@ export function ProjectDetailModal({ project, isOpen, onClose }: ProjectDetailMo
                 </div>
               )}
 
-              <div className="modal-links">
-                {project.repositoryUrl && (
-                  <Link href={project.repositoryUrl} external variant="primary" size="sm">
-                    Repository
-                  </Link>
-                )}
-                {project.demoUrl && (
-                  <Link href={project.demoUrl} external variant="secondary" size="sm">
-                    Live Demo
-                  </Link>
-                )}
-                {project.documentationUrl && (
-                  <Link href={project.documentationUrl} external variant="ghost" size="sm">
-                    Documentation
-                  </Link>
-                )}
-              </div>
+              {(project.repositoryUrl || project.demoUrl || project.documentationUrl) && (
+                <div className="modal-links">
+                  {project.repositoryUrl && (
+                    <Link href={project.repositoryUrl} external variant="primary" size="sm">
+                      Repository
+                    </Link>
+                  )}
+                  {project.demoUrl && (
+                    <Link href={project.demoUrl} external variant="secondary" size="sm">
+                      Live Demo
+                    </Link>
+                  )}
+                  {project.documentationUrl && (
+                    <Link href={project.documentationUrl} external variant="ghost" size="sm">
+                      Documentation
+                    </Link>
+                  )}
+                </div>
+              )}
             </section>
           </div>
 
           <footer className="modal-footer">
             <button
+              type="button"
               className="btn btn-secondary"
               onClick={onClose}
             >

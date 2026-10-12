@@ -2,6 +2,7 @@
 /* ========================================================================== */
 
 import type { Profile, SocialLink } from './types';
+import profilePhotoImg from '../assets/images/profile/profile.png';
 
 /* Inline SVG Icons - Keys for use in components */
 export const iconKeys = {
@@ -71,12 +72,6 @@ export const socialLinks: SocialLink[] = [
     icon: iconKeys.email,
     external: false,
   },
-  {
-    label: 'Discord',
-    url: 'https://discord.com/users/dp_9318',
-    icon: iconKeys.discord,
-    external: true,
-  },
 ];
 
 /* Primary CTA Links (used in Hero) */
@@ -94,7 +89,7 @@ export const primaryCtaLinks: SocialLink[] = [
     external: true,
   },
   {
-    label: 'Download Resume',
+    label: 'View Resume',
     url: 'https://drive.google.com/drive/folders/1_0XEvkFYHP4ZGoslBVSa78gYvTJmlp1Y?usp=drive_link',
     icon: iconKeys.download,
     external: true,
@@ -111,7 +106,8 @@ export const profile: Profile = {
   supportingMessage: 'Software Engineer and MCA student exploring application development, systems integration, data, and emerging technologies through real projects.',
   email: 'dipankarkumar626@gmail.com',
   location: 'Bhopal, Madhya Pradesh, India',
-  profilePhoto: '/src/assets/images/profile/profile.png',
+  profilePhoto: profilePhotoImg,
   resumeUrl: 'https://drive.google.com/drive/folders/1_0XEvkFYHP4ZGoslBVSa78gYvTJmlp1Y?usp=drive_link',
   socialLinks,
+  discordHandle: 'dp_9318',
 };
