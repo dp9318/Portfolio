@@ -136,7 +136,7 @@ export function ProjectDetailModal({ project, isOpen, onClose }: ProjectDetailMo
                     <div key={idx} className="modal-image-item">
                       <img
                         src={img}
-                        alt={`${project.name} screenshot ${idx + 1}`}
+                        alt={getScreenshotAlt(project.name, img, idx)}
                         loading="lazy"
                       />
                     </div>
@@ -247,5 +247,14 @@ export function ProjectDetailModal({ project, isOpen, onClose }: ProjectDetailMo
       </div>
     </>
   );
+}
+
+function getScreenshotAlt(projectName: string, src: string, index: number): string {
+  const lower = src.toLowerCase();
+  if (lower.includes('architecture')) return `${projectName} architecture diagram`;
+  if (lower.includes('dark')) return `${projectName} dark-mode dashboard preview`;
+  if (lower.includes('light')) return `${projectName} light-mode dashboard preview`;
+  if (lower.includes('hero') || lower.includes('banner')) return `${projectName} overview banner`;
+  return `${projectName} screenshot ${index + 1}`;
 }
 

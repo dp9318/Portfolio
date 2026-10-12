@@ -4,10 +4,10 @@
 import type { Project, ProjectsData, ProjectStatus } from './types';
 
 // Project Image Assets
-import recallHero from '../assets/images/projects/recall/recall-hero.png';
-import recallArchitecture from '../assets/images/projects/recall/recall-architecture.png';
 import recallUiDark from '../assets/images/projects/recall/recall-ui-dark.png';
 import recallUiLight from '../assets/images/projects/recall/recall-ui-light.png';
+import recallArchitecture from '../assets/images/projects/recall/recall-architecture.png';
+import recallHero from '../assets/images/projects/recall/recall-hero.png';
 
 import aqiconic01 from '../assets/images/projects/aqiconic/aqiconic01.png';
 import aqiconic02 from '../assets/images/projects/aqiconic/aqiconic02.png';
@@ -63,8 +63,8 @@ const recall: Project = {
   repositoryUrl: 'https://github.com/dp9318/RECALL',
   demoUrl: undefined,
   documentationUrl: undefined,
-  images: [recallHero, recallArchitecture, recallUiDark, recallUiLight],
-  thumbnail: recallHero,
+  images: [recallUiDark, recallArchitecture, recallUiLight, recallHero],
+  thumbnail: recallUiDark,
   startDate: '2024',
   endDate: '2024',
   isCollaborative: true,
