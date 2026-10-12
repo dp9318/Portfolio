@@ -22,19 +22,18 @@ export function AboutSection() {
         </div>
         <div className="about-content">
           <p>
-            Dipankar is an MCA student at MANIT Bhopal with a strong interest in technology and its practical application.
-            He enjoys exploring different areas of computing, learning unfamiliar tools when a problem requires them,
-            and turning that learning into working software.
+            Dipankar is an MCA student at MANIT Bhopal focused on core software and application development with AI integration.
+            He is a systems-oriented developer who explores unfamiliar problem spaces, learns what the problem requires,
+            and builds functioning, reliable software.
           </p>
           <p>
-            His work spans application development, desktop software, system integration, data and analytics,
-            and ongoing exploration of machine learning and computer vision. The common thread is not a single
-            technology stack, but the process of understanding a problem, learning what is necessary, and building
-            a useful solution.
+            His work spans agentic AI tooling and persistent context systems, desktop software, hardware–software integration,
+            and data analytics. The unifying thread is not a static tech stack, but the process of understanding problem constraints,
+            designing sensible architectures, and executing practical solutions through persistence and adaptability.
           </p>
           <p>
-            He is currently preparing to enter the corporate workforce while continuing to grow as a software
-            engineer and contribute to the wider technology community.
+            Grounded in a personal philosophy of continuous learning — a <em>polymath in progress</em> — he is focused on
+            engineering real-world applications that solve substantive problems while contributing actively to the developer community.
           </p>
         </div>
       </div>

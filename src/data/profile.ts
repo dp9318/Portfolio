@@ -103,7 +103,7 @@ export const profile: Profile = {
   title: 'Software Engineer',
   tagline: 'I learn what the problem needs and build it.',
   shortTagline: 'Learn the problem needs, then build it.',
-  supportingMessage: 'Software Engineer and MCA student exploring application development, systems integration, data, and emerging technologies through real projects.',
+  supportingMessage: 'Software Engineer and MCA student focused on application development and AI integration — understanding problem needs, designing practical systems, and building working software.',
   email: 'dipankarkumar626@gmail.com',
   location: 'Bhopal, Madhya Pradesh, India',
   profilePhoto: profilePhotoImg,

@@ -19,6 +19,7 @@ export const skills: SkillGroup[] = [
     skills: [
       skill('Java', 'programming'),
       skill('Python', 'programming'),
+      skill('C++', 'programming'),
       skill('SQL', 'programming'),
       skill('Object-Oriented Programming', 'programming'),
       skill('Data Structures & Algorithms', 'programming'),
@@ -50,10 +51,12 @@ export const skills: SkillGroup[] = [
   },
   {
     category: 'ai-ml',
-    label: 'AI & Machine Learning',
-    note: 'Active Exploration',
-    description: 'Active learning and research exploration, not established specialization.',
+    label: 'AI & Machine Learning Integration',
+    note: 'Active Exploration & Systems Integration',
+    description: 'Hands-on AI agent tooling, context architectures, computer vision, and prompt evaluation.',
     skills: [
+      skill('Model Context Protocol (MCP)', 'ai-ml'),
+      skill('Agent Memory & Context Systems', 'ai-ml'),
       skill('Machine Learning', 'ai-ml'),
       skill('Computer Vision', 'ai-ml'),
       skill('YOLO', 'ai-ml'),
@@ -65,6 +68,7 @@ export const skills: SkillGroup[] = [
     category: 'databases',
     label: 'Databases & Foundations',
     skills: [
+      skill('SQLite', 'databases'),
       skill('DBMS', 'databases'),
       skill('SQL', 'databases'),
       skill('Computer Networks', 'databases'),

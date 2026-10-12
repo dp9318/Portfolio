@@ -45,7 +45,7 @@ The shorter version may be preferred visually.
 
 **Supporting message:**
 
-> Software Engineer and MCA student exploring application development, systems integration, data, and emerging technologies through real projects.
+> Software Engineer focused on application development and AI integration — understanding problem needs, designing practical systems, and building working software.
 
 The hero should communicate adaptability and practical engineering rather than claim specialization in every area.
 
@@ -70,11 +70,11 @@ About Me
 
 ## Approved Description
 
-Dipankar is an MCA student at MANIT Bhopal with a strong interest in technology and its practical application. He enjoys exploring different areas of computing, learning unfamiliar tools when a problem requires them, and turning that learning into working software.
+Dipankar is an MCA student at MANIT Bhopal focused on core software and application development with AI integration. He is a systems-oriented developer who explores unfamiliar problem spaces, learns what the problem requires, and builds functioning, reliable software.
 
-His work spans application development, desktop software, system integration, data and analytics, and ongoing exploration of machine learning and computer vision. The common thread is not a single technology stack, but the process of understanding a problem, learning what is necessary, and building a useful solution.
+His work spans agentic AI tooling and persistent context systems, desktop software, hardware–software integration, and data analytics. The unifying thread is not a static tech stack, but the process of understanding problem constraints, designing sensible architectures, and executing practical solutions through persistence and adaptability.
 
-He is currently preparing to enter the corporate workforce while continuing to grow as a software engineer and contribute to the wider technology community.
+Grounded in a personal philosophy of continuous learning — a *polymath in progress* — he is focused on engineering real-world applications that solve substantive problems while contributing actively to the developer community.
 
 ## What Visitors Should Understand About Him
 
@@ -92,15 +92,15 @@ He is currently preparing to enter the corporate workforce while continuing to g
 
 ## Primary Direction
 
-**Software Engineering / Application Development**
+**Software / Application Development with AI Integration**
 
-## Secondary Areas
+## Key Principles & Capabilities
 
-- Systems integration
-- Data and analytics
-- AI / machine learning exploration
-- Desktop application development
-- Backend and API-driven application development
+- Systems-oriented problem solving, architecture, and end-to-end implementation
+- AI integration: agent memory architectures, context lifecycle, Model Context Protocol (MCP)
+- Desktop applications and hardware–software integration
+- Breadth in data analytics and visualization (Power BI, DAX, Pandas) as supporting experience
+- Adaptability, learning agility, and engineering persistence
 
 ## Current Working Philosophy
 
@@ -152,9 +152,59 @@ For projects where Dipankar was the primary builder, first-person contribution s
 
 # 6. Featured Projects
 
-The initial portfolio should prioritize a small number of strong, representative projects rather than showing every project equally.
+The initial portfolio prioritizes a small number of strong, representative projects that communicate practical application development, AI systems integration, and engineering depth.
 
-## Featured Project 1 — AQIconic
+## Featured Project 1 — RECALL
+
+**Name:** RECALL
+**Type:** AI Systems / Developer Tooling / Persistent Memory Engine
+**Status:** Completed / Active v1.0.1
+**Collaboration:** Co-developed (Collaborative project)
+
+### Short Description
+
+A persistent context and memory engine for AI coding agents with SQLite canonical storage, Model Context Protocol (MCP), deterministic retrieval, and a web dashboard.
+
+### What Was Built
+
+A local, persistent cognitive memory and context engine for AI coding agents. RECALL preserves architectural decisions and developer conventions across sessions, enforces user custom instructions with strict precedence, resolves historical context conflicts, and exposes unified context via the Model Context Protocol (MCP) and a developer web dashboard.
+
+### Dipankar's Contribution
+
+- System architecture and overall modular monorepo design.
+- Database persistence layer design and canonical SQLite ledger implementation.
+- Core memory-management and orchestration layer (memory lifecycle, compaction, and context assembly).
+- Context-precedence enforcement and custom instruction handling (strict hierarchy: user instructions > supersession > memory).
+- Persisted canonical ledger fault tolerance (guaranteeing canonical writes succeed even if derived vector index operations encounter errors).
+- Built extensive core regression test suites (280+ tests passing).
+- Refined the web dashboard UI/UX, theme system (light/dark/system), and memory statistics.
+
+### Collaborator Attribution
+
+Co-developed with collaborator Shiva Infinity, who contributed to MCP client/server adapters, semantic retrieval evaluation and ranking, backend API route handlers, and conflict arbitration workflows.
+
+### Technologies
+
+- Python
+- SQLite (Canonical ledger)
+- Model Context Protocol (MCP)
+- FastAPI / HTTP API
+- ChromaDB (Derived semantic vector index)
+- React
+- Tailwind CSS
+- TypeScript
+
+### Portfolio Emphasis
+
+RECALL is the premier featured project demonstrating core software and application development with AI integration. It proves system architecture, multi-tier persistence resilience, agent-tool protocol integration, and comprehensive test coverage.
+
+### Repository
+
+https://github.com/dp9318/RECALL
+
+---
+
+## Featured Project 2 — AQIconic
 
 **Name:** AQIconic  
 **Type:** Desktop application / environmental monitoring / hardware integration  
@@ -204,7 +254,7 @@ No public live demo unless explicitly provided later.
 
 ---
 
-# 7. Featured Project 2 — AI Food Analyzer
+## Featured Project 3 — AI Food Analyzer
 
 **Name:** AI Food Analyzer  
 **Type:** Machine learning / computer vision / research-oriented application  
@@ -249,7 +299,7 @@ Do not imply medical certification, commercial deployment, or production-level a
 
 ---
 
-# 8. Featured Project 3 — Video Game Sales Analysis
+## Featured Project 4 — Video Game Sales Analysis
 
 **Name:** Video Game Sales Analysis (1971–2024)  
 **Type:** Data analytics / visualization  
@@ -475,6 +525,7 @@ Skills should reflect current, defensible capability and should not become a dum
 
 - Java
 - Python
+- C++
 - SQL
 - Object-Oriented Programming
 - Data Structures and Algorithms
@@ -500,10 +551,12 @@ Skills should reflect current, defensible capability and should not become a dum
 - Data analysis
 - Data visualization
 
-## AI / ML
+## AI / ML & Context Systems
 
-Present this category as **learning / active exploration**, not established specialization.
+Present active exploration and practical integration tooling:
 
+- Model Context Protocol (MCP)
+- Agent Memory & Context Architectures
 - Machine Learning
 - Computer Vision
 - YOLO-based detection
@@ -512,6 +565,7 @@ Present this category as **learning / active exploration**, not established spec
 
 ## Databases / Foundations
 
+- SQLite
 - DBMS
 - SQL
 - Computer Networks

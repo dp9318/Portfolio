@@ -4,6 +4,11 @@
 import type { Project, ProjectsData, ProjectStatus } from './types';
 
 // Project Image Assets
+import recallHero from '../assets/images/projects/recall/recall-hero.png';
+import recallArchitecture from '../assets/images/projects/recall/recall-architecture.png';
+import recallUiDark from '../assets/images/projects/recall/recall-ui-dark.png';
+import recallUiLight from '../assets/images/projects/recall/recall-ui-light.png';
+
 import aqiconic01 from '../assets/images/projects/aqiconic/aqiconic01.png';
 import aqiconic02 from '../assets/images/projects/aqiconic/aqiconic02.png';
 import aqiconic03 from '../assets/images/projects/aqiconic/aqiconic03.png';
@@ -29,6 +34,42 @@ const status = {
 
 /* Featured Projects */
 /* -------------------------------------------------------------------------- */
+
+const recall: Project = {
+  id: 'recall',
+  slug: 'recall',
+  name: 'RECALL',
+  shortDescription: 'Persistent context and memory engine for AI coding agents with SQLite canonical storage, Model Context Protocol (MCP), deterministic retrieval, and a web dashboard.',
+  description: 'A local, persistent cognitive memory and context engine for AI coding agents. RECALL preserves architectural decisions and developer conventions across sessions, enforces user custom instructions with strict precedence, resolves historical context conflicts, and exposes unified context via the Model Context Protocol (MCP) and a developer web dashboard.',
+  problem: 'AI coding assistants lose critical context the moment a session ends. Every new conversation forgets past architectural decisions, project conventions, and user preferences, leading to repeated explanations and conflicting agent suggestions.',
+  solution: 'Architected and implemented a local persistent memory engine using canonical SQLite storage, deterministic context retrieval, strict custom-instruction precedence enforcement, MCP integration for AI coding agents, and a React + Tailwind CSS web dashboard.',
+  contribution: 'Co-developed the project. Architected the system and modular repository layout. Designed and implemented the database persistence layer and canonical SQLite ledger. Built the core memory-management and orchestration layer (lifecycle, compaction, and context assembly). Implemented custom instruction handling with strict precedence enforcement (user instruction > supersession > memory). Ensured canonical persistence resilience against derived index failures. Built extensive core regression test suites, and refined the web dashboard UI/UX, theme system, and memory statistics.',
+  challenges: [
+    'Enforcing strict context-precedence hierarchy (user instructions over historical memories)',
+    'Ensuring canonical SQLite writes remain successful even when secondary index operations fail',
+    'Coordinating dual client interfaces (MCP for AI agents and HTTP API for human dashboard)',
+    'Structuring modular monorepo boundaries for collaborative, contract-driven development',
+  ],
+  learnings: [
+    'Model Context Protocol (MCP) specification and agent-tool integration',
+    'Designing persistent memory architectures for LLM coding agents',
+    'Resilient multi-tier persistence (canonical SQLite ledger + derived vector index)',
+    'Deterministic context assembly and arbitration policies',
+  ],
+  status: status.completed,
+  category: 'AI Systems / Developer Tooling / Context Engine',
+  featured: true,
+  technologies: ['Python', 'SQLite', 'MCP', 'FastAPI', 'ChromaDB', 'React', 'Tailwind CSS', 'TypeScript'],
+  repositoryUrl: 'https://github.com/dp9318/RECALL',
+  demoUrl: undefined,
+  documentationUrl: undefined,
+  images: [recallHero, recallArchitecture, recallUiDark, recallUiLight],
+  thumbnail: recallHero,
+  startDate: '2024',
+  endDate: '2024',
+  isCollaborative: true,
+  teamSize: undefined,
+};
 
 const aqiconic: Project = {
   id: 'aqiconic',
@@ -210,12 +251,13 @@ const creditCardAnalysis: Project = {
 /* -------------------------------------------------------------------------- */
 
 export const projectsData: ProjectsData = {
-  featured: [aqiconic, aiFoodAnalyzer, videoGameSales],
+  featured: [recall, aqiconic, aiFoodAnalyzer, videoGameSales],
   additional: [epicGamesClone, creditCardAnalysis],
 };
 
 /* Export individual projects for direct import if needed */
 export const projects = {
+  recall,
   aqiconic,
   aiFoodAnalyzer,
   videoGameSales,
