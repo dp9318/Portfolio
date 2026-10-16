@@ -13,9 +13,6 @@ export type ProjectStatus =
 export type SkillCategory =
   | 'programming'
   | 'application-development'
-  | 'data-analytics'
-  | 'ai-ml'
-  | 'databases'
   | 'tools';
 
 export interface SocialLink {

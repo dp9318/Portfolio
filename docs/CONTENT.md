@@ -519,65 +519,22 @@ This should normally remain low-priority and may be omitted from the main portfo
 
 # 15. Skills
 
-Skills should reflect current, defensible capability and should not become a dump of every technology previously touched.
+Skills reflect current, defensible capability and are intentionally focused on core strengths rather than every technology previously touched.
 
-## Primary Software Engineering Skills
+## Programming
 
-- Java
 - Python
-- C++
 - SQL
-- Object-Oriented Programming
-- Data Structures and Algorithms
-- Application Development
-- REST APIs
-- Git / GitHub
 
 ## Application Development
 
-- Qt
-- QML
-- PySide6
-- Desktop application development
-- API-driven applications
-- Software–hardware integration
-
-## Data / Analytics
-
-- Power BI
-- DAX
-- Pandas
-- NumPy
-- Data analysis
-- Data visualization
-
-## AI / ML & Context Systems
-
-Present active exploration and practical integration tooling:
-
-- Model Context Protocol (MCP)
-- Agent Memory & Context Architectures
-- Machine Learning
-- Computer Vision
-- YOLO-based detection
-- Prompt Engineering
-- Generative AI / LLM evaluation
-
-## Databases / Foundations
-
-- SQLite
-- DBMS
-- SQL
-- Computer Networks
-- OOP
+- Qt / PySide6
+- REST API Integration
 
 ## Tools
 
 - Git
 - GitHub
-- VS Code
-- Jupyter Notebook
-- Power BI
 
 ---
 

@@ -15,7 +15,7 @@ export function SkillsSection() {
       <div className="skills-grid">
         {skills.map((group: SkillGroup) => (
           <Card key={group.category} className="skill-group" variant="default">
-            <CardContent>
+            <CardContent className="skill-group-content">
               <div className="skill-group-header">
                 <h3 className="skill-group-label">{group.label}</h3>
                 {group.note && (
@@ -27,7 +27,7 @@ export function SkillsSection() {
               <ul className="skill-list">
                 {group.skills.map((skill) => (
                   <li key={skill.name} className="skill-item">
-                    <Tag variant="default" size="sm" className="skill-tag">
+                    <Tag variant="default" size="md" className="skill-tag">
                       {skill.name}
                     </Tag>
                   </li>
