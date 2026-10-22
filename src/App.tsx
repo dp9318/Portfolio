@@ -9,27 +9,37 @@ import { LearningSection } from './sections/Learning/LearningSection'
 import { ContactSection } from './sections/Contact/ContactSection'
 import { Footer } from './sections/Contact/Footer'
 import { ThemeProvider } from './context/ThemeContext'
+import { SmoothScrollProvider } from './components/motion'
+import { HeroScene } from './sections/Hero/HeroScene'
 
 function App() {
   return (
     <ThemeProvider>
-      <>
-        <a href="#main-content" className="skip-link">
-          Skip to main content
-        </a>
-        <Navigation />
-        <main id="main-content" tabIndex={-1} style={{ outline: 'none' }}>
-          <HeroSection />
-          <AboutSection />
-          <ProjectsSection />
-          <ExperienceSection />
-          <SkillsSection />
-          <EducationSection />
-          <LearningSection />
-          <ContactSection />
-        </main>
-        <Footer />
-      </>
+      <SmoothScrollProvider>
+        {/* Global fixed 3D WebGL background layer */}
+        <HeroScene />
+        {/* Apple-style frosted glass veil diffused over the 3D scene */}
+        <div className="global-glass-veil" aria-hidden="true" />
+        
+        {/* Content layer floating cleanly on top */}
+        <div className="app-wrapper">
+          <a href="#main-content" className="skip-link">
+            Skip to main content
+          </a>
+          <Navigation />
+          <main id="main-content" tabIndex={-1} style={{ outline: 'none' }}>
+            <HeroSection />
+            <AboutSection />
+            <ProjectsSection />
+            <ExperienceSection />
+            <SkillsSection />
+            <EducationSection />
+            <LearningSection />
+            <ContactSection />
+          </main>
+          <Footer />
+        </div>
+      </SmoothScrollProvider>
     </ThemeProvider>
   )
 }

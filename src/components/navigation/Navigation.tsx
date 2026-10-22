@@ -1,9 +1,7 @@
-/* Navigation Component */
-/* ========================================================================== */
-
 import { useState, useEffect, useRef } from 'react';
 import { Link } from '../../components/ui';
 import { ThemeSelector } from '../theme/ThemeSelector';
+import { Magnetic, useSmoothScroll } from '../motion';
 
 const navigationLinks = [
   { href: '#about', label: 'About' },
@@ -24,6 +22,7 @@ export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const { stop, start } = useSmoothScroll();
 
   // Close menu on escape key
   useEffect(() => {
@@ -38,17 +37,22 @@ export function Navigation() {
     return () => document.removeEventListener('keydown', handleKeyDown);
   }, [isOpen]);
 
-  // Lock body scroll when mobile menu is open
+  // Lock body scroll and Lenis when mobile menu is open
   useEffect(() => {
-    if (!isOpen) return;
+    if (!isOpen) {
+      start();
+      return;
+    }
 
+    stop();
     const originalOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
 
     return () => {
       document.body.style.overflow = originalOverflow;
+      start();
     };
-  }, [isOpen]);
+  }, [isOpen, start, stop]);
 
   // Auto-close mobile menu on desktop resize
   useEffect(() => {
@@ -125,21 +129,24 @@ export function Navigation() {
   return (
     <nav className="navbar" role="navigation" aria-label="Main navigation">
       <div className="navbar-container container flex items-center justify-between">
-        <Link href="#hero" className="navbar-brand" aria-label="Dipankar Kumar - Home">
-          <span className="navbar-name">Dipankar</span>
-        </Link>
+        <Magnetic strength={0.2} activeScale={1.03}>
+          <Link href="#hero" className="navbar-brand" aria-label="Dipankar Kumar - Home">
+            <span className="navbar-name">Dipankar</span>
+          </Link>
+        </Magnetic>
 
         {/* Desktop Navigation */}
         <div className="navbar-links">
           {navigationLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="navbar-link"
-              onClick={handleLinkClick}
-            >
-              {link.label}
-            </Link>
+            <Magnetic key={link.href} strength={0.2} activeScale={1.05}>
+              <Link
+                href={link.href}
+                className="navbar-link"
+                onClick={handleLinkClick}
+              >
+                {link.label}
+              </Link>
+            </Magnetic>
           ))}
           <ThemeSelector placement="desktop" />
         </div>

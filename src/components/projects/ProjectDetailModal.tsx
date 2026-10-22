@@ -4,6 +4,7 @@
 import { useEffect, useRef } from 'react';
 import { Link, Tag } from '../../components/ui';
 import type { Project } from '../../data/types';
+import { useSmoothScroll } from '../motion';
 
 export interface ProjectDetailModalProps {
   project: Project | null;
@@ -16,10 +17,14 @@ export function ProjectDetailModal({ project, isOpen, onClose }: ProjectDetailMo
   const previousActiveElement = useRef<HTMLElement | null>(null);
   const onCloseRef = useRef(onClose);
   onCloseRef.current = onClose;
+  const { stop, start } = useSmoothScroll();
 
   // Handle focus management, body scroll lock, and keyboard navigation
   useEffect(() => {
     if (!isOpen) return;
+
+    // Pause Lenis smooth scroll while modal is active
+    stop();
 
     // Store the triggering element to restore focus when modal closes
     previousActiveElement.current = document.activeElement as HTMLElement;
@@ -80,8 +85,10 @@ export function ProjectDetailModal({ project, isOpen, onClose }: ProjectDetailMo
       document.removeEventListener('keydown', handleKeyDown);
       // Restore focus to triggering element
       previousActiveElement.current?.focus();
+      // Resume Lenis smooth scroll
+      start();
     };
-  }, [isOpen]);
+  }, [isOpen, stop, start]);
 
   if (!isOpen || !project) return null;
 
@@ -95,6 +102,9 @@ export function ProjectDetailModal({ project, isOpen, onClose }: ProjectDetailMo
         className={`modal-backdrop ${isOpen ? 'open' : ''}`}
         onClick={onClose}
         aria-hidden="true"
+        data-lenis-prevent="true"
+        data-lenis-prevent-wheel="true"
+        data-lenis-prevent-touch="true"
       />
       <div
         ref={modalRef}
@@ -103,8 +113,16 @@ export function ProjectDetailModal({ project, isOpen, onClose }: ProjectDetailMo
         aria-modal="true"
         aria-labelledby="modal-title"
         tabIndex={-1}
+        data-lenis-prevent="true"
+        data-lenis-prevent-wheel="true"
+        data-lenis-prevent-touch="true"
       >
-        <div className="modal-content">
+        <div
+          className="modal-content"
+          data-lenis-prevent="true"
+          data-lenis-prevent-wheel="true"
+          data-lenis-prevent-touch="true"
+        >
           <header className="modal-header">
             <h2 id="modal-title" className="modal-title">{project.name}</h2>
             <button
@@ -120,7 +138,12 @@ export function ProjectDetailModal({ project, isOpen, onClose }: ProjectDetailMo
             </button>
           </header>
 
-          <div className="modal-body">
+          <div
+            className="modal-body"
+            data-lenis-prevent="true"
+            data-lenis-prevent-wheel="true"
+            data-lenis-prevent-touch="true"
+          >
             {project.description && (
               <section className="modal-section">
                 <h3 className="modal-section-title">Overview</h3>

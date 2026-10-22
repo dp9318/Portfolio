@@ -33,25 +33,18 @@ The portfolio is an **engineering portfolio, not a design showcase**. Visual des
 
 ## 2. Core Visual Principle
 
-### Simplicity over spectacle
-
-The website should avoid visual complexity that exists only to appear impressive.
+### Fluidity, 3D Depth, and Apple-Style Frosted Glass
+The website utilizes a unified Apple VisionOS-inspired frosted glass (glassmorphism) architecture built over a persistent, viewport-locked 3D WebGL scene:
+- **Global Fixed 3D Scene**: The WebGL canvas is locked across the entire viewport (`position: fixed; inset: 0; z-index: 0; pointer-events: none;`), rendering floating `#EAAA00` metallic and wireframe geometries with ambient `#3A0F34` lighting that reacts to both mouse parallax and window scroll progress.
+- **Global Frosted Glass Veil**: A translucent `#3A0F34` tint overlay (`rgba(58, 15, 52, 0.55)`) with `backdrop-filter: blur(20px) saturate(160%)` diffuses the 3D scene softly behind all content.
+- **Floating Glass Surfaces**: Navigation, project cards, experience items, skill groups, and modals float cleanly above the veil as elevated frosted glass panels (`background: linear-gradient(135deg, rgba(221, 227, 232, 0.05) 0%, rgba(58, 15, 52, 0.45) 100%), rgba(58, 15, 52, 0.45); backdrop-filter: blur(24px) saturate(180%); border: 1px solid rgba(221, 227, 232, 0.16); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35), inset 0 1px 0 0 rgba(221, 227, 232, 0.15)`).
+- **Global Smooth Scroll**: Physics-based smooth scrolling via Lenis synchronized with the GSAP ticker.
+- **Strict 3-Color Palette**: Deep Purple (`#3A0F34`), Light Grey-Blue (`#DDE3E8`), and Gold (`#EAAA00`).
 
 Do not build the design around:
-
-- 3D scenes.
-- WebGL effects.
-- Excessive gradients.
-- Excessive glassmorphism.
-- Constant motion.
-- Large animated backgrounds.
-- Decorative code rain.
-- Artificial terminal interfaces.
-- Excessive parallax.
-- Complex cursor effects.
-- Unnecessary carousels.
-
-Small, intentional animations are acceptable when they improve hierarchy, feedback, or transitions.
+- Excessive opaque backgrounds that conceal the 3D depth layer.
+- Unstructured neon gradients or artificial terminal interfaces.
+- Unbounded 3D models that cause heavy frame drops or obstruct typography.
 
 ---
 
@@ -213,38 +206,56 @@ A single primary typeface with a restrained weight system is preferred.
 
 ---
 
-## 8. Color System
+## 8. 5-Preset Color Theme Architecture & Glass Surface Hierarchy
 
-The default visual direction should be primarily **neutral and light**.
+The portfolio implements a dynamic **5-Preset 3-Color Theme Architecture**. Each theme strictly uses all 3 of its assigned colors across frosted glass surfaces, typography/borders, interactive elements, and the live 3D WebGL background (`HeroScene.tsx`):
 
-Use a restrained palette:
+### 5 Curated Theme Presets
 
 ```text
-Background:         warm/neutral near-white
-Primary text:       near-black / charcoal
-Secondary text:     muted gray
-Borders:            very light gray
-Surface/cards:      slightly contrasting neutral
-Accent:             one restrained brand accent
+1. 'royal' (Default):   #3A0F34 (Deep Purple)   + #DDE3E8 (Light Grey-Blue) + #EAAA00 (Regal Gold)
+2. 'cyber':             #0A0A0A (Cyber Black)   + #007BA7 (Cerulean Cyan)   + #FF2D95 (Neon Pink)
+3. 'mocha':             #6F4E37 (Warm Mocha)    + #E5E4E2 (Platinum Silver) + #E6E0F0 (Pale Lilac)
+4. 'emerald':           #046A38 (Forest Emerald)+ #F9EBD7 (Antique Linen)   + #E34222 (Flame Orange)
+5. 'carbon':            #2A2A2A (Carbon Charcoal)+ #C0C0C0 (Pure Silver)    + #E10600 (Crimson Red)
 ```
 
-The accent color should be used selectively for:
+### Color Roles & Semantics Per Theme
 
-- Primary buttons.
-- Links when appropriate.
-- Small highlights.
-- Status indicators.
-- Interactive states.
+Every theme triplet maps cleanly into 3 structural roles:
 
-Do not use a large number of accent colors.
+1. **Role 1: Base Background & Glass Tint (`--color-base` / `--color-background`)**:
+   - Deep foundation color for the HTML `body` and ambient 3D scene lighting.
+   - Tint base for the global frosted veil (`var(--veil-bg)`) and glass panel backgrounds (`var(--glass-bg)`).
+   - In Royal: `#3A0F34` | Cyber: `#0A0A0A` | Mocha: `#6F4E37` | Emerald: `#046A38` | Carbon: `#2A2A2A`.
 
-Avoid making the portfolio look like a generic neon developer template.
+2. **Role 2: Primary Text, Glass Specular Borders & 3D Wireframes (`--color-secondary` / `--color-border-strong`)**:
+   - Primary readable typography and card specular borders (`var(--glass-border)`).
+   - 3D wireframe geometric meshes and secondary point light in the WebGL scene.
+   - For Cyber and Carbon, high-contrast tints (`#EAF6FA` and `#F2F2F2`) ensure strict WCAG AAA readability against ultra-dark bases, while `#007BA7` and `#C0C0C0` remain prominent across glass borders, badges, subheadings, and 3D wireframe lines.
+   - In Royal: `#DDE3E8` | Cyber: `#007BA7` (text: `#EAF6FA`) | Mocha: `#E5E4E2` | Emerald: `#F9EBD7` | Carbon: `#C0C0C0` (text: `#F2F2F2`).
 
-### Dark mode
+3. **Role 3: Interactive Accents, Button Fills, Hover Glows & 3D Solids (`--color-accent`)**:
+   - Primary button backgrounds, active nav links, hover states, selection, and focus rings.
+   - Solid 3D geometric meshes (Torus Knot, Icosahedron, Octahedron) and primary directional key light.
+   - Hover border glow on glass cards (`var(--glass-shadow-hover)` and `var(--color-btn-glow)`).
+   - Button text (`--color-btn-primary-text`) is strictly contrasted against the accent fill (e.g., `#3A0F34` in Royal, `#0A0A0A` in Cyber, `#6F4E37` in Mocha, `#F9EBD7` in Emerald, `#FFFFFF` in Carbon) to satisfy WCAG AAA standards.
+   - In Royal: `#EAAA00` | Cyber: `#FF2D95` | Mocha: `#E6E0F0` | Emerald: `#E34222` | Carbon: `#E10600`.
 
-Dark mode is **not required for V1** unless it can be implemented cleanly without compromising the light theme.
+### Live 3D WebGL Background Reactivity
 
-If implemented, dark mode should reuse the same hierarchy and remain restrained. It must not introduce a completely different visual identity.
+`HeroScene.tsx` dynamically subscribes to `useTheme()`. Whenever the theme changes:
+- **Ambient & Rim Lights**: Dynamically set to the theme's **Base color** (`color={baseColor}`).
+- **Wireframe Geometries & Secondary Point Light**: Dynamically set to the theme's **Secondary color** (`color={secondaryColor}`).
+- **Solid Geometries, Directional Key Light & Center Glow**: Dynamically set to the theme's **Accent color** (`color={accentColor}`).
+This guarantees that all 3 colors of the triplet are visibly alive in the background on every page.
+
+### Navigation Theme Selector
+
+`ThemeSelector.tsx` renders an Apple VisionOS frosted glass pill button:
+- Displays a 3-color swatch cluster representing the active theme's `base`, `secondary`, and `accent` colors.
+- Clicking the pill opens a keyboard-accessible glass popover (`role="menu"`) previewing all 5 presets with instant one-click switching.
+- Persists user selection to `localStorage` under `'portfolio-color-theme'` and synchronizes `document.documentElement.setAttribute('data-theme', theme)` and `<meta name="theme-color">`.
 
 ---
 
@@ -453,26 +464,30 @@ Buttons should have:
 
 ---
 
-## 13. Cards
+## 13. Cards & Glass Panels
 
-Cards should be restrained and structured.
+Cards and interactive containers follow an **Apple VisionOS-style frosted glass panel** architecture:
 
-Preferred characteristics:
+### Panel Specifications:
+- **Background**: Translucent deep purple gradient `linear-gradient(135deg, rgba(221, 227, 232, 0.05) 0%, rgba(58, 15, 52, 0.45) 100%), rgba(58, 15, 52, 0.45)`
+- **Backdrop Filter**: `blur(24px) saturate(180%)` (with `-webkit-backdrop-filter` prefix)
+- **Specular Border**: `1px solid rgba(221, 227, 232, 0.16)`
+- **Inner Highlight & Shadow**: `box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35), inset 0 1px 0 0 rgba(221, 227, 232, 0.15)`
+- **Hover State**: Gentle float-up (`transform: translateY(-4px to -6px)`), specular gold border transition (`border-color: #EAAA00`), and gold outer glow (`box-shadow: 0 16px 36px -10px rgba(18, 2, 16, 0.75), 0 0 24px rgba(234, 170, 0, 0.3), inset 0 1px 0 0 rgba(234, 170, 0, 0.35)`)
 
-- Subtle border or surface contrast.
-- Moderate corner radius.
-- Adequate internal padding.
-- Clear title hierarchy.
-- Minimal shadow.
+### Scope of Glass Panels:
+- Selected Projects (`.project-card`)
+- Experience Timeline entries (`.experience-entry`)
+- Skill Groups (`.skill-group`)
+- Education entries (`.education-entry`)
+- Primary Contact CTA (`.contact-primary`)
+- Sticky Navigation header (`.navbar`) and Mobile Drawer (`.mobile-menu`)
+- Project Detail Dialog (`.modal`)
 
 Avoid:
-
-- Very heavy shadows.
-- Extremely rounded pill-shaped containers everywhere.
-- Excessive glass effects.
-- Large floating card stacks.
-
-Not every section needs to be inside a card.
+- Completely opaque surface backgrounds that occlude the background 3D depth layer.
+- Overly strong, muddy shadows that reduce contrast.
+- Rainbow border gradients that violate the 3-color palette.
 
 ---
 
@@ -495,23 +510,22 @@ Images should have appropriate `alt` text.
 
 ---
 
-## 15. Animation and Interaction
+## 15. Animation, 3D, and Interaction
 
-Animation should be **subtle and functional**.
+Animation should be **fluid, cinematic, and deeply responsive**.
 
-Acceptable examples:
+### Motion & Physics Stack:
+- **Global Smooth Scroll**: Powered by `lenis` (`SmoothScrollProvider` in `src/components/motion/SmoothScroll.tsx`) synchronized with the GSAP ticker. Preserves native mobile touch functionality (`touchMultiplier: 1.5`).
+- **Scroll Animations**: `gsap` + `ScrollTrigger` for project cards and experience timeline reveals, subtle scale-up, and parallax shifts as they enter the viewport.
+- **Micro-Interactions & Entrances**: `framer-motion` for staggered hero float-up entrances and magnetic cursor pull (`src/components/motion/Magnetic.tsx`) with `#EAAA00` gold active hover states.
+- **Persistent Global 3D WebGL Layer**: Built with `three`, `@react-three/fiber`, and `@react-three/drei` in `src/sections/Hero/HeroScene.tsx`, mounted at the root level in `src/App.tsx`. Renders floating metallic and wireframe geometric shapes (`#EAAA00` materials with soft emissive glow, `#3A0F34` ambient and rim lighting). The 3D scene responds smoothly to cursor position and scroll progression (`window.scrollY`).
+- **Global Frosted Veil**: `.global-glass-veil` sits directly over the 3D canvas with `position: fixed; inset: 0; pointer-events: none; z-index: 0; background: rgba(58, 15, 52, 0.55); backdrop-filter: blur(20px) saturate(160%);`, diffusing the gold 3D shapes across the entire page background.
 
-- Small fade/slide-in when content enters the viewport.
-- Button hover transitions.
-- Card hover elevation/border changes.
-- Navigation state transitions.
-- Smooth scrolling.
-
-Keep durations short and natural.
-
-Do not make important information dependent on animation.
-
-Respect reduced-motion preferences where practical.
+### Performance and Accessibility Constraints:
+- Global 3D WebGL canvas must sit securely in the background (`position: fixed; inset: 0; z-index: 0; pointer-events: none;`) with all content floating on top in `.app-wrapper` (`position: relative; z-index: 1;`).
+- WebGL must be wrapped in an ErrorBoundary (`WebGLErrorBoundary`) with graceful CSS fallback if WebGL fails to initialize.
+- Native mouse-wheel and touch scrolling within modals is strictly preserved using `data-lenis-prevent="true"`, `overscroll-behavior: contain`, and bounded `max-height: 85vh`.
+- Strictly respect `prefers-reduced-motion: reduce` by disabling smooth scroll and animations, keeping the layout accessible and functional.
 
 ---
 

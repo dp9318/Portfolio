@@ -1,22 +1,84 @@
 /* Projects Section */
 /* ========================================================================== */
 
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Section, Heading, Card, Tag } from '../../components/ui';
 import { ProjectDetailModal } from '../../components/projects';
 import { projectsData } from '../../data';
 import type { Project } from '../../data/types';
+import { useSmoothScroll } from '../../components/motion';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export function ProjectsSection() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const { stop, start } = useSmoothScroll();
+
+  useEffect(() => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
+    const ctx = gsap.context(() => {
+      const cards = gsap.utils.toArray<HTMLElement>('.project-card');
+      cards.forEach((card) => {
+        // Entrance: subtle scale-up and parallax float-up
+        gsap.fromTo(
+          card,
+          {
+            opacity: 0,
+            y: 40,
+            scale: 0.95,
+          },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.85,
+            ease: 'power3.out',
+            scrollTrigger: {
+              trigger: card,
+              start: 'top 88%',
+              toggleActions: 'play none none none',
+            },
+          }
+        );
+
+        // Subtle parallax movement on the card thumbnail
+        const img = card.querySelector('.project-card-image img');
+        if (img) {
+          gsap.fromTo(
+            img,
+            { yPercent: -6 },
+            {
+              yPercent: 6,
+              ease: 'none',
+              scrollTrigger: {
+                trigger: card,
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: 1.2,
+              },
+            }
+          );
+        }
+      });
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
 
   const handleProjectClick = (project: Project) => {
     setSelectedProject(project);
+    stop();
   };
 
   const handleCloseModal = useCallback(() => {
     setSelectedProject(null);
-  }, []);
+    start();
+  }, [start]);
 
   const renderProjectCard = (project: Project) => (
     <Card
@@ -74,7 +136,7 @@ export function ProjectsSection() {
   );
 
   return (
-    <>
+    <div ref={sectionRef}>
       <Section id="projects" aria-labelledby="projects-heading" variant="default">
         <Heading id="projects-heading" level={2} variant="section">
           Selected Projects
@@ -101,7 +163,7 @@ export function ProjectsSection() {
           onClose={handleCloseModal}
         />
       </Section>
-    </>
+    </div>
   );
 }
 
