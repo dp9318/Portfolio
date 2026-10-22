@@ -224,9 +224,10 @@ The portfolio implements a dynamic **5-Preset 3-Color Theme Architecture**. Each
 
 Every theme triplet maps cleanly into 3 structural roles:
 
-1. **Role 1: Base Background & Glass Tint (`--color-base` / `--color-background`)**:
+1. **Role 1: Base Background & Authentic Glass Surface (`--color-base` / `--color-background` / `--glass-bg`)**:
    - Deep foundation color for the HTML `body` and ambient 3D scene lighting.
-   - Tint base for the global frosted veil (`var(--veil-bg)`) and glass panel backgrounds (`var(--glass-bg)`).
+   - Transparent `.global-glass-veil` without pre-blur so 3D background geometries remain crisp and sharp.
+   - Low-opacity frosted glass panels (`background: rgba(58, 15, 52, 0.28); backdrop-filter: blur(16px) saturate(180%);` in Royal) allowing 3D shapes to vividly bleed through and blur directly underneath the cards.
    - In Royal: `#3A0F34` | Cyber: `#0A0A0A` | Mocha: `#6F4E37` | Emerald: `#046A38` | Carbon: `#2A2A2A`.
 
 2. **Role 2: Primary Text, Glass Specular Borders & 3D Wireframes (`--color-secondary` / `--color-border-strong`)**:

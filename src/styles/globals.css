@@ -56,6 +56,7 @@ body {
   position: relative;
   z-index: 1;
   min-height: 100vh;
+  background: transparent;
 }
 
 .app-wrapper {
@@ -64,17 +65,27 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background: transparent;
 }
 
 /* Ensure main content grows to push footer down */
 main {
   flex: 1;
+  background: transparent;
 }
 
 /* Section Transparency over Global 3D Glass Layer */
 section,
 .section,
 .section-sm,
+#hero,
+#about,
+#projects,
+#experience,
+#skills,
+#education,
+#learning,
+#contact,
 .hero,
 .about,
 .projects,
@@ -82,8 +93,10 @@ section,
 .skills,
 .education,
 .learning,
-.contact {
-  background: transparent;
+.contact,
+footer,
+.footer {
+  background: transparent !important;
 }
 
 /* Typography Base */

@@ -290,7 +290,7 @@
   overflow: hidden;
 }
 
-/* Apple-style Frosted Glass Global Veil */
+/* Apple-style Frosted Glass Global Veil - No pre-blur so 3D background stays sharp */
 .global-glass-veil {
   position: fixed;
   inset: 0;
@@ -298,9 +298,7 @@
   height: 100vh;
   pointer-events: none;
   z-index: 0;
-  background: var(--veil-bg);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
+  background: transparent;
 }
 
 .hero-content {
@@ -454,10 +452,11 @@
   text-align: left;
 }
 
+.card:hover,
 .project-card:hover {
   transform: translateY(-6px) scale(1.015);
   box-shadow: var(--glass-shadow-hover);
-  border-color: var(--color-accent);
+  border-color: var(--glass-border-hover);
 }
 
 .project-card:active {
@@ -877,7 +876,7 @@
 
 .experience-entry:hover {
   transform: translateY(-4px) scale(1.01);
-  border-color: var(--color-accent);
+  border-color: var(--glass-border-hover);
   box-shadow: var(--glass-shadow-hover);
 }
 
@@ -990,7 +989,7 @@
 
 .skill-group:hover {
   transform: translateY(-4px) scale(1.01);
-  border-color: var(--color-accent);
+  border-color: var(--glass-border-hover);
   box-shadow: var(--glass-shadow-hover);
 }
 
@@ -1088,7 +1087,7 @@
 
 .education-entry:hover {
   transform: translateY(-3px) scale(1.01);
-  border-color: var(--color-accent);
+  border-color: var(--glass-border-hover);
   box-shadow: var(--glass-shadow-hover);
 }
 
@@ -1274,7 +1273,7 @@
 
 .contact-primary:hover {
   transform: translateY(-4px) scale(1.02);
-  border-color: var(--color-accent);
+  border-color: var(--glass-border-hover);
   box-shadow: var(--glass-shadow-hover);
 }
 

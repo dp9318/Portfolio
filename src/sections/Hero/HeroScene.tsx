@@ -60,18 +60,49 @@ interface FloatingShapeProps extends ShapeDefinition {
 function FloatingShape({ position, rotationSpeed, scale, type, wireframe = false, color }: FloatingShapeProps) {
   const meshRef = useRef<THREE.Mesh>(null);
 
+  // Persistent tracking for base ambient spin and damped scroll rotation
+  const baseRot = useRef({
+    x: Math.random() * Math.PI * 2,
+    y: Math.random() * Math.PI * 2,
+    z: Math.random() * Math.PI * 2,
+  });
+  const currentScrollRot = useRef(0);
+
   useFrame((_, delta) => {
     if (!meshRef.current) return;
-    meshRef.current.rotation.x += rotationSpeed[0] * delta;
-    meshRef.current.rotation.y += rotationSpeed[1] * delta;
-    meshRef.current.rotation.z += rotationSpeed[2] * delta;
+
+    // 1. Continuous idle/ambient spin on local axes so shapes are never frozen
+    baseRot.current.x += delta * rotationSpeed[0];
+    baseRot.current.y += delta * rotationSpeed[1];
+    baseRot.current.z += delta * rotationSpeed[2];
+
+    // 2. Normalized page scroll progress (0 to 1)
+    const scrollHeight = typeof document !== 'undefined'
+      ? (document.documentElement.scrollHeight - window.innerHeight || 1)
+      : 1;
+    const scrollY = typeof window !== 'undefined' ? window.scrollY : 0;
+    const scrollProgress = scrollY / scrollHeight;
+
+    // Smooth weighted lerp for scroll progression (damping on scroll stops)
+    currentScrollRot.current = THREE.MathUtils.lerp(
+      currentScrollRot.current,
+      scrollProgress * Math.PI * 6, // Multiple full 360-degree tumbles across the page!
+      0.06
+    );
+
+    // Apply combined continuous spin + dynamic scroll tumble on mesh's local axes
+    const dirX = rotationSpeed[0] >= 0 ? 1.2 : -1.2;
+    const dirZ = rotationSpeed[2] >= 0 ? 0.9 : -0.9;
+    meshRef.current.rotation.x = baseRot.current.x + currentScrollRot.current * dirX;
+    meshRef.current.rotation.y = baseRot.current.y + currentScrollRot.current * 1.5;
+    meshRef.current.rotation.z = baseRot.current.z + currentScrollRot.current * dirZ;
   });
 
   return (
     <Float
       speed={1.5}
-      rotationIntensity={1}
-      floatIntensity={1.5}
+      rotationIntensity={0}
+      floatIntensity={1.2}
       floatingRange={[-0.15, 0.15]}
     >
       <mesh ref={meshRef} position={position} scale={scale}>
@@ -81,12 +112,12 @@ function FloatingShape({ position, rotationSpeed, scale, type, wireframe = false
         <meshStandardMaterial
           color={color}
           emissive={color}
-          emissiveIntensity={wireframe ? 0.35 : 0.45}
-          metalness={0.85}
-          roughness={0.2}
+          emissiveIntensity={wireframe ? 0.45 : 0.60}
+          metalness={0.75}
+          roughness={0.20}
           wireframe={wireframe}
           transparent
-          opacity={wireframe ? 0.65 : 0.85}
+          opacity={wireframe ? 0.75 : 0.92}
         />
       </mesh>
     </Float>
@@ -99,70 +130,120 @@ function Scene() {
   const { themeConfig } = useTheme();
   const { base: baseColor, secondary: secondaryColor, accent: accentColor } = themeConfig.colors;
 
-  // Parallax response to cursor AND smooth scroll progress
+  // Gentle mouse parallax & vertical translation on the world group
   useFrame((state) => {
     if (!groupRef.current) return;
-    const targetX = (state.pointer.x * Math.PI) / 10;
-    const targetY = (-state.pointer.y * Math.PI) / 12;
 
-    const scrollY = typeof window !== 'undefined' ? window.scrollY : 0;
-    const scrollFactor = scrollY * 0.001;
+    // Gentle cursor parallax clamped to ~0.15 radians (~8 degrees) to keep shapes in view
+    const targetX = THREE.MathUtils.clamp((state.pointer.x * Math.PI) / 12, -0.15, 0.15);
+    const targetY = THREE.MathUtils.clamp((-state.pointer.y * Math.PI) / 14, -0.15, 0.15);
 
-    // Smooth lerping with both pointer parallax and scroll rotation
     groupRef.current.rotation.y = THREE.MathUtils.lerp(
       groupRef.current.rotation.y,
-      targetX + scrollFactor * 0.8,
-      0.04
+      targetX,
+      0.05
     );
     groupRef.current.rotation.x = THREE.MathUtils.lerp(
       groupRef.current.rotation.x,
-      targetY - scrollFactor * 0.35,
-      0.04
+      targetY,
+      0.05
     );
-    // Subtle vertical parallax as user scrolls down the page
+    groupRef.current.rotation.z = THREE.MathUtils.lerp(
+      groupRef.current.rotation.z,
+      0,
+      0.05
+    );
+
+    // Continuous vertical translation so shapes glide upwards behind cards
+    const scrollY = typeof window !== 'undefined' ? window.scrollY : 0;
+    const targetGroupY = scrollY * 0.0038;
     groupRef.current.position.y = THREE.MathUtils.lerp(
       groupRef.current.position.y,
-      (scrollY * 0.0004) % 1.6,
-      0.04
+      targetGroupY,
+      0.05
     );
   });
 
   const shapes = useMemo<ShapeDefinition[]>(() => [
-    // Center-left primary accent shape (Torus Knot) - Accent solid
-    { position: [-3.4, 1.4, -1], rotationSpeed: [0.15, 0.2, 0.1], scale: 1.15, type: 'torusKnot' },
-    // Center-right primary accent shape (Icosahedron) - Accent solid
-    { position: [3.5, -0.6, -1.2], rotationSpeed: [0.2, 0.15, 0.12], scale: 1.25, type: 'icosahedron' },
-    // Background wireframe torus knot - Secondary wireframe
-    { position: [0.6, 2.4, -2.5], rotationSpeed: [0.1, 0.12, 0.08], scale: 1.35, type: 'torusKnot', wireframe: true },
-    // Lower-left floating octahedron - Accent solid
-    { position: [-2.6, -1.8, -0.5], rotationSpeed: [0.25, 0.18, 0.15], scale: 0.9, type: 'octahedron' },
-    // Upper-right floating icosahedron - Accent solid
-    { position: [2.8, 2.2, -1.8], rotationSpeed: [0.18, 0.22, 0.1], scale: 0.95, type: 'icosahedron' },
-    // Mid-page depth shapes for full-viewport scroll richness - Accent solid
-    { position: [-3.8, -3.2, -2.0], rotationSpeed: [0.12, 0.16, 0.09], scale: 1.05, type: 'torusKnot' },
-    { position: [3.2, -3.6, -1.5], rotationSpeed: [0.15, 0.18, 0.11], scale: 1.1, type: 'octahedron' },
-    // Far background depth shapes - Secondary wireframe
-    { position: [-4.4, -0.8, -3.5], rotationSpeed: [0.08, 0.12, 0.05], scale: 0.8, type: 'octahedron', wireframe: true },
-    { position: [4.2, 1.6, -3], rotationSpeed: [0.1, 0.14, 0.07], scale: 0.85, type: 'icosahedron', wireframe: true },
-    { position: [0, -2.5, -2.8], rotationSpeed: [0.09, 0.11, 0.06], scale: 1.1, type: 'icosahedron', wireframe: true },
+    // --- HERO SECTION (y: +2.5 to -1.5) ---
+    // Left hero wing
+    { position: [-3.2, 1.4, -1.0], rotationSpeed: [0.15, 0.20, 0.10], scale: 1.15, type: 'torusKnot' },
+    // Right hero wing
+    { position: [3.2, -0.6, -1.1], rotationSpeed: [0.20, 0.15, 0.12], scale: 1.20, type: 'icosahedron' },
+    // Upper center-right wireframe
+    { position: [0.8, 2.2, -1.8], rotationSpeed: [0.10, 0.12, 0.08], scale: 1.30, type: 'torusKnot', wireframe: true },
+    // Lower center-left accent (behind hero CTA / name)
+    { position: [-0.9, -0.8, -0.7], rotationSpeed: [0.22, 0.18, 0.14], scale: 0.95, type: 'octahedron' },
+    // Upper-left secondary depth
+    { position: [-2.6, 2.6, -2.2], rotationSpeed: [0.12, 0.14, 0.09], scale: 0.90, type: 'icosahedron', wireframe: true },
+
+    // --- ABOUT SECTION (y: -3.0 to -6.0) ---
+    // Behind About glass card (left/center)
+    { position: [-1.6, -3.8, -0.8], rotationSpeed: [0.18, 0.16, 0.11], scale: 1.10, type: 'torusKnot' },
+    // Right side depth shape
+    { position: [2.4, -4.6, -1.0], rotationSpeed: [0.16, 0.22, 0.13], scale: 1.15, type: 'icosahedron' },
+    // Center-left wireframe passing behind About content
+    { position: [0.2, -5.6, -1.6], rotationSpeed: [0.11, 0.13, 0.07], scale: 1.25, type: 'octahedron', wireframe: true },
+    // Left outer drift
+    { position: [-3.4, -5.2, -1.8], rotationSpeed: [0.14, 0.15, 0.10], scale: 1.00, type: 'torusKnot', wireframe: true },
+
+    // --- PROJECTS SECTION (y: -7.0 to -11.5) ---
+    // DIRECTLY BEHIND Left Column Project Card 1 (RECALL)
+    { position: [-1.8, -7.4, -0.7], rotationSpeed: [0.20, 0.18, 0.12], scale: 1.25, type: 'torusKnot' },
+    // DIRECTLY BEHIND Right Column Project Card 2 (AQIconic)
+    { position: [1.8, -8.2, -0.8], rotationSpeed: [0.16, 0.22, 0.15], scale: 1.20, type: 'icosahedron' },
+    // Center corridor between project cards
+    { position: [0.0, -9.2, -1.5], rotationSpeed: [0.12, 0.15, 0.09], scale: 1.35, type: 'torusKnot', wireframe: true },
+    // DIRECTLY BEHIND Left Column Project Card 3 (AI Food Analyzer)
+    { position: [-2.0, -10.2, -0.7], rotationSpeed: [0.22, 0.16, 0.14], scale: 1.15, type: 'octahedron' },
+    // DIRECTLY BEHIND Right Column Project Card 4 (Game Sales Analysis)
+    { position: [1.9, -11.0, -0.8], rotationSpeed: [0.18, 0.20, 0.11], scale: 1.20, type: 'icosahedron' },
+    // Right outer accent drift
+    { position: [3.3, -9.8, -1.6], rotationSpeed: [0.13, 0.14, 0.08], scale: 0.95, type: 'octahedron', wireframe: true },
+
+    // --- EXPERIENCE SECTION (y: -12.5 to -16.5) ---
+    // DIRECTLY BEHIND Experience Entry 1 (Academic & Project Leadership)
+    { position: [-1.2, -13.0, -0.7], rotationSpeed: [0.17, 0.19, 0.12], scale: 1.20, type: 'torusKnot' },
+    // DIRECTLY BEHIND Experience Entry 2 (Full-Stack Engineering)
+    { position: [1.3, -14.2, -0.8], rotationSpeed: [0.19, 0.15, 0.14], scale: 1.25, type: 'icosahedron' },
+    // DIRECTLY BEHIND Experience Entry 3 (Data Analytics & Research)
+    { position: [-0.8, -15.5, -0.7], rotationSpeed: [0.21, 0.18, 0.13], scale: 1.15, type: 'octahedron' },
+    // Left outer wireframe drift
+    { position: [-3.0, -14.0, -1.8], rotationSpeed: [0.10, 0.12, 0.08], scale: 1.30, type: 'torusKnot', wireframe: true },
+    // Right outer wireframe drift
+    { position: [2.8, -15.8, -1.7], rotationSpeed: [0.12, 0.14, 0.09], scale: 1.05, type: 'icosahedron', wireframe: true },
+
+    // --- SKILLS & EDUCATION & CONTACT (y: -17.5 to -23.0) ---
+    // Behind Left Skill Group (Frontend & Full-Stack)
+    { position: [-2.0, -17.5, -0.8], rotationSpeed: [0.18, 0.17, 0.11], scale: 1.15, type: 'icosahedron' },
+    // Behind Center Skill Group (Backend & Systems)
+    { position: [0.0, -18.2, -0.7], rotationSpeed: [0.16, 0.20, 0.13], scale: 1.25, type: 'torusKnot' },
+    // Behind Right Skill Group (AI & Analytics)
+    { position: [2.0, -18.8, -0.8], rotationSpeed: [0.22, 0.15, 0.12], scale: 1.15, type: 'octahedron' },
+    // Behind Education Card
+    { position: [-1.1, -20.2, -0.7], rotationSpeed: [0.17, 0.18, 0.14], scale: 1.20, type: 'icosahedron' },
+    // Center wireframe
+    { position: [0.5, -21.4, -1.6], rotationSpeed: [0.11, 0.13, 0.08], scale: 1.35, type: 'torusKnot', wireframe: true },
+    // Behind Primary Contact CTA
+    { position: [0.0, -22.6, -0.7], rotationSpeed: [0.20, 0.19, 0.15], scale: 1.20, type: 'octahedron' },
   ], []);
 
   return (
     <>
       {/* Background & Ambient Lighting matching Theme Base Color */}
-      <ambientLight color={baseColor} intensity={3.2} />
+      <ambientLight color={baseColor} intensity={3.5} />
       
       {/* Directional Key Light matching Theme Accent Color */}
-      <directionalLight position={[5, 6, 4]} color={accentColor} intensity={4.2} />
+      <directionalLight position={[5, 8, 5]} color={accentColor} intensity={4.5} />
       
       {/* Rim Light matching Theme Base Color */}
       <pointLight position={[-6, -4, -2]} color={baseColor} intensity={4.5} />
       
-      {/* Secondary Accent Light matching Theme Secondary Color */}
-      <pointLight position={[0, -2, 3]} color={secondaryColor} intensity={2.8} />
-
-      {/* Center Glow Point Light matching Theme Accent Color */}
-      <pointLight position={[0, 1, 1]} color={accentColor} intensity={2.2} distance={10} />
+      {/* Dynamic Key Point Lights along the vertical scroll corridor */}
+      <pointLight position={[0, -2, 3]} color={accentColor} intensity={3.0} distance={18} />
+      <pointLight position={[2, -8, 3]} color={accentColor} intensity={3.5} distance={18} />
+      <pointLight position={[-2, -14, 3]} color={secondaryColor} intensity={3.2} distance={18} />
+      <pointLight position={[0, -20, 3]} color={accentColor} intensity={3.5} distance={18} />
 
       <group ref={groupRef}>
         {shapes.map((shape, idx) => (
