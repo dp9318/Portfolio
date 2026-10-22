@@ -20,8 +20,6 @@ function App() {
         <div className="global-scene-container" aria-hidden="true">
           <HeroScene />
         </div>
-        {/* Apple-style frosted glass veil diffused over the 3D scene */}
-        <div className="global-glass-veil" aria-hidden="true" />
         
         {/* Content layer floating cleanly on top */}
         <div className="app-wrapper">

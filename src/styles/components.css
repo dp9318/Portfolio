@@ -157,11 +157,9 @@
   isolation: isolate;
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
-  background: var(--glass-bg, rgba(221, 227, 232, 0.05));
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: var(--glass-border);
-  box-shadow: var(--glass-shadow);
+  background: var(--color-surface-glass, rgba(58, 15, 52, 0.24));
+  border-bottom: 1px solid rgba(221, 227, 232, 0.14);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(221, 227, 232, 0.15);
 }
 
 .navbar-container {
@@ -282,6 +280,7 @@
 }
 
 /* Global 3D WebGL Canvas Layer */
+/* Global 3D WebGL Canvas Layer with Native GPU Blur */
 .global-scene-container,
 .hero-3d-canvas-wrapper {
   position: fixed;
@@ -291,19 +290,10 @@
   pointer-events: none;
   z-index: 0;
   overflow: hidden;
-}
-
-/* Apple-style Frosted Glass Global Veil */
-.global-glass-veil {
-  position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 1;
-  background: var(--color-glass-veil, rgba(58, 15, 52, 0.48));
-  backdrop-filter: blur(28px) saturate(180%);
-  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  filter: blur(22px) saturate(160%);
+  -webkit-filter: blur(22px) saturate(160%);
+  transform: translateZ(0);
+  will-change: transform, filter;
 }
 
 .hero-content {
@@ -443,12 +433,10 @@
   isolation: isolate;
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
-  background: var(--glass-bg, rgba(221, 227, 232, 0.05));
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: var(--glass-border);
+  background: var(--color-surface-glass, rgba(58, 15, 52, 0.24));
+  border: 1px solid rgba(221, 227, 232, 0.14);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(221, 227, 232, 0.15);
   border-radius: var(--radius-lg);
-  box-shadow: var(--glass-shadow);
   overflow: hidden;
   transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), 
               box-shadow 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), 
@@ -479,7 +467,7 @@
 .project-card,
 .experience-entry,
 .skill-group {
-  background: var(--color-surface-glass, rgba(221, 227, 232, 0.05)) !important;
+  background: var(--color-surface-glass, rgba(58, 15, 52, 0.24)) !important;
 }
 
 .project-card:focus-visible {
@@ -654,12 +642,10 @@
   transform: translate(-50%, -50%) scale(0.95) translateZ(0);
   -webkit-transform: translate(-50%, -50%) scale(0.95) translateZ(0);
   z-index: var(--z-modal);
-  background: var(--color-modal-bg);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: var(--glass-border);
+  background: var(--color-surface-glass, rgba(58, 15, 52, 0.24));
+  border: 1px solid rgba(221, 227, 232, 0.14);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(221, 227, 232, 0.15);
   border-radius: var(--radius-2xl);
-  box-shadow: 0 24px 60px 0 rgba(0, 0, 0, 0.65), var(--glass-shadow);
   max-width: 720px;
   width: calc(100% - var(--space-8));
   max-height: 85vh;
@@ -887,12 +873,10 @@
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
   padding: var(--space-4) var(--space-5);
-  background: var(--glass-bg, rgba(221, 227, 232, 0.05));
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: var(--glass-border);
+  background: var(--color-surface-glass, rgba(58, 15, 52, 0.24));
+  border: 1px solid rgba(221, 227, 232, 0.14);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(221, 227, 232, 0.15);
   border-radius: var(--radius-lg);
-  box-shadow: var(--glass-shadow);
   transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), 
               border-color 0.25s ease, 
               box-shadow 0.3s ease;
@@ -1002,12 +986,10 @@
   isolation: isolate;
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
-  background: var(--glass-bg, rgba(221, 227, 232, 0.05));
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: var(--glass-border);
+  background: var(--color-surface-glass, rgba(58, 15, 52, 0.24));
+  border: 1px solid rgba(221, 227, 232, 0.14);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(221, 227, 232, 0.15);
   border-radius: var(--radius-xl);
-  box-shadow: var(--glass-shadow);
   padding: var(--space-6);
   height: 100%;
   display: flex;

@@ -13,18 +13,17 @@
   --color-background: #3A0F34;
   --color-surface: rgba(58, 15, 52, 0.32);
   --color-surface-elevated: rgba(58, 15, 52, 0.42);
-  --color-surface-card: rgba(221, 227, 232, 0.05);
-  --color-surface-glass: rgba(221, 227, 232, 0.05);
-  --color-glass-veil: rgba(58, 15, 52, 0.48);
-  --veil-bg: rgba(58, 15, 52, 0.48);
+  --color-surface-card: rgba(58, 15, 52, 0.24);
+  --color-surface-glass: rgba(58, 15, 52, 0.24);
+  --veil-bg: transparent;
 
   /* Authentic Apple Frosted Glass Tokens */
-  --glass-bg: rgba(221, 227, 232, 0.05);
+  --glass-bg: rgba(58, 15, 52, 0.24);
   --glass-sheen: rgba(221, 227, 232, 0.20);
   --glass-blur: blur(12px);
-  --glass-border: 1px solid rgba(221, 227, 232, 0.16);
+  --glass-border: 1px solid rgba(221, 227, 232, 0.14);
   --glass-border-hover: rgba(234, 170, 0, 0.45);
-  --glass-shadow: 0 16px 40px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(221, 227, 232, 0.18);
+  --glass-shadow: 0 12px 32px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(221, 227, 232, 0.15);
   --glass-shadow-hover: 0 16px 40px rgba(234, 170, 0, 0.15), inset 0 1px 0 rgba(234, 170, 0, 0.35);
 
   /* Typography & Borders mapped to #DDE3E8 */
@@ -77,17 +76,16 @@
   --color-background: #0A0A0A;
   --color-surface: rgba(10, 10, 10, 0.35);
   --color-surface-elevated: rgba(10, 10, 10, 0.45);
-  --color-surface-card: rgba(0, 123, 167, 0.08);
-  --color-surface-glass: rgba(0, 123, 167, 0.08);
-  --color-glass-veil: rgba(10, 10, 10, 0.52);
-  --veil-bg: rgba(10, 10, 10, 0.52);
+  --color-surface-card: rgba(10, 10, 10, 0.28);
+  --color-surface-glass: rgba(10, 10, 10, 0.28);
+  --veil-bg: transparent;
 
-  --glass-bg: rgba(0, 123, 167, 0.08);
+  --glass-bg: rgba(10, 10, 10, 0.28);
   --glass-sheen: rgba(0, 123, 167, 0.25);
   --glass-blur: blur(12px);
-  --glass-border: 1px solid rgba(0, 123, 167, 0.28);
+  --glass-border: 1px solid rgba(0, 123, 167, 0.25);
   --glass-border-hover: rgba(255, 45, 149, 0.50);
-  --glass-shadow: 0 16px 40px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(0, 123, 167, 0.25);
+  --glass-shadow: 0 12px 32px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(0, 123, 167, 0.20);
   --glass-shadow-hover: 0 16px 40px rgba(255, 45, 149, 0.18), inset 0 1px 0 rgba(255, 45, 149, 0.40);
 
   --color-border: rgba(0, 123, 167, 0.25);
@@ -138,17 +136,16 @@
   --color-background: #6F4E37;
   --color-surface: rgba(111, 78, 55, 0.32);
   --color-surface-elevated: rgba(111, 78, 55, 0.42);
-  --color-surface-card: rgba(229, 228, 226, 0.06);
-  --color-surface-glass: rgba(229, 228, 226, 0.06);
-  --color-glass-veil: rgba(111, 78, 55, 0.48);
-  --veil-bg: rgba(111, 78, 55, 0.48);
+  --color-surface-card: rgba(111, 78, 55, 0.24);
+  --color-surface-glass: rgba(111, 78, 55, 0.24);
+  --veil-bg: transparent;
 
-  --glass-bg: rgba(229, 228, 226, 0.06);
+  --glass-bg: rgba(111, 78, 55, 0.24);
   --glass-sheen: rgba(229, 228, 226, 0.22);
   --glass-blur: blur(12px);
-  --glass-border: 1px solid rgba(229, 228, 226, 0.18);
+  --glass-border: 1px solid rgba(229, 228, 226, 0.16);
   --glass-border-hover: rgba(230, 224, 240, 0.50);
-  --glass-shadow: 0 16px 40px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(229, 228, 226, 0.22);
+  --glass-shadow: 0 12px 32px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(229, 228, 226, 0.15);
   --glass-shadow-hover: 0 16px 40px rgba(230, 224, 240, 0.15), inset 0 1px 0 rgba(230, 224, 240, 0.35);
 
   --color-border: rgba(229, 228, 226, 0.18);
@@ -198,17 +195,16 @@
   --color-background: #046A38;
   --color-surface: rgba(4, 106, 56, 0.32);
   --color-surface-elevated: rgba(4, 106, 56, 0.42);
-  --color-surface-card: rgba(249, 235, 215, 0.06);
-  --color-surface-glass: rgba(249, 235, 215, 0.06);
-  --color-glass-veil: rgba(4, 106, 56, 0.48);
-  --veil-bg: rgba(4, 106, 56, 0.48);
+  --color-surface-card: rgba(4, 106, 56, 0.24);
+  --color-surface-glass: rgba(4, 106, 56, 0.24);
+  --veil-bg: transparent;
 
-  --glass-bg: rgba(249, 235, 215, 0.06);
+  --glass-bg: rgba(4, 106, 56, 0.24);
   --glass-sheen: rgba(249, 235, 215, 0.22);
   --glass-blur: blur(12px);
-  --glass-border: 1px solid rgba(249, 235, 215, 0.18);
+  --glass-border: 1px solid rgba(249, 235, 215, 0.16);
   --glass-border-hover: rgba(227, 66, 34, 0.50);
-  --glass-shadow: 0 16px 40px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(249, 235, 215, 0.22);
+  --glass-shadow: 0 12px 32px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(249, 235, 215, 0.15);
   --glass-shadow-hover: 0 16px 40px rgba(227, 66, 34, 0.15), inset 0 1px 0 rgba(227, 66, 34, 0.35);
 
   --color-border: rgba(249, 235, 215, 0.18);
@@ -258,17 +254,16 @@
   --color-background: #2A2A2A;
   --color-surface: rgba(42, 42, 42, 0.35);
   --color-surface-elevated: rgba(42, 42, 42, 0.45);
-  --color-surface-card: rgba(192, 192, 192, 0.06);
-  --color-surface-glass: rgba(192, 192, 192, 0.06);
-  --color-glass-veil: rgba(42, 42, 42, 0.52);
-  --veil-bg: rgba(42, 42, 42, 0.52);
+  --color-surface-card: rgba(42, 42, 42, 0.28);
+  --color-surface-glass: rgba(42, 42, 42, 0.28);
+  --veil-bg: transparent;
 
-  --glass-bg: rgba(192, 192, 192, 0.06);
+  --glass-bg: rgba(42, 42, 42, 0.28);
   --glass-sheen: rgba(192, 192, 192, 0.22);
   --glass-blur: blur(12px);
-  --glass-border: 1px solid rgba(192, 192, 192, 0.18);
+  --glass-border: 1px solid rgba(192, 192, 192, 0.16);
   --glass-border-hover: rgba(225, 6, 0, 0.55);
-  --glass-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(192, 192, 192, 0.22);
+  --glass-shadow: 0 12px 32px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(192, 192, 192, 0.15);
   --glass-shadow-hover: 0 16px 40px rgba(225, 6, 0, 0.18), inset 0 1px 0 rgba(225, 6, 0, 0.38);
 
   --color-border: rgba(192, 192, 192, 0.18);

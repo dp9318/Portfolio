@@ -105,19 +105,19 @@ function FloatingShape({ position, rotationSpeed, scale, type, wireframe = false
       floatIntensity={1.2}
       floatingRange={[-0.15, 0.15]}
     >
-      <mesh ref={meshRef} position={position} scale={scale}>
+      <mesh ref={meshRef} position={position} scale={scale * 1.2}>
         {type === 'torusKnot' && <torusKnotGeometry args={[0.7, 0.22, 90, 16]} />}
         {type === 'icosahedron' && <icosahedronGeometry args={[0.85, 0]} />}
         {type === 'octahedron' && <octahedronGeometry args={[0.8, 0]} />}
         <meshStandardMaterial
           color={color}
           emissive={color}
-          emissiveIntensity={wireframe ? 0.45 : 0.60}
+          emissiveIntensity={wireframe ? 0.55 : 0.70}
           metalness={0.75}
           roughness={0.20}
           wireframe={wireframe}
           transparent
-          opacity={wireframe ? 0.75 : 0.92}
+          opacity={wireframe ? 0.85 : 0.95}
         />
       </mesh>
     </Float>
