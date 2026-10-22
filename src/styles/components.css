@@ -154,9 +154,12 @@
   position: sticky;
   top: 0;
   z-index: var(--z-sticky);
+  isolation: isolate;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
   background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
   border-bottom: var(--glass-border);
   box-shadow: var(--glass-shadow);
 }
@@ -435,9 +438,12 @@
 
 .card,
 .project-card {
+  isolation: isolate;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
   background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
   border: var(--glass-border);
   border-radius: var(--radius-lg);
   box-shadow: var(--glass-shadow);
@@ -454,14 +460,24 @@
 
 .card:hover,
 .project-card:hover {
-  transform: translateY(-6px) scale(1.015);
+  transform: translateY(-6px) scale(1.015) translateZ(0);
+  -webkit-transform: translateY(-6px) scale(1.015) translateZ(0);
   box-shadow: var(--glass-shadow-hover);
   border-color: var(--glass-border-hover);
 }
 
 .project-card:active {
-  transform: translateY(-2px) scale(0.99);
+  transform: translateY(-2px) scale(0.99) translateZ(0);
+  -webkit-transform: translateY(-2px) scale(0.99) translateZ(0);
   border-color: var(--color-accent);
+}
+
+/* High-Specificity Glass Background for Production Bundles */
+.card,
+.project-card,
+.experience-entry,
+.skill-group {
+  background: var(--color-surface-glass, rgba(58, 15, 52, 0.32)) !important;
 }
 
 .project-card:focus-visible {
@@ -632,11 +648,13 @@
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(0.95);
+  isolation: isolate;
+  transform: translate(-50%, -50%) scale(0.95) translateZ(0);
+  -webkit-transform: translate(-50%, -50%) scale(0.95) translateZ(0);
   z-index: var(--z-modal);
   background: var(--color-modal-bg);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
   border: var(--glass-border);
   border-radius: var(--radius-2xl);
   box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.65), var(--glass-shadow);
@@ -653,7 +671,8 @@
 .modal.open {
   opacity: 1;
   visibility: visible;
-  transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%) scale(1) translateZ(0);
+  -webkit-transform: translate(-50%, -50%) scale(1) translateZ(0);
 }
 
 @media (max-width: 640px) {
@@ -862,10 +881,13 @@
 }
 
 .experience-entry {
+  isolation: isolate;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
   padding: var(--space-4) var(--space-5);
   background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
   border: var(--glass-border);
   border-radius: var(--radius-lg);
   box-shadow: var(--glass-shadow);
@@ -875,7 +897,8 @@
 }
 
 .experience-entry:hover {
-  transform: translateY(-4px) scale(1.01);
+  transform: translateY(-4px) scale(1.01) translateZ(0);
+  -webkit-transform: translateY(-4px) scale(1.01) translateZ(0);
   border-color: var(--glass-border-hover);
   box-shadow: var(--glass-shadow-hover);
 }
@@ -974,9 +997,12 @@
 }
 
 .skill-group {
+  isolation: isolate;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
   background: var(--glass-bg);
-  backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
   border: var(--glass-border);
   border-radius: var(--radius-xl);
   box-shadow: var(--glass-shadow);
@@ -988,7 +1014,8 @@
 }
 
 .skill-group:hover {
-  transform: translateY(-4px) scale(1.01);
+  transform: translateY(-4px) scale(1.01) translateZ(0);
+  -webkit-transform: translateY(-4px) scale(1.01) translateZ(0);
   border-color: var(--glass-border-hover);
   box-shadow: var(--glass-shadow-hover);
 }

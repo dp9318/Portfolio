@@ -11,14 +11,14 @@
   --color-accent-hover: #ffc21a;
 
   --color-background: #3A0F34;
-  --color-surface: rgba(58, 15, 52, 0.28);
-  --color-surface-elevated: rgba(58, 15, 52, 0.38);
-  --color-surface-card: rgba(58, 15, 52, 0.28);
-  --color-surface-glass: rgba(58, 15, 52, 0.28);
+  --color-surface: rgba(58, 15, 52, 0.32);
+  --color-surface-elevated: rgba(58, 15, 52, 0.42);
+  --color-surface-card: rgba(58, 15, 52, 0.32);
+  --color-surface-glass: rgba(58, 15, 52, 0.32);
   --veil-bg: transparent;
 
   /* Authentic Apple Frosted Glass Tokens */
-  --glass-bg: rgba(58, 15, 52, 0.28);
+  --glass-bg: rgba(58, 15, 52, 0.32);
   --glass-sheen: rgba(221, 227, 232, 0.20);
   --glass-blur: blur(16px) saturate(180%);
   --glass-border: 1px solid rgba(221, 227, 232, 0.14);
@@ -49,7 +49,7 @@
   --color-accent-focus: #EAAA00;
   --focus-ring-color: #EAAA00;
 
-  --color-modal-bg: rgba(58, 15, 52, 0.28);
+  --color-modal-bg: rgba(58, 15, 52, 0.32);
   --color-modal-backdrop: rgba(20, 4, 18, 0.65);
 
   /* Status Colors */
@@ -74,13 +74,13 @@
   --color-accent-hover: #ff54ad;
 
   --color-background: #0A0A0A;
-  --color-surface: rgba(10, 10, 10, 0.30);
-  --color-surface-elevated: rgba(10, 10, 10, 0.42);
-  --color-surface-card: rgba(10, 10, 10, 0.30);
-  --color-surface-glass: rgba(10, 10, 10, 0.30);
+  --color-surface: rgba(10, 10, 10, 0.35);
+  --color-surface-elevated: rgba(10, 10, 10, 0.45);
+  --color-surface-card: rgba(10, 10, 10, 0.35);
+  --color-surface-glass: rgba(10, 10, 10, 0.35);
   --veil-bg: transparent;
 
-  --glass-bg: rgba(10, 10, 10, 0.30);
+  --glass-bg: rgba(10, 10, 10, 0.35);
   --glass-sheen: rgba(0, 123, 167, 0.25);
   --glass-blur: blur(16px) saturate(180%);
   --glass-border: 1px solid rgba(0, 123, 167, 0.25);
@@ -110,7 +110,7 @@
   --color-accent-focus: #FF2D95;
   --focus-ring-color: #FF2D95;
 
-  --color-modal-bg: rgba(10, 10, 10, 0.30);
+  --color-modal-bg: rgba(10, 10, 10, 0.35);
   --color-modal-backdrop: rgba(0, 0, 0, 0.75);
 
   --color-status-completed: #FF2D95;
@@ -134,13 +134,13 @@
   --color-accent-hover: #ffffff;
 
   --color-background: #6F4E37;
-  --color-surface: rgba(111, 78, 55, 0.28);
-  --color-surface-elevated: rgba(111, 78, 55, 0.38);
-  --color-surface-card: rgba(111, 78, 55, 0.28);
-  --color-surface-glass: rgba(111, 78, 55, 0.28);
+  --color-surface: rgba(111, 78, 55, 0.32);
+  --color-surface-elevated: rgba(111, 78, 55, 0.42);
+  --color-surface-card: rgba(111, 78, 55, 0.32);
+  --color-surface-glass: rgba(111, 78, 55, 0.32);
   --veil-bg: transparent;
 
-  --glass-bg: rgba(111, 78, 55, 0.28);
+  --glass-bg: rgba(111, 78, 55, 0.32);
   --glass-sheen: rgba(229, 228, 226, 0.22);
   --glass-blur: blur(16px) saturate(180%);
   --glass-border: 1px solid rgba(229, 228, 226, 0.18);
@@ -169,7 +169,7 @@
   --color-accent-focus: #E6E0F0;
   --focus-ring-color: #E6E0F0;
 
-  --color-modal-bg: rgba(111, 78, 55, 0.28);
+  --color-modal-bg: rgba(111, 78, 55, 0.32);
   --color-modal-backdrop: rgba(45, 25, 15, 0.70);
 
   --color-status-completed: #E6E0F0;
@@ -193,13 +193,13 @@
   --color-accent-hover: #ff5633;
 
   --color-background: #046A38;
-  --color-surface: rgba(4, 106, 56, 0.28);
-  --color-surface-elevated: rgba(4, 106, 56, 0.38);
-  --color-surface-card: rgba(4, 106, 56, 0.28);
-  --color-surface-glass: rgba(4, 106, 56, 0.28);
+  --color-surface: rgba(4, 106, 56, 0.32);
+  --color-surface-elevated: rgba(4, 106, 56, 0.42);
+  --color-surface-card: rgba(4, 106, 56, 0.32);
+  --color-surface-glass: rgba(4, 106, 56, 0.32);
   --veil-bg: transparent;
 
-  --glass-bg: rgba(4, 106, 56, 0.28);
+  --glass-bg: rgba(4, 106, 56, 0.32);
   --glass-sheen: rgba(249, 235, 215, 0.22);
   --glass-blur: blur(16px) saturate(180%);
   --glass-border: 1px solid rgba(249, 235, 215, 0.18);
@@ -228,7 +228,7 @@
   --color-accent-focus: #E34222;
   --focus-ring-color: #E34222;
 
-  --color-modal-bg: rgba(4, 106, 56, 0.28);
+  --color-modal-bg: rgba(4, 106, 56, 0.32);
   --color-modal-backdrop: rgba(2, 50, 26, 0.70);
 
   --color-status-completed: #E34222;
@@ -252,13 +252,13 @@
   --color-accent-hover: #ff2a24;
 
   --color-background: #2A2A2A;
-  --color-surface: rgba(42, 42, 42, 0.30);
-  --color-surface-elevated: rgba(42, 42, 42, 0.40);
-  --color-surface-card: rgba(42, 42, 42, 0.30);
-  --color-surface-glass: rgba(42, 42, 42, 0.30);
+  --color-surface: rgba(42, 42, 42, 0.35);
+  --color-surface-elevated: rgba(42, 42, 42, 0.45);
+  --color-surface-card: rgba(42, 42, 42, 0.35);
+  --color-surface-glass: rgba(42, 42, 42, 0.35);
   --veil-bg: transparent;
 
-  --glass-bg: rgba(42, 42, 42, 0.30);
+  --glass-bg: rgba(42, 42, 42, 0.35);
   --glass-sheen: rgba(192, 192, 192, 0.22);
   --glass-blur: blur(16px) saturate(180%);
   --glass-border: 1px solid rgba(192, 192, 192, 0.18);
@@ -287,7 +287,7 @@
   --color-accent-focus: #E10600;
   --focus-ring-color: #E10600;
 
-  --color-modal-bg: rgba(42, 42, 42, 0.30);
+  --color-modal-bg: rgba(42, 42, 42, 0.35);
   --color-modal-backdrop: rgba(15, 15, 15, 0.75);
 
   --color-status-completed: #E10600;
