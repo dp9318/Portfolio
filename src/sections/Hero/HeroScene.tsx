@@ -268,24 +268,20 @@ export function HeroScene() {
   }
 
   return (
-    <div
-      className="global-scene-container"
-      aria-hidden="true"
-    >
-      <WebGLErrorBoundary>
-        <Canvas
-          camera={{ position: [0, 0, 5], fov: 50 }}
-          dpr={[1, 1.5]}
-          gl={{
-            antialias: true,
-            alpha: true,
-            powerPreference: 'high-performance',
-          }}
-          style={{ width: '100%', height: '100%', pointerEvents: 'none' }}
-        >
-          <Scene />
-        </Canvas>
-      </WebGLErrorBoundary>
-    </div>
+    <WebGLErrorBoundary>
+      <Canvas
+        camera={{ position: [0, 0, 5], fov: 50 }}
+        dpr={[1, 1.5]}
+        gl={{
+          preserveDrawingBuffer: true,
+          alpha: true,
+          antialias: true,
+          powerPreference: 'high-performance',
+        }}
+        style={{ width: '100%', height: '100%', pointerEvents: 'none' }}
+      >
+        <Scene />
+      </Canvas>
+    </WebGLErrorBoundary>
   );
 }

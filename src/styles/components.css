@@ -157,9 +157,9 @@
   isolation: isolate;
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
-  background: var(--glass-bg);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background: var(--glass-bg, rgba(221, 227, 232, 0.05));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-bottom: var(--glass-border);
   box-shadow: var(--glass-shadow);
 }
@@ -293,15 +293,17 @@
   overflow: hidden;
 }
 
-/* Apple-style Frosted Glass Global Veil - No pre-blur so 3D background stays sharp */
+/* Apple-style Frosted Glass Global Veil */
 .global-glass-veil {
   position: fixed;
   inset: 0;
   width: 100vw;
   height: 100vh;
   pointer-events: none;
-  z-index: 0;
-  background: transparent;
+  z-index: 1;
+  background: var(--color-glass-veil, rgba(58, 15, 52, 0.48));
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
 }
 
 .hero-content {
@@ -441,9 +443,9 @@
   isolation: isolate;
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
-  background: var(--glass-bg);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background: var(--glass-bg, rgba(221, 227, 232, 0.05));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: var(--glass-border);
   border-radius: var(--radius-lg);
   box-shadow: var(--glass-shadow);
@@ -477,7 +479,7 @@
 .project-card,
 .experience-entry,
 .skill-group {
-  background: var(--color-surface-glass, rgba(58, 15, 52, 0.32)) !important;
+  background: var(--color-surface-glass, rgba(221, 227, 232, 0.05)) !important;
 }
 
 .project-card:focus-visible {
@@ -653,11 +655,11 @@
   -webkit-transform: translate(-50%, -50%) scale(0.95) translateZ(0);
   z-index: var(--z-modal);
   background: var(--color-modal-bg);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: var(--glass-border);
   border-radius: var(--radius-2xl);
-  box-shadow: 0 20px 50px 0 rgba(0, 0, 0, 0.65), var(--glass-shadow);
+  box-shadow: 0 24px 60px 0 rgba(0, 0, 0, 0.65), var(--glass-shadow);
   max-width: 720px;
   width: calc(100% - var(--space-8));
   max-height: 85vh;
@@ -885,9 +887,9 @@
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
   padding: var(--space-4) var(--space-5);
-  background: var(--glass-bg);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background: var(--glass-bg, rgba(221, 227, 232, 0.05));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: var(--glass-border);
   border-radius: var(--radius-lg);
   box-shadow: var(--glass-shadow);
@@ -1000,9 +1002,9 @@
   isolation: isolate;
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
-  background: var(--glass-bg);
-  backdrop-filter: blur(16px) saturate(180%);
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background: var(--glass-bg, rgba(221, 227, 232, 0.05));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: var(--glass-border);
   border-radius: var(--radius-xl);
   box-shadow: var(--glass-shadow);

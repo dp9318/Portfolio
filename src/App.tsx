@@ -17,7 +17,9 @@ function App() {
     <ThemeProvider>
       <SmoothScrollProvider>
         {/* Global fixed 3D WebGL background layer */}
-        <HeroScene />
+        <div className="global-scene-container" aria-hidden="true">
+          <HeroScene />
+        </div>
         {/* Apple-style frosted glass veil diffused over the 3D scene */}
         <div className="global-glass-veil" aria-hidden="true" />
         
