@@ -157,9 +157,9 @@
   isolation: isolate;
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
-  background: var(--color-surface-glass, rgba(58, 15, 52, 0.24));
-  border-bottom: 1px solid rgba(221, 227, 232, 0.14);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(221, 227, 232, 0.15);
+  background: var(--color-surface-glass, rgba(35, 9, 32, 0.72));
+  border-bottom: 1px solid rgba(221, 227, 232, 0.16);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(221, 227, 232, 0.16);
 }
 
 .navbar-container {
@@ -279,7 +279,6 @@
   }
 }
 
-/* Global 3D WebGL Canvas Layer */
 /* Global 3D WebGL Canvas Layer with Native GPU Blur */
 .global-scene-container,
 .hero-3d-canvas-wrapper {
@@ -290,8 +289,8 @@
   pointer-events: none;
   z-index: 0;
   overflow: hidden;
-  filter: blur(22px) saturate(160%);
-  -webkit-filter: blur(22px) saturate(160%);
+  filter: blur(10px) saturate(140%);
+  -webkit-filter: blur(10px) saturate(140%);
   transform: translateZ(0);
   will-change: transform, filter;
 }
@@ -433,9 +432,9 @@
   isolation: isolate;
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
-  background: var(--color-surface-glass, rgba(58, 15, 52, 0.24));
-  border: 1px solid rgba(221, 227, 232, 0.14);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(221, 227, 232, 0.15);
+  background: var(--color-surface-glass, rgba(35, 9, 32, 0.72));
+  border: 1px solid rgba(221, 227, 232, 0.16);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(221, 227, 232, 0.16);
   border-radius: var(--radius-lg);
   overflow: hidden;
   transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), 
@@ -466,8 +465,9 @@
 .card,
 .project-card,
 .experience-entry,
-.skill-group {
-  background: var(--color-surface-glass, rgba(58, 15, 52, 0.24)) !important;
+.skill-group,
+.modal {
+  background: var(--color-surface-glass, rgba(35, 9, 32, 0.72)) !important;
 }
 
 .project-card:focus-visible {
@@ -642,9 +642,9 @@
   transform: translate(-50%, -50%) scale(0.95) translateZ(0);
   -webkit-transform: translate(-50%, -50%) scale(0.95) translateZ(0);
   z-index: var(--z-modal);
-  background: var(--color-surface-glass, rgba(58, 15, 52, 0.24));
-  border: 1px solid rgba(221, 227, 232, 0.14);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(221, 227, 232, 0.15);
+  background: var(--color-surface-glass, rgba(35, 9, 32, 0.85));
+  border: 1px solid rgba(221, 227, 232, 0.16);
+  box-shadow: 0 24px 60px 0 rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(221, 227, 232, 0.16);
   border-radius: var(--radius-2xl);
   max-width: 720px;
   width: calc(100% - var(--space-8));
@@ -873,9 +873,9 @@
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
   padding: var(--space-4) var(--space-5);
-  background: var(--color-surface-glass, rgba(58, 15, 52, 0.24));
-  border: 1px solid rgba(221, 227, 232, 0.14);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(221, 227, 232, 0.15);
+  background: var(--color-surface-glass, rgba(35, 9, 32, 0.72));
+  border: 1px solid rgba(221, 227, 232, 0.16);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(221, 227, 232, 0.16);
   border-radius: var(--radius-lg);
   transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), 
               border-color 0.25s ease, 
@@ -986,9 +986,9 @@
   isolation: isolate;
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
-  background: var(--color-surface-glass, rgba(58, 15, 52, 0.24));
-  border: 1px solid rgba(221, 227, 232, 0.14);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(221, 227, 232, 0.15);
+  background: var(--color-surface-glass, rgba(35, 9, 32, 0.72));
+  border: 1px solid rgba(221, 227, 232, 0.16);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(221, 227, 232, 0.16);
   border-radius: var(--radius-xl);
   padding: var(--space-6);
   height: 100%;

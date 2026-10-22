@@ -3,8 +3,8 @@
 
 **Project:** Portfolio Build — Learn What the Problem Needs  
 **Document:** Design Specification  
-**Version:** 1.0  
-**Status:** Approved for V1 implementation
+**Version:** 1.8  
+**Status:** Approved for V1.8 implementation
 
 ---
 
@@ -33,13 +33,13 @@ The portfolio is an **engineering portfolio, not a design showcase**. Visual des
 
 ## 2. Core Visual Principle
 
-### Fluidity, 3D Depth, and Apple-Style Frosted Glass
-The website utilizes a unified Apple VisionOS-inspired frosted glass (glassmorphism) architecture built over a persistent, viewport-locked 3D WebGL scene:
-- **Global Fixed 3D Scene**: The WebGL canvas is locked across the entire viewport (`position: fixed; inset: 0; z-index: 0; pointer-events: none;`), rendering floating `#EAAA00` metallic and wireframe geometries with ambient `#3A0F34` lighting that reacts to both mouse parallax and window scroll progress.
-- **Global Frosted Glass Veil**: A translucent `#3A0F34` tint overlay (`rgba(58, 15, 52, 0.55)`) with `backdrop-filter: blur(20px) saturate(160%)` diffuses the 3D scene softly behind all content.
-- **Floating Glass Surfaces**: Navigation, project cards, experience items, skill groups, and modals float cleanly above the veil as elevated frosted glass panels (`background: linear-gradient(135deg, rgba(221, 227, 232, 0.05) 0%, rgba(58, 15, 52, 0.45) 100%), rgba(58, 15, 52, 0.45); backdrop-filter: blur(24px) saturate(180%); border: 1px solid rgba(221, 227, 232, 0.16); box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35), inset 0 1px 0 0 rgba(221, 227, 232, 0.15)`).
+### Fluidity, 3D Depth, and Calibrated Apple-Style Frosted Glass (Version 1.8)
+The website utilizes a unified Apple VisionOS-inspired frosted glass (glassmorphism) architecture calibrated for high foreground text legibility over a persistent, viewport-locked 3D WebGL scene:
+- **Global Fixed 3D Scene with Calibrated Direct GPU Blur**: The WebGL canvas is locked across the entire viewport (`position: fixed; inset: 0; z-index: 0; pointer-events: none;`) with native GPU blur `filter: blur(10px) saturate(140%)` directly on `.global-scene-container`. This keeps 3D geometries smoothly anti-aliased and visible without diffusing into oversized light clouds that engulf card typography.
+- **Deepened Card & Surface Backdrops (0.72–0.78 Opacity)**: Navigation, project cards, experience items, skill groups, and modals feature deepened backdrops (`rgba(35, 9, 32, 0.72)` in Royal, `0.78` in Cyber, `0.75` in Mocha, `0.75` in Emerald, and `0.78` in Carbon) to eliminate text washout and provide deep, readable backdrops meeting strict WCAG AAA contrast standards.
+- **Floating Glass Surfaces**: Cards preserve their floating elevation with specular top border (`1px solid rgba(221, 227, 232, 0.16)`), subtle inner rim light (`inset 0 1px 0 rgba(221, 227, 232, 0.16)`), and drop shadows (`0 12px 32px rgba(0, 0, 0, 0.35)`).
 - **Global Smooth Scroll**: Physics-based smooth scrolling via Lenis synchronized with the GSAP ticker.
-- **Strict 3-Color Palette**: Deep Purple (`#3A0F34`), Light Grey-Blue (`#DDE3E8`), and Gold (`#EAAA00`).
+- **Strict 5-Preset 3-Color Architecture**: 5 cohesive color palettes strictly mapping base, secondary, and accent colors across the UI and 3D WebGL scene.
 
 Do not build the design around:
 - Excessive opaque backgrounds that conceal the 3D depth layer.
@@ -226,8 +226,8 @@ Every theme triplet maps cleanly into 3 structural roles:
 
 1. **Role 1: Base Background & Authentic Glass Surface (`--color-base` / `--color-background` / `--glass-bg`)**:
    - Deep foundation color for the HTML `body` and ambient 3D scene lighting.
-   - Transparent `.global-glass-veil` without pre-blur so 3D background geometries remain crisp and sharp.
-   - Low-opacity frosted glass panels (`background: rgba(58, 15, 52, 0.28); backdrop-filter: blur(16px) saturate(180%);` in Royal) allowing 3D shapes to vividly bleed through and blur directly underneath the cards.
+   - Calibrated 10px GPU blur on background container (`.global-scene-container`) so 3D background geometries remain smooth without bleeding into wide light clouds.
+   - Deepened frosted glass panels (`0.72 - 0.78` opacity, e.g., `rgba(35, 9, 32, 0.72)` in Royal) eliminating text washout while allowing 3D shapes to softly emerge behind cards.
    - In Royal: `#3A0F34` | Cyber: `#0A0A0A` | Mocha: `#6F4E37` | Emerald: `#046A38` | Carbon: `#2A2A2A`.
 
 2. **Role 2: Primary Text, Glass Specular Borders & 3D Wireframes (`--color-secondary` / `--color-border-strong`)**:
@@ -469,12 +469,12 @@ Buttons should have:
 
 Cards and interactive containers follow an **Apple VisionOS-style frosted glass panel** architecture:
 
-### Panel Specifications:
-- **Background**: Translucent deep purple gradient `linear-gradient(135deg, rgba(221, 227, 232, 0.05) 0%, rgba(58, 15, 52, 0.45) 100%), rgba(58, 15, 52, 0.45)`
-- **Backdrop Filter**: `blur(24px) saturate(180%)` (with `-webkit-backdrop-filter` prefix)
+### Panel Specifications (Version 1.8 Calibration):
+- **Background**: Deep card backdrop with high contrast (`var(--color-surface-glass)`, `0.72 - 0.78` opacity across themes; e.g., `rgba(35, 9, 32, 0.72)` in Royal)
+- **Scene GPU Blur**: `10px` direct GPU blur with `saturate(140%)` on the background canvas container
 - **Specular Border**: `1px solid rgba(221, 227, 232, 0.16)`
-- **Inner Highlight & Shadow**: `box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35), inset 0 1px 0 0 rgba(221, 227, 232, 0.15)`
-- **Hover State**: Gentle float-up (`transform: translateY(-4px to -6px)`), specular gold border transition (`border-color: #EAAA00`), and gold outer glow (`box-shadow: 0 16px 36px -10px rgba(18, 2, 16, 0.75), 0 0 24px rgba(234, 170, 0, 0.3), inset 0 1px 0 0 rgba(234, 170, 0, 0.35)`)
+- **Inner Highlight & Shadow**: `box-shadow: 0 12px 32px 0 rgba(0, 0, 0, 0.35), inset 0 1px 0 0 rgba(221, 227, 232, 0.16)`
+- **Hover State**: Gentle float-up (`transform: translateY(-4px to -6px) scale(1.015)`), specular gold border transition (`border-color: var(--glass-border-hover)`), and outer glow (`box-shadow: var(--glass-shadow-hover)`)
 
 ### Scope of Glass Panels:
 - Selected Projects (`.project-card`)
@@ -519,8 +519,7 @@ Animation should be **fluid, cinematic, and deeply responsive**.
 - **Global Smooth Scroll**: Powered by `lenis` (`SmoothScrollProvider` in `src/components/motion/SmoothScroll.tsx`) synchronized with the GSAP ticker. Preserves native mobile touch functionality (`touchMultiplier: 1.5`).
 - **Scroll Animations**: `gsap` + `ScrollTrigger` for project cards and experience timeline reveals, subtle scale-up, and parallax shifts as they enter the viewport.
 - **Micro-Interactions & Entrances**: `framer-motion` for staggered hero float-up entrances and magnetic cursor pull (`src/components/motion/Magnetic.tsx`) with `#EAAA00` gold active hover states.
-- **Persistent Global 3D WebGL Layer**: Built with `three`, `@react-three/fiber`, and `@react-three/drei` in `src/sections/Hero/HeroScene.tsx`, mounted at the root level in `src/App.tsx`. Renders floating metallic and wireframe geometric shapes (`#EAAA00` materials with soft emissive glow, `#3A0F34` ambient and rim lighting). The 3D scene responds smoothly to cursor position and scroll progression (`window.scrollY`).
-- **Global Frosted Veil**: `.global-glass-veil` sits directly over the 3D canvas with `position: fixed; inset: 0; pointer-events: none; z-index: 0; background: rgba(58, 15, 52, 0.55); backdrop-filter: blur(20px) saturate(160%);`, diffusing the gold 3D shapes across the entire page background.
+- **Persistent Global 3D WebGL Layer**: Built with `three`, `@react-three/fiber`, and `@react-three/drei` in `src/sections/Hero/HeroScene.tsx`, mounted at the root level in `src/App.tsx`. Renders floating metallic and wireframe geometric shapes with individual self-spin and scroll-driven tumble. The 3D container `.global-scene-container` uses direct GPU blur `filter: blur(10px) saturate(140%)` for smooth anti-aliased depth without oversized light halos.
 
 ### Performance and Accessibility Constraints:
 - Global 3D WebGL canvas must sit securely in the background (`position: fixed; inset: 0; z-index: 0; pointer-events: none;`) with all content floating on top in `.app-wrapper` (`position: relative; z-index: 1;`).
