@@ -10,6 +10,22 @@ import { projectsData } from '../../data';
 import type { Project } from '../../data/types';
 import { useSmoothScroll } from '../../components/motion';
 
+import recallDoodle from '../../assets/images/sketch/recall-doodle.svg';
+import aqiconicDoodle from '../../assets/images/sketch/aqiconic-doodle.svg';
+import foodAnalyzerDoodle from '../../assets/images/sketch/food-analyzer-doodle.svg';
+import gameSalesDoodle from '../../assets/images/sketch/game-sales-doodle.svg';
+import epicCloneDoodle from '../../assets/images/sketch/epic-clone-doodle.svg';
+import creditCardDoodle from '../../assets/images/sketch/credit-card-doodle.svg';
+
+const projectDoodles: Record<string, string> = {
+  'recall': recallDoodle,
+  'aqiconic': aqiconicDoodle,
+  'ai-food-analyzer': foodAnalyzerDoodle,
+  'video-game-sales': gameSalesDoodle,
+  'epic-games-clone': epicCloneDoodle,
+  'credit-card-analysis': creditCardDoodle,
+};
+
 gsap.registerPlugin(ScrollTrigger);
 
 export function ProjectsSection() {
@@ -38,6 +54,7 @@ export function ProjectsSection() {
             scale: 1,
             duration: 0.85,
             ease: 'power3.out',
+            clearProps: 'transform',
             scrollTrigger: {
               trigger: card,
               start: 'top 88%',
@@ -103,7 +120,20 @@ export function ProjectsSection() {
         </div>
       )}
       <div className="project-card-content">
-        <h3 className="project-title">{project.name}</h3>
+        <div className="project-card-header-row">
+          {projectDoodles[project.id] && (
+            <img
+              src={projectDoodles[project.id]}
+              alt=""
+              className="project-card-doodle"
+              aria-hidden="true"
+            />
+          )}
+          <div>
+            <span className="project-card-sublabel">{project.category.split('/')[0].trim()}</span>
+            <h3 className="project-title">{project.name}</h3>
+          </div>
+        </div>
         <p className="project-description">{project.shortDescription}</p>
         <div className="project-meta">
           <Tag variant={`status-${project.status}` as any} size="sm">

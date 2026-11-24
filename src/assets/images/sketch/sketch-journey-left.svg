@@ -1,0 +1,340 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 11000" width="340" height="11000" fill="none">
+    
+    <!-- Continuous Spine Ribbon (Left) -->
+    <path d="M 115 0 C 170 120, 60 280, 115 400 C 60 520, 170 680, 115 800 C 170 920, 60 1080, 115 1200 C 60 1320, 170 1480, 115 1600 C 170 1720, 60 1880, 115 2000 C 60 2120, 170 2280, 115 2400 C 170 2520, 60 2680, 115 2800 C 60 2920, 170 3080, 115 3200 C 170 3320, 60 3480, 115 3600 C 60 3720, 170 3880, 115 4000 C 170 4120, 60 4280, 115 4400 C 60 4520, 170 4680, 115 4800 C 170 4920, 60 5080, 115 5200 C 60 5320, 170 5480, 115 5600 C 170 5720, 60 5880, 115 6000 C 60 6120, 170 6280, 115 6400 C 170 6520, 60 6680, 115 6800 C 60 6920, 170 7080, 115 7200 C 170 7320, 60 7480, 115 7600 C 60 7720, 170 7880, 115 8000 C 170 8120, 60 8280, 115 8400 C 60 8520, 170 8680, 115 8800 C 170 8920, 60 9080, 115 9200 C 60 9320, 170 9480, 115 9600 C 170 9720, 60 9880, 115 10000 C 60 10120, 170 10280, 115 10400 C 170 10520, 60 10680, 115 10800 " stroke="#282522" stroke-width="2.2" stroke-dasharray="10 6" opacity="0.50" fill="none" />
+    <path d="M 110 0 C 165 120, 55 280, 110 400 C 55 520, 165 680, 110 800 C 165 920, 55 1080, 110 1200 C 55 1320, 165 1480, 110 1600 C 165 1720, 55 1880, 110 2000 C 55 2120, 165 2280, 110 2400 C 165 2520, 55 2680, 110 2800 C 55 2920, 165 3080, 110 3200 C 165 3320, 55 3480, 110 3600 C 55 3720, 165 3880, 110 4000 C 165 4120, 55 4280, 110 4400 C 55 4520, 165 4680, 110 4800 C 165 4920, 55 5080, 110 5200 C 55 5320, 165 5480, 110 5600 C 165 5720, 55 5880, 110 6000 C 55 6120, 165 6280, 110 6400 C 165 6520, 55 6680, 110 6800 C 55 6920, 165 7080, 110 7200 C 165 7320, 55 7480, 110 7600 C 55 7720, 165 7880, 110 8000 C 165 8120, 55 8280, 110 8400 C 55 8520, 165 8680, 110 8800 C 165 8920, 55 9080, 110 9200 C 55 9320, 165 9480, 110 9600 C 165 9720, 55 9880, 110 10000 C 55 10120, 165 10280, 110 10400 C 165 10520, 55 10680, 110 10800 " stroke="#857F73" stroke-width="1.0" opacity="0.30" fill="none" />
+    
+    <!-- Desk Clamp & Drafting Edge (Y: 100 - 240) -->
+    <g opacity="0.82">
+      <!-- Clamp bracket -->
+      <path d="M 25 110 L 80 110 L 80 170 L 45 170 L 45 220 L 75 220" 
+            stroke="#282522" stroke-width="2.2" fill="none" stroke-linecap="round" />
+      <path d="M 28 114 L 76 114 L 76 166 L 49 166 L 49 216 L 72 216" 
+            stroke="#857F73" stroke-width="1.0" fill="none" opacity="0.4" />
+      <!-- Screw thread -->
+      <line x1="60" y1="170" x2="60" y2="235" stroke="#4D4943" stroke-width="2" />
+      <line x1="53" y1="180" x2="67" y2="183" stroke="#4D4943" stroke-width="1.5" />
+      <line x1="53" y1="195" x2="67" y2="198" stroke="#4D4943" stroke-width="1.5" />
+      <line x1="53" y1="210" x2="67" y2="213" stroke="#4D4943" stroke-width="1.5" />
+      <ellipse cx="60" cy="238" rx="14" ry="4" stroke="#282522" stroke-width="1.8" fill="none" />
+      <text x="30" y="98" font-family="'Caveat', cursive" font-size="14" fill="#857F73">// desk: 01</text>
+    </g>
+
+    <!-- Articulated Desk Lamp & Beam (Y: 270 - 520) -->
+    <g opacity="0.85">
+      <!-- Lamp base -->
+      <ellipse cx="75" cy="510" rx="28" ry="8" stroke="#282522" stroke-width="2" fill="none" />
+      <!-- Lower arm -->
+      <line x1="75" y1="510" x2="50" y2="400" stroke="#282522" stroke-width="3" stroke-linecap="round" />
+      <line x1="78" y1="508" x2="53" y2="398" stroke="#857F73" stroke-width="1.2" stroke-linecap="round" />
+      <!-- Elbow hinge -->
+      <circle cx="50" cy="400" r="6" stroke="#282522" stroke-width="2" fill="#FAF8F2" />
+      <circle cx="50" cy="400" r="2" fill="#E10600" />
+      <!-- Upper arm -->
+      <line x1="50" y1="400" x2="95" y2="310" stroke="#282522" stroke-width="3" stroke-linecap="round" />
+      <line x1="48" y1="402" x2="93" y2="312" stroke="#857F73" stroke-width="1.2" stroke-linecap="round" />
+      <!-- Head joint & Shade -->
+      <circle cx="95" cy="310" r="5" stroke="#282522" stroke-width="2" fill="#FAF8F2" />
+      <path d="M 90 305 L 140 280 L 155 330 L 98 318 Z" 
+            stroke="#282522" stroke-width="2.2" fill="#FAF8F2" stroke-linejoin="round" />
+      <!-- Light rays -->
+      <line x1="148" y1="288" x2="195" y2="275" stroke="#E10600" stroke-width="1.5" stroke-dasharray="5 3" opacity="0.6" />
+      <line x1="154" y1="305" x2="205" y2="305" stroke="#E10600" stroke-width="1.5" stroke-dasharray="6 3" opacity="0.8" />
+      <line x1="158" y1="322" x2="200" y2="335" stroke="#E10600" stroke-width="1.5" stroke-dasharray="5 3" opacity="0.6" />
+      <text x="100" y="270" font-family="'Caveat', cursive" font-size="14" fill="#E10600">idea glow</text>
+    </g>
+
+    <!-- Steaming Coffee Mug (Y: 560 - 710) -->
+    <g opacity="0.85">
+      <!-- Mug body -->
+      <path d="M 50 620 L 55 690 C 55 705, 95 705, 95 690 L 100 620 Z" 
+            stroke="#282522" stroke-width="2.2" fill="none" />
+      <ellipse cx="75" cy="620" rx="25" ry="6" stroke="#282522" stroke-width="2" fill="#FAF8F2" />
+      <ellipse cx="75" cy="622" rx="20" ry="4" stroke="#4D4943" stroke-width="1" fill="none" opacity="0.5" />
+      <!-- Handle -->
+      <path d="M 98 632 C 118 632, 118 675, 96 675" stroke="#282522" stroke-width="2.2" fill="none" />
+      <!-- Steam curls -->
+      <path d="M 65 605 C 60 590, 72 580, 66 565" stroke="#E10600" stroke-width="1.6" fill="none" stroke-linecap="round" />
+      <path d="M 78 608 C 84 590, 74 575, 82 560" stroke="#4D4943" stroke-width="1.6" fill="none" stroke-linecap="round" />
+      <path d="M 88 605 C 84 595, 94 585, 90 570" stroke="#857F73" stroke-width="1.4" fill="none" stroke-linecap="round" />
+      <text x="110" y="655" font-family="'Caveat', cursive" font-size="13" fill="#4D4943">fuel</text>
+    </g>
+
+    <!-- Open Sketchbook & Architect Ruler (Y: 760 - 950) -->
+    <g opacity="0.85">
+      <!-- Notebook pages -->
+      <path d="M 40 820 C 65 815, 85 818, 95 824 C 105 818, 125 815, 150 820 L 145 885 C 122 880, 105 882, 95 890 C 85 882, 65 880, 35 885 Z" 
+            stroke="#282522" stroke-width="2" fill="#FAF8F2" />
+      <line x1="95" y1="824" x2="95" y2="890" stroke="#282522" stroke-width="1.8" />
+      <!-- Sketched lines inside notebook -->
+      <line x1="48" y1="835" x2="85" y2="835" stroke="#857F73" stroke-width="1" stroke-dasharray="3 2" />
+      <line x1="48" y1="846" x2="82" y2="846" stroke="#857F73" stroke-width="1" stroke-dasharray="3 2" />
+      <line x1="48" y1="857" x2="75" y2="857" stroke="#E10600" stroke-width="1.2" />
+      <line x1="105" y1="835" x2="138" y2="835" stroke="#857F73" stroke-width="1" stroke-dasharray="3 2" />
+      <line x1="105" y1="846" x2="135" y2="846" stroke="#857F73" stroke-width="1" stroke-dasharray="3 2" />
+      <!-- Architect ruler placed across -->
+      <rect x="25" y="895" width="140" height="14" rx="2" stroke="#282522" stroke-width="1.8" fill="#FFFDF9" />
+      <line x1="40" y1="895" x2="40" y2="904" stroke="#282522" stroke-width="1.2" />
+      <line x1="55" y1="895" x2="55" y2="901" stroke="#4D4943" stroke-width="1" />
+      <line x1="70" y1="895" x2="70" y2="904" stroke="#282522" stroke-width="1.2" />
+      <line x1="85" y1="895" x2="85" y2="901" stroke="#4D4943" stroke-width="1" />
+      <line x1="100" y1="895" x2="100" y2="906" stroke="#E10600" stroke-width="1.4" />
+      <line x1="115" y1="895" x2="115" y2="901" stroke="#4D4943" stroke-width="1" />
+      <line x1="130" y1="895" x2="130" y2="904" stroke="#282522" stroke-width="1.2" />
+      <line x1="145" y1="895" x2="145" y2="901" stroke="#4D4943" stroke-width="1" />
+      <text x="30" y="930" font-family="'Caveat', cursive" font-size="13" fill="#857F73">scale 1:1</text>
+    </g>
+
+    <!-- Floating Lightbulb & Sparkles (Y: 980 - 1110) -->
+    <g opacity="0.85">
+      <path d="M 75 1010 C 60 1010, 52 1025, 55 1040 C 57 1050, 68 1060, 68 1070 L 82 1070 C 82 1060, 93 1050, 95 1040 C 98 1025, 90 1010, 75 1010 Z" 
+            stroke="#282522" stroke-width="2" fill="#FAF8F2" />
+      <path d="M 68 1070 L 82 1070 L 80 1080 L 70 1080 Z" stroke="#282522" stroke-width="1.8" fill="none" />
+      <!-- Filament -->
+      <path d="M 70 1045 L 73 1032 L 77 1032 L 80 1045" stroke="#E10600" stroke-width="1.4" fill="none" />
+      <!-- Radiating Sparks -->
+      <line x1="45" y1="1025" x2="35" y2="1020" stroke="#E10600" stroke-width="1.5" />
+      <line x1="42" y1="1045" x2="32" y2="1048" stroke="#4D4943" stroke-width="1.2" />
+      <line x1="105" y1="1025" x2="115" y2="1020" stroke="#E10600" stroke-width="1.5" />
+      <line x1="108" y1="1045" x2="118" y2="1048" stroke="#4D4943" stroke-width="1.2" />
+      <line x1="75" y1="998" x2="75" y2="988" stroke="#E10600" stroke-width="1.5" />
+    </g>
+    
+    <!-- Circuit Board Traces & Microcontroller (Y: 1200 - 1600) -->
+    <g opacity="0.80">
+      <rect x="40" y="1250" width="70" height="70" rx="4" stroke="#282522" stroke-width="2.2" fill="#FAF8F2" />
+      <rect x="48" y="1258" width="54" height="54" stroke="#4D4943" stroke-width="1" fill="none" />
+      <text x="54" y="1290" font-family="'Architects Daughter', cursive" font-size="12" fill="#282522">CORE</text>
+      <!-- IC pins -->
+      <line x1="30" y1="1265" x2="40" y2="1265" stroke="#282522" stroke-width="2" />
+      <line x1="30" y1="1280" x2="40" y2="1280" stroke="#282522" stroke-width="2" />
+      <line x1="30" y1="1295" x2="40" y2="1295" stroke="#282522" stroke-width="2" />
+      <line x1="30" y1="1310" x2="40" y2="1310" stroke="#282522" stroke-width="2" />
+      <line x1="110" y1="1265" x2="120" y2="1265" stroke="#282522" stroke-width="2" />
+      <line x1="110" y1="1280" x2="120" y2="1280" stroke="#E10600" stroke-width="2" />
+      <line x1="110" y1="1295" x2="120" y2="1295" stroke="#282522" stroke-width="2" />
+      <line x1="110" y1="1310" x2="120" y2="1310" stroke="#282522" stroke-width="2" />
+      <!-- Bus traces -->
+      <path d="M 120 1280 L 150 1280 L 170 1320 L 170 1450" stroke="#E10600" stroke-width="1.8" fill="none" />
+      <circle cx="170" cy="1450" r="3" fill="#E10600" />
+      <path d="M 30 1280 L 18 1280 L 18 1390 L 45 1420 L 70 1420" stroke="#4D4943" stroke-width="1.5" fill="none" />
+      <circle cx="70" cy="1420" r="3" fill="#282522" />
+      <text x="35" y="1350" font-family="'Caveat', cursive" font-size="14" fill="#E10600">// interrupt: 0x04</text>
+    </g>
+
+    <!-- Terminal CLI Prompt (Y: 1750 - 2150) -->
+    <g opacity="0.82">
+      <rect x="30" y="1800" width="135" height="85" rx="3" stroke="#282522" stroke-width="2" fill="#FAF8F2" />
+      <line x1="30" y1="1818" x2="165" y2="1818" stroke="#282522" stroke-width="1.5" />
+      <circle cx="40" cy="1809" r="2.5" fill="#E10600" />
+      <circle cx="49" cy="1809" r="2.5" fill="#4D4943" />
+      <circle cx="58" cy="1809" r="2.5" fill="#857F73" />
+      <text x="38" y="1838" font-family="'Courier New', monospace" font-size="11" fill="#282522">$ recall run</text>
+      <text x="38" y="1855" font-family="'Courier New', monospace" font-size="11" fill="#4D4943">> mcp ok</text>
+      <text x="38" y="1872" font-family="'Courier New', monospace" font-size="11" fill="#E10600">> ready _</text>
+      <!-- Data stream lines -->
+      <line x1="60" y1="1885" x2="60" y2="2020" stroke="#282522" stroke-width="1.8" stroke-dasharray="6 4" />
+      <circle cx="60" cy="2020" r="4" stroke="#282522" stroke-width="1.5" fill="#E10600" />
+      <text x="75" y="1960" font-family="'Caveat', cursive" font-size="13" fill="#857F73">stream rx</text>
+    </g>
+
+    <!-- SQLite Database Cylinder & Tables (Y: 2350 - 2800) -->
+    <g opacity="0.80">
+      <ellipse cx="75" cy="2420" rx="42" ry="12" stroke="#282522" stroke-width="2" fill="#FAF8F2" />
+      <path d="M 33 2420 L 33 2470 C 33 2482, 117 2482, 117 2470 L 117 2420" stroke="#282522" stroke-width="2" fill="none" />
+      <path d="M 33 2445 C 33 2457, 117 2457, 117 2445" stroke="#4D4943" stroke-width="1.5" fill="none" />
+      <path d="M 33 2470 C 33 2482, 117 2482, 117 2470" stroke="#4D4943" stroke-width="1.5" fill="none" />
+      <text x="56" y="2442" font-family="'Architects Daughter', cursive" font-size="11" fill="#282522">SQLITE</text>
+      <text x="48" y="2466" font-family="'Courier New', monospace" font-size="10" fill="#E10600">memories</text>
+      <!-- Query pointer -->
+      <path d="M 117 2445 C 145 2445, 155 2490, 140 2520 L 95 2520" stroke="#E10600" stroke-width="1.6" fill="none" stroke-linecap="round" />
+      <polyline points="102,2515 94,2520 102,2525" stroke="#E10600" stroke-width="1.6" fill="none" />
+      <text x="45" y="2545" font-family="'Caveat', cursive" font-size="13" fill="#4D4943">SELECT * FROM ctx</text>
+    </g>
+
+    <!-- Logic Gates & Binary Stream (Y: 3000 - 3500) -->
+    <g opacity="0.80">
+      <!-- AND Gate -->
+      <path d="M 40 3080 L 65 3080 C 82 3080, 82 3110, 65 3110 L 40 3110 Z" stroke="#282522" stroke-width="2" fill="#FAF8F2" />
+      <line x1="25" y1="3088" x2="40" y2="3088" stroke="#282522" stroke-width="1.5" />
+      <line x1="25" y1="3102" x2="40" y2="3102" stroke="#282522" stroke-width="1.5" />
+      <line x1="77" y1="3095" x2="105" y2="3095" stroke="#E10600" stroke-width="1.8" />
+      <!-- Inverter Bubble -->
+      <circle cx="81" cy="3095" r="3" stroke="#E10600" stroke-width="1.5" fill="#FAF8F2" />
+      <text x="110" y="3100" font-family="'Courier New', monospace" font-size="11" fill="#E10600">Q = !(A&amp;B)</text>
+      <!-- Binary cascade -->
+      <text x="40" y="3220" font-family="'Courier New', monospace" font-size="11" fill="#857F73">01101001</text>
+      <text x="40" y="3240" font-family="'Courier New', monospace" font-size="11" fill="#4D4943">01101110</text>
+      <text x="40" y="3260" font-family="'Courier New', monospace" font-size="11" fill="#E10600">01110011</text>
+      <text x="40" y="3280" font-family="'Courier New', monospace" font-size="11" fill="#857F73">01111001</text>
+    </g>
+
+    <!-- Git Branching Tree & Commits (Y: 3750 - 4300) -->
+    <g opacity="0.82">
+      <!-- Main branch line -->
+      <line x1="55" y1="3820" x2="55" y2="4150" stroke="#282522" stroke-width="2.2" />
+      <!-- Feature branch curve -->
+      <path d="M 55 3880 C 85 3900, 95 3930, 95 3970 C 95 4010, 85 4040, 55 4060" 
+            stroke="#E10600" stroke-width="2" fill="none" />
+      <!-- Commit nodes -->
+      <circle cx="55" cy="3850" r="5" stroke="#282522" stroke-width="2" fill="#FAF8F2" />
+      <circle cx="55" cy="3880" r="5" stroke="#282522" stroke-width="2" fill="#FAF8F2" />
+      <circle cx="95" cy="3930" r="5" stroke="#E10600" stroke-width="2" fill="#FAF8F2" />
+      <circle cx="95" cy="3970" r="5" stroke="#E10600" stroke-width="2" fill="#E10600" />
+      <circle cx="95" cy="4010" r="5" stroke="#E10600" stroke-width="2" fill="#FAF8F2" />
+      <circle cx="55" cy="4060" r="5" stroke="#282522" stroke-width="2" fill="#FAF8F2" />
+      <circle cx="55" cy="4110" r="5" stroke="#282522" stroke-width="2" fill="#FAF8F2" />
+      <text x="110" y="3975" font-family="'Caveat', cursive" font-size="14" fill="#E10600">feat: agent-mcp</text>
+      <text x="15" y="3855" font-family="'Courier New', monospace" font-size="10" fill="#857F73">v2.1</text>
+      <text x="15" y="4115" font-family="'Courier New', monospace" font-size="10" fill="#857F73">v2.2</text>
+    </g>
+
+    <!-- Calibration Target & Oscilloscope Wave (Y: 4600 - 5200) -->
+    <g opacity="0.80">
+      <circle cx="80" cy="4700" r="35" stroke="#282522" stroke-width="1.8" fill="none" stroke-dasharray="4 3" />
+      <circle cx="80" cy="4700" r="22" stroke="#857F73" stroke-width="1.2" fill="none" />
+      <circle cx="80" cy="4700" r="4" fill="#E10600" />
+      <line x1="35" y1="4700" x2="125" y2="4700" stroke="#857F73" stroke-width="1" />
+      <line x1="80" y1="4655" x2="80" y2="4745" stroke="#857F73" stroke-width="1" />
+      <!-- Waveform below -->
+      <path d="M 30 4820 Q 50 4780, 70 4820 T 110 4820 T 150 4820" stroke="#E10600" stroke-width="2" fill="none" />
+      <text x="35" y="4860" font-family="'Caveat', cursive" font-size="13" fill="#4D4943">telemetry sample: 60Hz</text>
+    </g>
+    
+    <!-- System Architecture Gateway & Nodes (Y: 5800 - 6350) -->
+    <g opacity="0.82">
+      <!-- Client Node -->
+      <rect x="25" y="5860" width="55" height="30" rx="3" stroke="#282522" stroke-width="1.8" fill="#FAF8F2" />
+      <text x="33" y="5880" font-family="'Courier New', monospace" font-size="10" fill="#282522">CLIENT</text>
+      <!-- Gateway Node -->
+      <rect x="110" y="5860" width="60" height="30" rx="3" stroke="#E10600" stroke-width="1.8" fill="#FAF8F2" />
+      <text x="116" y="5880" font-family="'Courier New', monospace" font-size="10" fill="#E10600">GATEWAY</text>
+      <!-- Connectors -->
+      <line x1="80" y1="5875" x2="110" y2="5875" stroke="#282522" stroke-width="1.5" />
+      <!-- Downstream service boxes -->
+      <line x1="140" y1="5890" x2="140" y2="5940" stroke="#E10600" stroke-width="1.5" />
+      <rect x="105" y="5940" width="68" height="26" rx="2" stroke="#282522" stroke-width="1.5" fill="#FAF8F2" />
+      <text x="112" y="5957" font-family="'Courier New', monospace" font-size="9" fill="#4D4943">FASTAPI</text>
+      <text x="30" y="5930" font-family="'Caveat', cursive" font-size="13" fill="#857F73">REST &amp; WS bus</text>
+    </g>
+
+    <!-- Precision Vernier Caliper (Y: 6500 - 7100) -->
+    <g opacity="0.84">
+      <!-- Beam -->
+      <rect x="30" y="6620" width="130" height="16" stroke="#282522" stroke-width="2" fill="#FAF8F2" />
+      <!-- Fixed jaw -->
+      <path d="M 30 6620 L 30 6710 L 45 6670 L 45 6636" stroke="#282522" stroke-width="2" fill="#FAF8F2" />
+      <!-- Sliding jaw -->
+      <path d="M 85 6614 L 85 6710 L 98 6670 L 98 6636" stroke="#282522" stroke-width="2" fill="#FAF8F2" />
+      <!-- Ticks on beam -->
+      <line x1="50" y1="6620" x2="50" y2="6627" stroke="#4D4943" stroke-width="1" />
+      <line x1="60" y1="6620" x2="60" y2="6630" stroke="#282522" stroke-width="1.2" />
+      <line x1="70" y1="6620" x2="70" y2="6627" stroke="#4D4943" stroke-width="1" />
+      <line x1="80" y1="6620" x2="80" y2="6632" stroke="#E10600" stroke-width="1.4" />
+      <line x1="90" y1="6620" x2="90" y2="6627" stroke="#4D4943" stroke-width="1" />
+      <line x1="100" y1="6620" x2="100" y2="6630" stroke="#282522" stroke-width="1.2" />
+      <line x1="110" y1="6620" x2="110" y2="6627" stroke="#4D4943" stroke-width="1" />
+      <line x1="120" y1="6620" x2="120" y2="6630" stroke="#282522" stroke-width="1.2" />
+      <text x="48" y="6700" font-family="'Caveat', cursive" font-size="14" fill="#E10600">d: 38.2 mm</text>
+      <text x="35" y="6735" font-family="'Caveat', cursive" font-size="13" fill="#857F73">tolerance +-0.02</text>
+    </g>
+
+    <!-- Interlocking Mechanical Gears (Y: 7200 - 7550) -->
+    <g opacity="0.80">
+      <!-- Main gear -->
+      <circle cx="65" cy="7350" r="28" stroke="#282522" stroke-width="2" fill="none" stroke-dasharray="8 6" />
+      <circle cx="65" cy="7350" r="14" stroke="#282522" stroke-width="1.5" fill="#FAF8F2" />
+      <circle cx="65" cy="7350" r="4" fill="#E10600" />
+      <!-- Secondary gear -->
+      <circle cx="110" cy="7385" r="20" stroke="#4D4943" stroke-width="1.8" fill="none" stroke-dasharray="6 4" />
+      <circle cx="110" cy="7385" r="9" stroke="#4D4943" stroke-width="1.2" fill="#FAF8F2" />
+      <circle cx="110" cy="7385" r="3" fill="#4D4943" />
+    </g>
+    
+    <!-- Stack of Engineering & Math Textbooks (Y: 7750 - 8300) -->
+    <g opacity="0.84">
+      <!-- Book 1 (bottom) -->
+      <polygon points="35,8000 135,7990 145,8015 45,8025" stroke="#282522" stroke-width="2" fill="#FAF8F2" />
+      <line x1="45" y1="8025" x2="145" y2="8015" stroke="#282522" stroke-width="2" />
+      <text x="50" y="8014" font-family="'Courier New', monospace" font-size="9" fill="#4D4943">ALGORITHMS</text>
+      <!-- Book 2 (middle) -->
+      <polygon points="40,7975 130,7968 138,7992 48,8000" stroke="#282522" stroke-width="2" fill="#FAF8F2" />
+      <text x="52" y="7988" font-family="'Courier New', monospace" font-size="9" fill="#E10600">SYSTEMS</text>
+      <!-- Book 3 (top) -->
+      <polygon points="45,7950 120,7945 126,7968 51,7975" stroke="#282522" stroke-width="2" fill="#FAF8F2" />
+      <text x="56" y="7963" font-family="'Courier New', monospace" font-size="9" fill="#282522">CALCULUS</text>
+      <text x="40" y="8055" font-family="'Caveat', cursive" font-size="13" fill="#857F73">foundations</text>
+    </g>
+
+    <!-- Diploma Scroll & Seal with Red Ribbon (Y: 8550 - 9050) -->
+    <g opacity="0.85">
+      <!-- Rolled parchment -->
+      <rect x="40" y="8750" width="105" height="42" rx="4" stroke="#282522" stroke-width="2" fill="#FAF8F2" transform="rotate(-6 90 8770)" />
+      <!-- Scroll curl edges -->
+      <ellipse cx="38" cy="8778" rx="8" ry="20" stroke="#282522" stroke-width="2" fill="#FFFDF9" transform="rotate(-6 38 8778)" />
+      <!-- Red ribbon tie -->
+      <rect x="85" y="8742" width="12" height="46" stroke="#E10600" stroke-width="1.6" fill="#E10600" transform="rotate(-6 90 8765)" />
+      <circle cx="90" cy="8795" r="9" stroke="#E10600" stroke-width="1.8" fill="#FAF8F2" />
+      <text x="86" y="8799" font-family="'Architects Daughter', cursive" font-size="11" fill="#E10600">M</text>
+      <text x="40" y="8835" font-family="'Caveat', cursive" font-size="14" fill="#282522">MANIT Bhopal '28</text>
+    </g>
+
+    <!-- Neural Network Nodes & Vector Embeddings (Y: 9350 - 9850) -->
+    <g opacity="0.80">
+      <!-- Layer 1 -->
+      <circle cx="45" cy="9550" r="6" stroke="#282522" stroke-width="2" fill="#FAF8F2" />
+      <circle cx="45" cy="9600" r="6" stroke="#282522" stroke-width="2" fill="#FAF8F2" />
+      <circle cx="45" cy="9650" r="6" stroke="#282522" stroke-width="2" fill="#FAF8F2" />
+      <!-- Layer 2 -->
+      <circle cx="105" cy="9575" r="6" stroke="#E10600" stroke-width="2" fill="#FAF8F2" />
+      <circle cx="105" cy="9625" r="6" stroke="#E10600" stroke-width="2" fill="#E10600" />
+      <!-- Connections -->
+      <line x1="51" y1="9550" x2="99" y2="9575" stroke="#857F73" stroke-width="1.2" />
+      <line x1="51" y1="9550" x2="99" y2="9625" stroke="#4D4943" stroke-width="1.2" />
+      <line x1="51" y1="9600" x2="99" y2="9575" stroke="#E10600" stroke-width="1.5" />
+      <line x1="51" y1="9600" x2="99" y2="9625" stroke="#857F73" stroke-width="1.2" />
+      <line x1="51" y1="9650" x2="99" y2="9575" stroke="#857F73" stroke-width="1.2" />
+      <line x1="51" y1="9650" x2="99" y2="9625" stroke="#E10600" stroke-width="1.5" />
+      <text x="40" y="9700" font-family="'Caveat', cursive" font-size="14" fill="#E10600">dim: 1536 cosine</text>
+    </g>
+
+    <!-- Folded Paper Airplane in Flight (Y: 9950 - 10250) -->
+    <g opacity="0.85">
+      <path d="M 50 10080 L 125 10040 L 85 10100 Z" stroke="#282522" stroke-width="2" fill="#FAF8F2" />
+      <line x1="85" y1="10100" x2="125" y2="10040" stroke="#4D4943" stroke-width="1.5" />
+      <!-- Dashed wind loop -->
+      <path d="M 35 10140 C 20 10110, 45 10090, 50 10080" stroke="#E10600" stroke-width="1.5" stroke-dasharray="4 3" fill="none" />
+      <text x="45" y="10135" font-family="'Caveat', cursive" font-size="13" fill="#4D4943">learning trajectory</text>
+    </g>
+    
+    <!-- Constellation (Ursa Major / Great Bear) (Y: 10350 - 10650) -->
+    <g opacity="0.75">
+      <!-- Stars -->
+      <circle cx="45" cy="10420" r="3.5" fill="#E10600" />
+      <circle cx="65" cy="10440" r="3" fill="#282522" />
+      <circle cx="85" cy="10465" r="3" fill="#282522" />
+      <circle cx="105" cy="10480" r="3.5" fill="#E10600" />
+      <circle cx="130" cy="10475" r="3" fill="#282522" />
+      <circle cx="140" cy="10510" r="3" fill="#282522" />
+      <circle cx="115" cy="10515" r="3.5" fill="#282522" />
+      <!-- Constellation lines -->
+      <line x1="45" y1="10420" x2="65" y2="10440" stroke="#857F73" stroke-width="1" stroke-dasharray="3 2" />
+      <line x1="65" y1="10440" x2="85" y2="10465" stroke="#857F73" stroke-width="1" stroke-dasharray="3 2" />
+      <line x1="85" y1="10465" x2="105" y2="10480" stroke="#E10600" stroke-width="1.2" />
+      <line x1="105" y1="10480" x2="130" y2="10475" stroke="#857F73" stroke-width="1" stroke-dasharray="3 2" />
+      <line x1="130" y1="10475" x2="140" y2="10510" stroke="#857F73" stroke-width="1" stroke-dasharray="3 2" />
+      <line x1="140" y1="10510" x2="115" y2="10515" stroke="#857F73" stroke-width="1" stroke-dasharray="3 2" />
+      <line x1="115" y1="10515" x2="105" y2="10480" stroke="#857F73" stroke-width="1" stroke-dasharray="3 2" />
+      <text x="50" y="10545" font-family="'Caveat', cursive" font-size="13" fill="#857F73">guided by curiosity</text>
+    </g>
+
+    <!-- Crescent Moon & Little Orbit (Y: 10700 - 10980) -->
+    <g opacity="0.80">
+      <path d="M 75 10760 C 60 10780, 60 10820, 80 10840 C 65 10825, 65 10795, 75 10760 Z" 
+            stroke="#282522" stroke-width="2" fill="#FFFDF9" />
+      <ellipse cx="75" cy="10800" rx="42" ry="14" stroke="#857F73" stroke-width="1" stroke-dasharray="4 3" fill="none" transform="rotate(-20 75 10800)" />
+      <circle cx="112" cy="10785" r="2.5" fill="#E10600" />
+      <text x="35" y="10875" font-family="'Caveat', cursive" font-size="13" fill="#4D4943">// end of sheet</text>
+    </g>
+    
+</svg>

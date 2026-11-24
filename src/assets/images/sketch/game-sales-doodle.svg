@@ -1,0 +1,15 @@
+<svg width="84" height="64" viewBox="0 0 84 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Hand-drawn retro arcade gamepad & analytics chart doodle for Video Game Sales -->
+  <!-- Gamepad body -->
+  <path d="M 16 26 C 14 36, 17 48, 23 48 C 27 48, 30 40, 35 40 C 40 40, 43 48, 47 48 C 53 48, 56 36, 54 26 C 53 22, 17 22, 16 26 Z" stroke="#2E2B27" stroke-width="2.2" fill="#FAF8F2"/>
+  <!-- D-pad cross -->
+  <path d="M 23 28 L 27 28 M 25 26 L 25 30" stroke="#2E2B27" stroke-width="2" stroke-linecap="round"/>
+  <!-- Action buttons -->
+  <circle cx="43" cy="27" r="1.8" fill="#E10600"/>
+  <circle cx="47" cy="30" r="1.8" fill="#2E2B27"/>
+  <!-- Analytics Bar Chart rising on the right -->
+  <rect x="58" y="36" width="5" height="12" stroke="#2E2B27" stroke-width="1.5" fill="#FAF8F2"/>
+  <rect x="65" y="28" width="5" height="20" stroke="#2E2B27" stroke-width="1.5" fill="#FAF8F2"/>
+  <rect x="72" y="18" width="5" height="30" stroke="#E10600" stroke-width="1.5" fill="#FAF8F2"/>
+  <path d="M 57 32 Q 67 22 75 14" stroke="#E10600" stroke-width="1.8" stroke-dasharray="2 2"/>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <defs><filter id="c-tooth-tl"><feTurbulence type="fractalNoise" baseFrequency="0.22" numOctaves="2" seed="11" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="1.2"/></filter></defs>
+  <path d="M 3,6.8 C 9,6.2 15,6.9 21,6.5" stroke="#6E6A63" stroke-width="1.15" stroke-linecap="round" opacity="0.52" filter="url(#c-tooth-tl)"/>
+  <path d="M 6.8,3 C 6.3,9 6.9,15 6.5,21" stroke="#6E6A63" stroke-width="1.15" stroke-linecap="round" opacity="0.52" filter="url(#c-tooth-tl)"/>
+  <path d="M 1.8,5.4 C 6.5,5.1 13,5.6 19,5.3" stroke="#2D2A26" stroke-width="1.8" stroke-linecap="round" opacity="0.72" filter="url(#c-tooth-tl)"/>
+  <path d="M 5.4,1.8 C 5.1,6.5 5.6,13 5.3,19" stroke="#2D2A26" stroke-width="1.8" stroke-linecap="round" opacity="0.72" filter="url(#c-tooth-tl)"/>
+</svg>

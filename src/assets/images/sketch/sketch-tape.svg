@@ -1,0 +1,6 @@
+<svg width="80" height="24" viewBox="0 0 80 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Hand-drawn translucent paper tape strip with jagged ends -->
+  <path d="M 4 2 L 76 1 L 78 22 L 2 23 Z" fill="rgba(240, 235, 220, 0.75)" stroke="#A39D92" stroke-width="1" stroke-dasharray="2 3"/>
+  <line x1="2" y1="2" x2="6" y2="23" stroke="#8A857C" stroke-width="1.2" stroke-dasharray="3 2" opacity="0.4"/>
+  <line x1="74" y1="1" x2="78" y2="22" stroke="#8A857C" stroke-width="1.2" stroke-dasharray="3 2" opacity="0.4"/>
+</svg>

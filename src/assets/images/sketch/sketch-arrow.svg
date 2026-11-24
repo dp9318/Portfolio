@@ -1,0 +1,26 @@
+<svg width="110" height="155" viewBox="0 0 110 155" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Extended hand-drawn curved crimson pencil arrow reaching toward Selected Projects -->
+  <path
+    d="M 8 10 C 34 8, 66 20, 74 52 C 80 78, 68 108, 63 142"
+    stroke="#E10600"
+    stroke-width="2.4"
+    stroke-linecap="round"
+  />
+  <!-- Secondary light dry-pencil double pass for organic sketchbook feel -->
+  <path
+    d="M 11 13 C 36 11, 64 24, 71 54 C 76 78, 66 108, 62 138"
+    stroke="#E10600"
+    stroke-width="1.05"
+    stroke-linecap="round"
+    stroke-dasharray="14 6 5 8"
+    opacity="0.45"
+  />
+  <!-- Crisp hand-sketched arrowhead pointing down toward Selected Projects -->
+  <path
+    d="M 52 128 C 56 135, 60 141, 63 146 C 67 140, 72 135, 77 129"
+    stroke="#E10600"
+    stroke-width="2.4"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>

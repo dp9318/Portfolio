@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="carbon">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -8,28 +8,108 @@
     <meta property="og:title" content="Dipankar Kumar — Software Engineer" />
     <meta property="og:description" content="Software engineering portfolio of Dipankar Kumar, showcasing application development, AI systems integration, and practical software projects." />
     <meta property="og:type" content="website" />
-    <meta name="theme-color" content="#3A0F34" />
+    <meta name="theme-color" content="#F5F2EB" />
     <title>Dipankar Kumar — Software Engineer</title>
+
+    <!-- Google Fonts: Authentic Sketch & Notebook Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Caveat:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Patrick+Hand&display=swap"
+      rel="stylesheet"
+    />
+
     <style>
       html, body {
-        background-color: #3A0F34;
-        color: #DDE3E8;
+        background-color: #F5F2EB;
+        color: #2A2A2A;
       }
     </style>
     <script>
-      (function () {
-        var storageKey = 'portfolio-theme';
-        var theme = localStorage.getItem(storageKey);
-        var root = document.documentElement;
-        if (theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-          root.setAttribute('data-theme', 'dark');
-        } else {
-          root.removeAttribute('data-theme');
-        }
-      })();
+      document.documentElement.setAttribute('data-theme', 'carbon');
     </script>
   </head>
   <body>
+    <!-- Global SVG Filter Definitions for Authentic Porous Graphite Pencil Strokes (v2.6) -->
+    <svg style="position: absolute; width: 0; height: 0; overflow: hidden; pointer-events: none;" aria-hidden="true">
+      <defs>
+        <!-- Primary 2B Graphite Pencil Stroke: organic hand waviness + paper-tooth porosity + lighter grazing ghost pass -->
+        <filter id="pencil-stroke-primary" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
+          <!-- Secondary grazing lighter graphite pass (#75716A, offset + different pressure wave) -->
+          <feOffset in="SourceGraphic" dx="1.15" dy="1.0" result="ghostShift" />
+          <feTurbulence type="fractalNoise" baseFrequency="0.024 0.019" numOctaves="3" seed="53" result="ghostWave" />
+          <feDisplacementMap in="ghostShift" in2="ghostWave" scale="3.9" xChannelSelector="R" yChannelSelector="G" result="ghostDisplaced" />
+          <feColorMatrix type="matrix" in="ghostDisplaced" values="
+            0 0 0 0 0.45
+            0 0 0 0 0.44
+            0 0 0 0 0.41
+            0 0 0 0.46 0" result="ghostPass" />
+
+          <!-- Primary 2B stroke: macro waviness + fine cold-press paper-tooth porosity -->
+          <feTurbulence type="fractalNoise" baseFrequency="0.018 0.022" numOctaves="3" seed="11" result="macroNoise" />
+          <feDisplacementMap in="SourceGraphic" in2="macroNoise" scale="3.3" xChannelSelector="R" yChannelSelector="G" result="displacedMacro" />
+          <feTurbulence type="fractalNoise" baseFrequency="0.16 0.14" numOctaves="3" seed="87" result="microGrain" />
+          <feDisplacementMap in="displacedMacro" in2="microGrain" scale="1.2" xChannelSelector="G" yChannelSelector="B" result="roughStroke" />
+          <!-- Paper tooth density modulation (variable graphite contact on paper peaks) -->
+          <feTurbulence type="fractalNoise" baseFrequency="0.52" numOctaves="3" seed="71" result="paperTooth" />
+          <feColorMatrix type="matrix" in="paperTooth" values="
+            0 0 0 0 0
+            0 0 0 0 0
+            0 0 0 0 0
+            0 0 0 1.35 0.18" result="toothAlpha" />
+          <feComposite in="roughStroke" in2="toothAlpha" operator="in" result="porousPrimary" />
+
+          <feMerge>
+            <feMergeNode in="ghostPass" />
+            <feMergeNode in="porousPrimary" />
+          </feMerge>
+        </filter>
+
+        <!-- Secondary Loose Sketch Pass (Wandering ghost line) -->
+        <filter id="pencil-stroke-secondary" x="-20%" y="-20%" width="140%" height="140%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.03 0.06" numOctaves="3" seed="53" result="ghostNoise" />
+          <feDisplacementMap in="SourceGraphic" in2="ghostNoise" scale="3.2" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+
+        <!-- Fine HB Technical Pencil Stroke (Buttons, chips, small elements - lighter lead + porous tooth) -->
+        <filter id="pencil-stroke-fine" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
+          <feOffset in="SourceGraphic" dx="0.8" dy="0.7" result="hbShift" />
+          <feTurbulence type="fractalNoise" baseFrequency="0.036 0.029" numOctaves="2" seed="41" result="hbGhostWave" />
+          <feDisplacementMap in="hbShift" in2="hbGhostWave" scale="2.1" xChannelSelector="R" yChannelSelector="G" result="hbGhostDisplaced" />
+          <feColorMatrix type="matrix" in="hbGhostDisplaced" values="
+            0 0 0 0 0.48
+            0 0 0 0 0.46
+            0 0 0 0 0.43
+            0 0 0 0.30 0" result="hbGhostPass" />
+
+          <feTurbulence type="fractalNoise" baseFrequency="0.032 0.028" numOctaves="3" seed="23" result="fineNoise" />
+          <feDisplacementMap in="SourceGraphic" in2="fineNoise" scale="1.8" xChannelSelector="R" yChannelSelector="G" result="fineDisplaced" />
+          <feTurbulence type="fractalNoise" baseFrequency="0.58" numOctaves="2" seed="31" result="fineTooth" />
+          <feColorMatrix type="matrix" in="fineTooth" values="
+            0 0 0 0 0
+            0 0 0 0 0
+            0 0 0 0 0
+            0 0 0 1.2 0.28" result="fineToothAlpha" />
+          <feComposite in="fineDisplaced" in2="fineToothAlpha" operator="in" result="porousHB" />
+
+          <feMerge>
+            <feMergeNode in="hbGhostPass" />
+            <feMergeNode in="porousHB" />
+          </feMerge>
+        </filter>
+
+        <!-- Legacy aliases for backwards compatibility -->
+        <filter id="sketch-border" x="-10%" y="-10%" width="120%" height="120%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.045 0.035" numOctaves="4" seed="3" result="noise" />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="3.2" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+        <filter id="rough-edge" x="-10%" y="-10%" width="120%" height="120%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.045" numOctaves="4" result="noise" />
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+      </defs>
+    </svg>
+
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

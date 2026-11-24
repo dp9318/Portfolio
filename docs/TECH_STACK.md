@@ -2,35 +2,35 @@
 ## Personal Engineering Portfolio — Dipankar Kumar
 
 **Document:** TECH_STACK.md  
-**Version:** 1.0  
-**Status:** V1 technology specification
+**Version:** 2.0  
+**Status:** V2.0 Paper & Pencil Redesign specification  
+**Date:** 24 November 2026
 
-This document defines the approved technology choices and implementation boundaries for Version 1 of the portfolio.
-
-The goal is not to demonstrate how many web technologies can be used. The goal is to build a clean, maintainable, responsive portfolio that works reliably.
+This document defines the approved technology choices and implementation boundaries for Version 2.0 of the portfolio.
 
 ---
 
-# 1. V1 Stack Summary
+# 1. V2.0 Stack Summary
 
 | Area | Technology |
 |---|---|
-| Frontend | React |
-| Language | TypeScript |
-| Build Tool | Vite |
-| Styling | CSS / modern CSS |
-| Routing | React Router only if dedicated project routes are implemented |
-| Icons | Inline SVG or lightweight icon library only when justified |
-| Content | Local TypeScript/JSON data |
+| Frontend | React 19 |
+| Language | TypeScript 7 |
+| Build Tool | Vite 8 |
+| Styling | Modern CSS (Carbon Paper & Pencil tokens, graphite borders) |
+| Motion | Subtle Framer Motion + Lenis smooth scroll |
+| 3D / WebGL | None (Removed in V2.0) |
+| Icons | Inline SVG |
+| Content | Local typed TypeScript data (`src/data/`) |
 | Package Manager | npm |
 | Version Control | Git + GitHub |
 | Deployment | Vercel |
-| Backend | None for V1 |
-| Database | None for V1 |
+| Backend | None (Client-side static SPA) |
+| Database | None |
 | Authentication | None |
 | Email | `mailto:` link |
 | Resume | External URL |
-| Analytics | None initially |
+| Memory & Persistence | RECALL (MCP Core integration) |
 
 ---
 
@@ -162,27 +162,24 @@ Do not use icon fonts unnecessarily.
 
 ---
 
-# 9. Animation
+# 9. Animation & Motion (V2.0 Specification)
 
-Animation should be minimal and purposeful.
+Animation is restrained, purposeful, and lightweight.
 
-V1 should primarily use:
+V2.0 utilizes:
 
-- CSS transitions
-- Small hover interactions
-- Subtle entrance effects only where they improve hierarchy
+- Subtle CSS transitions for hover, focus, and state feedback
+- Restrained Framer Motion for staggered section entrances and magnetic CTA pull
+- Lenis for physics-based smooth scrolling with native mobile fallback
 
-Do not add:
+Explicitly prohibited / removed in V2.0:
 
-- Three.js
-- WebGL
-- GSAP
-- Framer Motion
-- Lottie
+- Three.js (removed)
+- WebGL 3D scenes (removed)
+- React Three Fiber & Drei (removed)
+- Heavy canvas animations or full-page visual effects
 
-unless a future design requirement specifically justifies them.
-
-The portfolio is an engineering portfolio, not an animation showcase.
+The portfolio is an engineering notebook and portfolio, not an animation showcase.
 
 ---
 

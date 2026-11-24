@@ -1,0 +1,16 @@
+<svg width="84" height="64" viewBox="0 0 84 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Hand-drawn desktop monitor + environmental air waves doodle for AQIconic -->
+  <!-- Desktop monitor frame -->
+  <rect x="14" y="14" width="38" height="28" rx="2" stroke="#2E2B27" stroke-width="2.2" fill="#FAF8F2"/>
+  <rect x="18" y="18" width="30" height="20" rx="1" stroke="#54504A" stroke-width="1.2" stroke-dasharray="2 2"/>
+  <!-- Monitor stand -->
+  <path d="M 33 42 L 33 48 M 26 48 L 40 48" stroke="#2E2B27" stroke-width="2" stroke-linecap="round"/>
+  <!-- Hardware sensor waves (air quality wind stream) -->
+  <path d="M 56 18 C 62 16, 68 22, 76 19" stroke="#E10600" stroke-width="2" stroke-linecap="round"/>
+  <path d="M 54 26 C 60 24, 66 30, 78 27" stroke="#2E2B27" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M 57 34 C 63 32, 69 38, 77 35" stroke="#54504A" stroke-width="1.8" stroke-linecap="round"/>
+  <!-- ESP32 antenna signal tick -->
+  <circle cx="56" cy="45" r="2.5" fill="#E10600"/>
+  <path d="M 61 41 C 63 43, 63 47, 61 49" stroke="#2E2B27" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 65 38 C 68 42, 68 48, 65 52" stroke="#54504A" stroke-width="1.5" stroke-linecap="round"/>
+</svg>

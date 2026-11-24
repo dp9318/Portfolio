@@ -1,332 +1,174 @@
-/* Color System - 5-Preset 3-Color Architecture */
-/* ========================================================================== */
+/* ==========================================================================
+   Design Tokens - Illustrated Sketchbook & Engineering Notebook (v2.1)
+   ========================================================================== */
 
-/* Theme 1: Royal (Default) */
 :root,
-[data-theme="royal"] {
-  --theme-name: 'Royal';
-  --color-base: #3A0F34;
-  --color-secondary: #DDE3E8;
-  --color-accent: #EAAA00;
-  --color-accent-hover: #ffc21a;
-
-  --color-background: #3A0F34;
-  --color-surface: rgba(58, 15, 52, 0.32);
-  --color-surface-elevated: rgba(58, 15, 52, 0.42);
-  --color-surface-card: rgba(35, 9, 32, 0.72);
-  --color-surface-glass: rgba(35, 9, 32, 0.72);
-  --veil-bg: transparent;
-
-  /* Authentic Apple Frosted Glass Tokens */
-  --glass-bg: rgba(35, 9, 32, 0.72);
-  --glass-sheen: rgba(221, 227, 232, 0.20);
-  --glass-blur: blur(12px);
-  --glass-border: 1px solid rgba(221, 227, 232, 0.16);
-  --glass-border-hover: rgba(234, 170, 0, 0.45);
-  --glass-shadow: 0 12px 32px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(221, 227, 232, 0.16);
-  --glass-shadow-hover: 0 16px 40px rgba(234, 170, 0, 0.15), inset 0 1px 0 rgba(234, 170, 0, 0.35);
-
-  /* Typography & Borders mapped to #DDE3E8 */
-  --color-border: rgba(221, 227, 232, 0.14);
-  --color-border-strong: #DDE3E8;
-  --color-secondary-bg: #DDE3E8;
-  --color-secondary-text: #3A0F34;
-  --color-secondary-border: rgba(221, 227, 232, 0.14);
-
-  --color-text-primary: #DDE3E8;
-  --color-text-secondary: rgba(221, 227, 232, 0.85);
-  --color-text-muted: rgba(221, 227, 232, 0.65);
-  --color-text-inverse: #3A0F34;
-
-  /* Button Tokens */
-  --color-btn-primary-bg: #EAAA00;
-  --color-btn-primary-text: #3A0F34;
-  --color-btn-primary-border: #EAAA00;
-  --color-btn-primary-hover-bg: #ffc21a;
-  --color-btn-glow: rgba(234, 170, 0, 0.4);
-
-  --color-accent-light: rgba(234, 170, 0, 0.16);
-  --color-accent-focus: #EAAA00;
-  --focus-ring-color: #EAAA00;
-
-  --color-modal-bg: rgba(58, 15, 52, 0.85);
-  --color-modal-backdrop: rgba(20, 4, 18, 0.65);
-
-  /* Status Colors */
-  --color-status-completed: #EAAA00;
-  --color-status-completed-bg: rgba(234, 170, 0, 0.16);
-  --color-status-in-progress: #DDE3E8;
-  --color-status-in-progress-bg: rgba(221, 227, 232, 0.14);
-  --color-status-prototype: #EAAA00;
-  --color-status-prototype-bg: rgba(234, 170, 0, 0.16);
-  --color-status-experimental: #EAAA00;
-  --color-status-experimental-bg: rgba(234, 170, 0, 0.16);
-  --color-status-learning: #DDE3E8;
-  --color-status-learning-bg: rgba(221, 227, 232, 0.14);
-}
-
-/* Theme 2: Cyber */
-[data-theme="cyber"] {
-  --theme-name: 'Cyber';
-  --color-base: #0A0A0A;
-  --color-secondary: #007BA7;
-  --color-accent: #FF2D95;
-  --color-accent-hover: #ff54ad;
-
-  --color-background: #0A0A0A;
-  --color-surface: rgba(10, 10, 10, 0.35);
-  --color-surface-elevated: rgba(10, 10, 10, 0.45);
-  --color-surface-card: rgba(10, 10, 10, 0.78);
-  --color-surface-glass: rgba(10, 10, 10, 0.78);
-  --veil-bg: transparent;
-
-  --glass-bg: rgba(10, 10, 10, 0.78);
-  --glass-sheen: rgba(0, 123, 167, 0.25);
-  --glass-blur: blur(12px);
-  --glass-border: 1px solid rgba(221, 227, 232, 0.16);
-  --glass-border-hover: rgba(255, 45, 149, 0.50);
-  --glass-shadow: 0 12px 32px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(221, 227, 232, 0.16);
-  --glass-shadow-hover: 0 16px 40px rgba(255, 45, 149, 0.18), inset 0 1px 0 rgba(255, 45, 149, 0.40);
-
-  --color-border: rgba(0, 123, 167, 0.25);
-  --color-border-strong: #007BA7;
-  --color-secondary-bg: #007BA7;
-  --color-secondary-text: #0A0A0A;
-  --color-secondary-border: rgba(0, 123, 167, 0.25);
-
-  /* Primary text: crisp light cyan tint for AAA contrast, subheadings in #007BA7 */
-  --color-text-primary: #EAF6FA;
-  --color-text-secondary: rgba(234, 246, 250, 0.85);
-  --color-text-muted: rgba(0, 123, 167, 0.90);
-  --color-text-inverse: #0A0A0A;
-
-  --color-btn-primary-bg: #FF2D95;
-  --color-btn-primary-text: #0A0A0A;
-  --color-btn-primary-border: #FF2D95;
-  --color-btn-primary-hover-bg: #ff54ad;
-  --color-btn-glow: rgba(255, 45, 149, 0.45);
-
-  --color-accent-light: rgba(255, 45, 149, 0.18);
-  --color-accent-focus: #FF2D95;
-  --focus-ring-color: #FF2D95;
-
-  --color-modal-bg: rgba(10, 10, 10, 0.88);
-  --color-modal-backdrop: rgba(0, 0, 0, 0.75);
-
-  --color-status-completed: #FF2D95;
-  --color-status-completed-bg: rgba(255, 45, 149, 0.18);
-  --color-status-in-progress: #007BA7;
-  --color-status-in-progress-bg: rgba(0, 123, 167, 0.22);
-  --color-status-prototype: #FF2D95;
-  --color-status-prototype-bg: rgba(255, 45, 149, 0.18);
-  --color-status-experimental: #FF2D95;
-  --color-status-experimental-bg: rgba(255, 45, 149, 0.18);
-  --color-status-learning: #007BA7;
-  --color-status-learning-bg: rgba(0, 123, 167, 0.22);
-}
-
-/* Theme 3: Mocha */
-[data-theme="mocha"] {
-  --theme-name: 'Mocha';
-  --color-base: #6F4E37;
-  --color-secondary: #E5E4E2;
-  --color-accent: #E6E0F0;
-  --color-accent-hover: #ffffff;
-
-  --color-background: #6F4E37;
-  --color-surface: rgba(111, 78, 55, 0.32);
-  --color-surface-elevated: rgba(111, 78, 55, 0.42);
-  --color-surface-card: rgba(60, 42, 30, 0.75);
-  --color-surface-glass: rgba(60, 42, 30, 0.75);
-  --veil-bg: transparent;
-
-  --glass-bg: rgba(60, 42, 30, 0.75);
-  --glass-sheen: rgba(229, 228, 226, 0.22);
-  --glass-blur: blur(12px);
-  --glass-border: 1px solid rgba(221, 227, 232, 0.16);
-  --glass-border-hover: rgba(230, 224, 240, 0.50);
-  --glass-shadow: 0 12px 32px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(221, 227, 232, 0.16);
-  --glass-shadow-hover: 0 16px 40px rgba(230, 224, 240, 0.15), inset 0 1px 0 rgba(230, 224, 240, 0.35);
-
-  --color-border: rgba(229, 228, 226, 0.18);
-  --color-border-strong: #E5E4E2;
-  --color-secondary-bg: #E5E4E2;
-  --color-secondary-text: #6F4E37;
-  --color-secondary-border: rgba(229, 228, 226, 0.18);
-
-  --color-text-primary: #E5E4E2;
-  --color-text-secondary: rgba(229, 228, 226, 0.85);
-  --color-text-muted: rgba(229, 228, 226, 0.68);
-  --color-text-inverse: #6F4E37;
-
-  --color-btn-primary-bg: #E6E0F0;
-  --color-btn-primary-text: #6F4E37;
-  --color-btn-primary-border: #E6E0F0;
-  --color-btn-primary-hover-bg: #ffffff;
-  --color-btn-glow: rgba(230, 224, 240, 0.45);
-
-  --color-accent-light: rgba(230, 224, 240, 0.18);
-  --color-accent-focus: #E6E0F0;
-  --focus-ring-color: #E6E0F0;
-
-  --color-modal-bg: rgba(111, 78, 55, 0.85);
-  --color-modal-backdrop: rgba(45, 25, 15, 0.70);
-
-  --color-status-completed: #E6E0F0;
-  --color-status-completed-bg: rgba(230, 224, 240, 0.18);
-  --color-status-in-progress: #E5E4E2;
-  --color-status-in-progress-bg: rgba(229, 228, 226, 0.16);
-  --color-status-prototype: #E6E0F0;
-  --color-status-prototype-bg: rgba(230, 224, 240, 0.18);
-  --color-status-experimental: #E6E0F0;
-  --color-status-experimental-bg: rgba(230, 224, 240, 0.18);
-  --color-status-learning: #E5E4E2;
-  --color-status-learning-bg: rgba(229, 228, 226, 0.16);
-}
-
-/* Theme 4: Emerald */
-[data-theme="emerald"] {
-  --theme-name: 'Emerald';
-  --color-base: #046A38;
-  --color-secondary: #F9EBD7;
-  --color-accent: #E34222;
-  --color-accent-hover: #ff5633;
-
-  --color-background: #046A38;
-  --color-surface: rgba(4, 106, 56, 0.32);
-  --color-surface-elevated: rgba(4, 106, 56, 0.42);
-  --color-surface-card: rgba(3, 60, 31, 0.75);
-  --color-surface-glass: rgba(3, 60, 31, 0.75);
-  --veil-bg: transparent;
-
-  --glass-bg: rgba(3, 60, 31, 0.75);
-  --glass-sheen: rgba(249, 235, 215, 0.22);
-  --glass-blur: blur(12px);
-  --glass-border: 1px solid rgba(221, 227, 232, 0.16);
-  --glass-border-hover: rgba(227, 66, 34, 0.50);
-  --glass-shadow: 0 12px 32px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(221, 227, 232, 0.16);
-  --glass-shadow-hover: 0 16px 40px rgba(227, 66, 34, 0.15), inset 0 1px 0 rgba(227, 66, 34, 0.35);
-
-  --color-border: rgba(249, 235, 215, 0.18);
-  --color-border-strong: #F9EBD7;
-  --color-secondary-bg: #F9EBD7;
-  --color-secondary-text: #046A38;
-  --color-secondary-border: rgba(249, 235, 215, 0.18);
-
-  --color-text-primary: #F9EBD7;
-  --color-text-secondary: rgba(249, 235, 215, 0.85);
-  --color-text-muted: rgba(249, 235, 215, 0.68);
-  --color-text-inverse: #046A38;
-
-  --color-btn-primary-bg: #E34222;
-  --color-btn-primary-text: #F9EBD7;
-  --color-btn-primary-border: #E34222;
-  --color-btn-primary-hover-bg: #ff5633;
-  --color-btn-glow: rgba(227, 66, 34, 0.45);
-
-  --color-accent-light: rgba(227, 66, 34, 0.18);
-  --color-accent-focus: #E34222;
-  --focus-ring-color: #E34222;
-
-  --color-modal-bg: rgba(4, 106, 56, 0.85);
-  --color-modal-backdrop: rgba(2, 50, 26, 0.70);
-
-  --color-status-completed: #E34222;
-  --color-status-completed-bg: rgba(227, 66, 34, 0.18);
-  --color-status-in-progress: #F9EBD7;
-  --color-status-in-progress-bg: rgba(249, 235, 215, 0.16);
-  --color-status-prototype: #E34222;
-  --color-status-prototype-bg: rgba(227, 66, 34, 0.18);
-  --color-status-experimental: #E34222;
-  --color-status-experimental-bg: rgba(227, 66, 34, 0.18);
-  --color-status-learning: #F9EBD7;
-  --color-status-learning-bg: rgba(249, 235, 215, 0.16);
-}
-
-/* Theme 5: Carbon */
 [data-theme="carbon"] {
-  --theme-name: 'Carbon';
-  --color-base: #2A2A2A;
-  --color-secondary: #C0C0C0;
-  --color-accent: #E10600;
-  --color-accent-hover: #ff2a24;
+  color-scheme: light;
+  --theme-name: 'Sketchbook Graphite';
 
-  --color-background: #2A2A2A;
-  --color-surface: rgba(42, 42, 42, 0.35);
-  --color-surface-elevated: rgba(42, 42, 42, 0.45);
-  --color-surface-card: rgba(26, 26, 26, 0.78);
-  --color-surface-glass: rgba(26, 26, 26, 0.78);
-  --veil-bg: transparent;
+  /* --------------------------------------------------------------------------
+     Authentic Graphite & Paper Palette (Ref: docs/paper-pencil-sketch-reference.png)
+     -------------------------------------------------------------------------- */
+  --color-base: #222222;              /* Deep graphite charcoal */
+  --color-secondary: #54504A;         /* Medium 2B graphite */
+  --color-accent: #E10600;            /* Crimson pencil accent */
+  --color-accent-hover: #C90B05;      /* Darker crimson hover */
+  --color-accent-light: rgba(225, 6, 0, 0.09); /* Faint crimson highlighter wash */
 
-  --glass-bg: rgba(26, 26, 26, 0.78);
-  --glass-sheen: rgba(192, 192, 192, 0.22);
-  --glass-blur: blur(12px);
-  --glass-border: 1px solid rgba(221, 227, 232, 0.16);
-  --glass-border-hover: rgba(225, 6, 0, 0.55);
-  --glass-shadow: 0 12px 32px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(221, 227, 232, 0.16);
-  --glass-shadow-hover: 0 16px 40px rgba(225, 6, 0, 0.18), inset 0 1px 0 rgba(225, 6, 0, 0.38);
+  /* Surface Neutrals (Warm Cotton Drawing Paper & Brighter Card Paper - v2.6) */
+  --color-background: #F5F2EB;        /* Warm off-white cotton drawing paper */
+  --color-surface: #FAF8F3;           /* Brighter, cleaner sketchbook card paper */
+  --color-surface-elevated: #FDFBF7;  /* Crisp highlight paper */
+  --color-surface-card: #FAF8F3;      /* Sketch card surface */
+  --color-surface-nav: #FAF8F3;       /* Navbar paper */
+  --color-surface-modal: #FAF8F3;     /* Modal notebook sheet */
 
-  --color-border: rgba(192, 192, 192, 0.18);
-  --color-border-strong: #C0C0C0;
-  --color-secondary-bg: #C0C0C0;
-  --color-secondary-text: #2A2A2A;
-  --color-secondary-border: rgba(192, 192, 192, 0.18);
+  /* Text & Ink Tokens */
+  --color-text-primary: #222222;      /* Deep graphite - 12:1+ contrast on paper */
+  --color-text-secondary: #48443E;    /* Medium graphite body - 8:1+ contrast */
+  --color-text-muted: #736E66;        /* Light pencil metadata - 4.7:1+ contrast */
+  --color-text-inverse: #FFFFFF;      /* White text for crimson buttons */
 
-  --color-text-primary: #F2F2F2;
-  --color-text-secondary: rgba(192, 192, 192, 0.88);
-  --color-text-muted: rgba(192, 192, 192, 0.65);
-  --color-text-inverse: #2A2A2A;
-
-  --color-btn-primary-bg: #E10600;
-  --color-btn-primary-text: #FFFFFF;
-  --color-btn-primary-border: #E10600;
-  --color-btn-primary-hover-bg: #ff2a24;
-  --color-btn-glow: rgba(225, 6, 0, 0.45);
-
-  --color-accent-light: rgba(225, 6, 0, 0.18);
-  --color-accent-focus: #E10600;
+  /* Graphite Linework & Pencil Borders (#262626 - #4A4A4A range) */
+  --color-border: #33312E;            /* Primary 2B charcoal graphite stroke */
+  --color-border-strong: #262523;     /* Deep charcoal graphite hover/emphasis */
+  --color-border-pencil: #5E5A54;     /* Medium HB sketch line */
+  --color-border-light: #9E988E;      /* Light drafting line / grid tick */
+  --color-focus: #E10600;
   --focus-ring-color: #E10600;
 
-  --color-modal-bg: rgba(42, 42, 42, 0.88);
-  --color-modal-backdrop: rgba(15, 15, 15, 0.75);
+  /* Button Tokens (Hand-drawn paper boxes with fine HB graphite outline) */
+  --color-btn-primary-bg: #E10600;
+  --color-btn-primary-text: #FFFFFF;
+  --color-btn-primary-border: #262523;
+  --color-btn-primary-hover-bg: #C90B05;
+  --color-btn-glow: rgba(225, 6, 0, 0.35);
 
-  --color-status-completed: #E10600;
-  --color-status-completed-bg: rgba(225, 6, 0, 0.18);
-  --color-status-in-progress: #C0C0C0;
-  --color-status-in-progress-bg: rgba(192, 192, 192, 0.16);
+  /* Modal Tokens */
+  --color-modal-bg: #FAF8F3;
+  --color-modal-backdrop: rgba(35, 33, 30, 0.55);
+
+  /* Status Colors (Hand-sketched tags) */
+  --color-status-completed: #222222;
+  --color-status-completed-bg: rgba(34, 34, 34, 0.08);
+  --color-status-in-progress: #54504A;
+  --color-status-in-progress-bg: rgba(84, 80, 74, 0.10);
   --color-status-prototype: #E10600;
-  --color-status-prototype-bg: rgba(225, 6, 0, 0.18);
+  --color-status-prototype-bg: rgba(225, 6, 0, 0.09);
   --color-status-experimental: #E10600;
-  --color-status-experimental-bg: rgba(225, 6, 0, 0.18);
-  --color-status-learning: #C0C0C0;
-  --color-status-learning-bg: rgba(192, 192, 192, 0.16);
-}
+  --color-status-experimental-bg: rgba(225, 6, 0, 0.09);
+  --color-status-learning: #48443E;
+  --color-status-learning-bg: rgba(72, 68, 62, 0.10);
 
-/* Grayscale aliases for system compatibility */
-:root {
+  /* --------------------------------------------------------------------------
+     Organic Hand-Drawn Border Radii (Wobbly PaperCSS Geometry)
+     -------------------------------------------------------------------------- */
+  --radius-sketch-card-1: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  --radius-sketch-card-2: 235px 20px 245px 20px / 20px 245px 20px 235px;
+  --radius-sketch-card-3: 245px 18px 230px 18px / 18px 230px 18px 245px;
+  --radius-sketch-btn: 255px 16px 225px 16px / 16px 225px 16px 255px;
+  --radius-sketch-tag: 180px 10px 160px 10px / 10px 160px 10px 180px;
+
+  /* --------------------------------------------------------------------------
+     Textured Soft Graphite Shadows (v2.6 Refined)
+     Soft #6E6E6E - #9A9A9A smudged graphite falloff working with exterior grain strips
+     -------------------------------------------------------------------------- */
+  --radius-none: 0;
+  --radius-sm: 3px;
+  --radius-md: 5px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --radius-full: 9999px;
+
+  /* Small chips / badges / tags (Very restrained micro contact shadow) */
+  --pencil-shadow-sm:
+    0.8px 1px 0.6px rgba(96, 92, 86, 0.34),
+    1.8px 2.2px 1.6px rgba(132, 128, 120, 0.18);
+  --pencil-shadow-sm-hover:
+    1.2px 1.6px 0.8px rgba(82, 78, 72, 0.42),
+    2.5px 3.2px 2.2px rgba(124, 120, 112, 0.24);
+
+  /* Buttons & CTAs (Compact soft smudge paired with ::after graphite grain) */
+  --pencil-shadow-btn:
+    1px 1.4px 0.8px rgba(88, 84, 78, 0.38),
+    2.4px 3.2px 2px rgba(122, 118, 110, 0.22),
+    3.8px 4.8px 3.5px rgba(148, 144, 136, 0.11);
+  --pencil-shadow-btn-hover:
+    1.4px 2px 1px rgba(74, 70, 65, 0.44),
+    3.2px 4.4px 2.6px rgba(110, 106, 98, 0.26),
+    5px 6.5px 4.5px rgba(140, 136, 128, 0.14);
+  --pencil-shadow-btn-active:
+    0.5px 0.8px 0.5px rgba(88, 84, 78, 0.40),
+    1.2px 1.6px 1px rgba(128, 124, 116, 0.18);
+
+  /* Content Cards (Soft charcoal-gray smudge depth behind ::after hatched grain) */
+  --pencil-shadow-card:
+    1.5px 2px 1.2px rgba(86, 82, 76, 0.32),
+    3.5px 5px 3.5px rgba(118, 114, 106, 0.22),
+    6px 8px 6.5px rgba(144, 140, 132, 0.12),
+    9px 12px 10px rgba(154, 150, 142, 0.06);
+  --pencil-shadow-card-hover:
+    2px 2.8px 1.5px rgba(74, 70, 64, 0.38),
+    5px 7px 4.5px rgba(108, 104, 96, 0.26),
+    8.5px 11.5px 8px rgba(136, 132, 124, 0.16),
+    12px 16px 12px rgba(154, 150, 142, 0.08);
+
+  /* Large Containers & Polaroid Photo Frame */
+  --pencil-shadow-lg:
+    2px 2.5px 1.5px rgba(82, 78, 72, 0.34),
+    4.5px 6px 4px rgba(114, 110, 102, 0.24),
+    7.5px 10px 7.5px rgba(140, 136, 128, 0.14),
+    11px 15px 12px rgba(154, 150, 142, 0.07);
+  --pencil-shadow-lg-hover:
+    2.5px 3.2px 1.8px rgba(70, 66, 60, 0.40),
+    5.5px 7.5px 5px rgba(104, 100, 92, 0.28),
+    9.5px 12.5px 9px rgba(132, 128, 120, 0.17),
+    14px 19px 14px rgba(154, 150, 142, 0.09);
+
+  /* Modal Drawing Sheet (Highest depth in elevation hierarchy) */
+  --pencil-shadow-modal:
+    3px 4px 2px rgba(68, 64, 58, 0.42),
+    7px 10px 6px rgba(96, 92, 86, 0.30),
+    13px 18px 12px rgba(126, 122, 114, 0.20),
+    22px 30px 22px rgba(146, 142, 134, 0.12);
+
+  /* Fallback aliases for generic CSS classes */
+  --paper-shadow-sm: var(--pencil-shadow-sm);
+  --paper-shadow: var(--pencil-shadow-card);
+  --paper-shadow-hover: var(--pencil-shadow-card-hover);
+  --paper-shadow-modal: var(--pencil-shadow-modal);
+  --red-glow: 0 0 10px rgba(225, 6, 0, 0.28), 0 0 22px rgba(225, 6, 0, 0.14);
+
+  /* Grayscale Aliases */
   --color-white: #FFFFFF;
   --color-black: #000000;
   --color-gray-50: var(--color-surface);
   --color-gray-100: var(--color-surface-elevated);
-  --color-gray-200: var(--color-border);
-  --color-gray-300: var(--color-border-strong);
+  --color-gray-200: var(--color-border-light);
+  --color-gray-300: var(--color-border-pencil);
   --color-gray-400: var(--color-text-muted);
   --color-gray-500: var(--color-text-secondary);
   --color-gray-600: var(--color-text-secondary);
   --color-gray-700: var(--color-text-primary);
-  --color-gray-800: var(--color-background);
-  --color-gray-900: var(--color-background);
-  --color-gray-950: var(--color-background);
+  --color-gray-800: var(--color-base);
+  --color-gray-900: var(--color-base);
+  --color-gray-950: var(--color-base);
 }
 
-/* Typography */
-/* ========================================================================== */
+/* ==========================================================================
+   Typography System - Pairing Architectural Sketch Lettering with Crisp Sans
+   ========================================================================== */
 :root {
-  /* Font Stack - System-first, modern sans-serif */
-  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+  /* Fonts */
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sketch: 'Architects Daughter', 'Patrick Hand', cursive, sans-serif; /* Titles, brand, buttons */
+  --font-hand: 'Caveat', cursive, sans-serif; /* Handwritten annotations, notes, arrows */
+  --font-casual: 'Patrick Hand', 'Architects Daughter', cursive, sans-serif; /* Tags, subheadings */
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
-  /* Font Sizes - Fluid scale using clamp */
+  /* Font Sizes - Fluid scale */
   --text-xs: 0.75rem;      /* 12px */
   --text-sm: 0.875rem;     /* 14px */
   --text-base: 1rem;       /* 16px */
@@ -339,15 +181,15 @@
   --text-6xl: 3.75rem;     /* 60px */
 
   /* Fluid Display Sizes */
-  --text-display-sm: clamp(2.5rem, 5vw, 3.5rem);     /* 40-56px */
-  --text-display-md: clamp(3rem, 6vw, 4.5rem);       /* 48-72px */
-  --text-display-lg: clamp(3.5rem, 8vw, 6rem);       /* 56-96px */
+  --text-display-sm: clamp(2.25rem, 4.5vw, 3.25rem);
+  --text-display-md: clamp(2.75rem, 5.5vw, 4.25rem);
+  --text-display-lg: clamp(3.25rem, 7vw, 5.5rem);
 
   /* Line Heights */
-  --leading-tight: 1.1;
-  --leading-snug: 1.375;
-  --leading-normal: 1.5;
-  --leading-relaxed: 1.625;
+  --leading-tight: 1.2;
+  --leading-snug: 1.35;
+  --leading-normal: 1.55;
+  --leading-relaxed: 1.65;
   --leading-loose: 2;
 
   /* Font Weights */
@@ -356,7 +198,7 @@
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
 
-  /* Typography Scale - Semantic Tokens */
+  /* Semantic Typography Tokens */
   --text-display: var(--text-display-md);
   --text-h1: var(--text-5xl);
   --text-h2: var(--text-4xl);
@@ -372,8 +214,9 @@
   --text-label-sm: var(--text-xs);
 }
 
-/* Spacing System */
-/* ========================================================================== */
+/* ==========================================================================
+   Spacing System (8px Invariant)
+   ========================================================================== */
 :root {
   --space-0: 0;
   --space-1: 0.25rem;   /* 4px */
@@ -389,86 +232,64 @@
   --space-20: 5rem;     /* 80px */
   --space-24: 6rem;     /* 96px */
 
-  /* Section Spacing */
   --section-padding-y: var(--space-16);
   --section-padding-y-lg: var(--space-24);
   --section-padding-y-sm: var(--space-12);
 
-  /* Component Spacing */
   --component-gap: var(--space-4);
   --component-gap-lg: var(--space-6);
   --component-gap-xl: var(--space-8);
 }
 
-/* Layout & Container */
-/* ========================================================================== */
+/* ==========================================================================
+   Layout & Container (Strict Layout Lock)
+   ========================================================================== */
 :root {
-  --container-max-width: 1200px;
+  --container-max-width: 1080px;
   --container-max-width-narrow: 800px;
   --container-padding-x: var(--space-4);
   --container-padding-x-md: var(--space-6);
   --container-padding-x-lg: var(--space-8);
 
-  /* Navbar */
-  --navbar-height: 64px;
+  --navbar-height: 68px;
 
-  /* Grid */
   --grid-gap: var(--space-6);
   --grid-gap-sm: var(--space-4);
   --grid-gap-lg: var(--space-8);
 
-  /* Column Counts */
   --grid-cols-1: 1;
   --grid-cols-2: 2;
   --grid-cols-3: 3;
   --grid-cols-4: 4;
 }
 
-/* Border Radius */
-/* ========================================================================== */
-:root {
-  --radius-none: 0;
-  --radius-sm: 0.25rem;    /* 4px */
-  --radius-md: 0.375rem;   /* 6px */
-  --radius-lg: 0.5rem;     /* 8px */
-  --radius-xl: 0.75rem;    /* 12px */
-  --radius-2xl: 1rem;      /* 16px */
-  --radius-full: 9999px;
-}
-
-/* Shadows */
-/* ========================================================================== */
-:root {
-  --shadow-none: none;
-  --shadow-sm: 0 2px 4px 0 rgba(18, 2, 16, 0.4);
-  --shadow-md: 0 4px 12px -2px rgba(18, 2, 16, 0.5), 0 2px 6px -1px rgba(18, 2, 16, 0.3);
-  --shadow-lg: 0 12px 24px -4px rgba(18, 2, 16, 0.6), 0 4px 12px -2px rgba(18, 2, 16, 0.4);
-  --shadow-xl: 0 20px 32px -6px rgba(18, 2, 16, 0.7), 0 8px 16px -4px rgba(18, 2, 16, 0.5);
-  --shadow-gold: 0 0 24px rgba(234, 170, 0, 0.28);
-}
-
-/* Transitions */
-/* ========================================================================== */
+/* ==========================================================================
+   Transitions & Animations
+   ========================================================================== */
 :root {
   --transition-fast: 150ms ease;
-  --transition-normal: 200ms ease;
-  --transition-slow: 300ms ease;
+  --transition-normal: 220ms ease;
+  --transition-slow: 350ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-/* Breakpoints - Mobile First */
-/* ========================================================================== */
+/* ==========================================================================
+   Breakpoints
+   ========================================================================== */
 :root {
-  --bp-sm: 480px;    /* Small mobile */
-  --bp-md: 640px;    /* Large mobile */
-  --bp-lg: 768px;    /* Tablet */
-  --bp-xl: 1024px;   /* Desktop */
-  --bp-2xl: 1280px;  /* Large desktop */
-  --bp-3xl: 1536px;  /* Wide desktop */
+  --bp-sm: 480px;
+  --bp-md: 640px;
+  --bp-lg: 768px;
+  --bp-xl: 1024px;
+  --bp-2xl: 1280px;
+  --bp-3xl: 1536px;
 }
 
-/* Z-Index Scale */
-/* ========================================================================== */
+/* ==========================================================================
+   Z-Index Scale
+   ========================================================================== */
 :root {
+  --z-bg-sketch: 0;
+  --z-base: 1;
   --z-dropdown: 100;
   --z-sticky: 200;
   --z-fixed: 300;
@@ -479,16 +300,15 @@
   --z-toast: 800;
 }
 
-/* Focus Styles */
-/* ========================================================================== */
+/* ==========================================================================
+   Focus Styles
+   ========================================================================== */
 :root {
-  --focus-ring-width: 2px;
-  --focus-ring-offset: 2px;
+  --focus-ring-width: 2.5px;
+  --focus-ring-offset: 3px;
   --focus-ring-color: var(--color-accent);
 }
 
-/* Reduced Motion */
-/* ========================================================================== */
 @media (prefers-reduced-motion: reduce) {
   :root {
     --transition-fast: 0ms;
@@ -496,14 +316,3 @@
     --transition-slow: 0ms;
   }
 }
-
-/* Media Query Helpers (for reference in JS if needed) */
-/* ========================================================================== */
-/*
-  @media (min-width: 480px)  { }  --bp-sm
-  @media (min-width: 640px)  { }  --bp-md
-  @media (min-width: 768px)  { }  --bp-lg
-  @media (min-width: 1024px) { }  --bp-xl
-  @media (min-width: 1280px) { }  --bp-2xl
-  @media (min-width: 1536px) { }  --bp-3xl
-*/

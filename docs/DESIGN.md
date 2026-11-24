@@ -1,728 +1,338 @@
-# Design Specification
-## Personal Engineering Portfolio
+# Personal Engineering Portfolio — Design Specification
 
 **Project:** Portfolio Build — Learn What the Problem Needs  
-**Document:** Design Specification  
-**Version:** 1.8  
-**Status:** Approved for V1.8 implementation
+**Document:** `DESIGN.md`  
+**Version:** 2.0  
+**Status:** Approved visual direction for the paper-and-pencil redesign  
+**Date:** 24 November 2026
 
 ---
 
 ## 1. Design Direction
 
-The portfolio should use the approved **Picto-style portfolio design direction** as its primary visual reference, based on:
+The portfolio is moving from the previous glassmorphism / 3D presentation to a **paper-and-pencil sketch aesthetic**.
 
-> https://khurramshafeeq.vercel.app/
+The visual reference is supplied at:
 
-The goal is **not to reproduce the reference site's content or identity**. The goal is to use its overall visual language as a starting point and adapt it to an engineering portfolio.
+`assets/reference/paper-pencil-sketch-reference.png`
 
-The resulting website should feel:
+The target feeling is a carefully composed engineering notebook or editorial sketchbook: warm textured paper, graphite linework, imperfect hand-drawn outlines, subtle pencil shading, and restrained crimson-red accents.
 
-- Clean.
-- Professional.
-- Modern.
-- Calm.
-- Technical without looking sterile.
-- Personal without becoming gimmicky.
-- Easy to scan.
-- Easy to maintain.
+The design must remain professional and readable. It should feel intentionally hand-crafted, not childish, messy, or like a generic hand-drawn website template.
 
-The portfolio is an **engineering portfolio, not a design showcase**. Visual design should support communication rather than compete with it.
+**Design north star:** keep the existing portfolio composition and make its surfaces feel like they were drawn and assembled on textured paper. The engineering work remains the subject.
 
----
+## 2. Scope and Non-Negotiable Decisions
 
-## 2. Core Visual Principle
+This is a **visual redesign, not a structural redesign**.
 
-### Fluidity, 3D Depth, and Calibrated Apple-Style Frosted Glass (Version 1.8)
-The website utilizes a unified Apple VisionOS-inspired frosted glass (glassmorphism) architecture calibrated for high foreground text legibility over a persistent, viewport-locked 3D WebGL scene:
-- **Global Fixed 3D Scene with Calibrated Direct GPU Blur**: The WebGL canvas is locked across the entire viewport (`position: fixed; inset: 0; z-index: 0; pointer-events: none;`) with native GPU blur `filter: blur(10px) saturate(140%)` directly on `.global-scene-container`. This keeps 3D geometries smoothly anti-aliased and visible without diffusing into oversized light clouds that engulf card typography.
-- **Deepened Card & Surface Backdrops (0.72–0.78 Opacity)**: Navigation, project cards, experience items, skill groups, and modals feature deepened backdrops (`rgba(35, 9, 32, 0.72)` in Royal, `0.78` in Cyber, `0.75` in Mocha, `0.75` in Emerald, and `0.78` in Carbon) to eliminate text washout and provide deep, readable backdrops meeting strict WCAG AAA contrast standards.
-- **Floating Glass Surfaces**: Cards preserve their floating elevation with specular top border (`1px solid rgba(221, 227, 232, 0.16)`), subtle inner rim light (`inset 0 1px 0 rgba(221, 227, 232, 0.16)`), and drop shadows (`0 12px 32px rgba(0, 0, 0, 0.35)`).
-- **Global Smooth Scroll**: Physics-based smooth scrolling via Lenis synchronized with the GSAP ticker.
-- **Strict 5-Preset 3-Color Architecture**: 5 cohesive color palettes strictly mapping base, secondary, and accent colors across the UI and 3D WebGL scene.
+### 2.1 Remove completely
 
-Do not build the design around:
-- Excessive opaque backgrounds that conceal the 3D depth layer.
-- Unstructured neon gradients or artificial terminal interfaces.
-- Unbounded 3D models that cause heavy frame drops or obstruct typography.
+1. **All 3D / WebGL presentation**
+   - Remove the persistent 3D background scene and all visible 3D geometry.
+   - Remove the `HeroScene` mount from `src/App.tsx` and remove its scene container/styles.
+   - Remove Three.js, React Three Fiber, Drei, and related type dependencies after confirming no remaining imports or usages.
+   - Do not replace the 3D scene with another canvas, WebGL effect, animated 3D object, or video background.
 
----
+2. **All glassmorphism**
+   - No `backdrop-filter`, frosted glass, blur-based panels, translucent glass cards, glass sheen, specular glass borders, or floating translucent layers.
+   - Cards, navigation, popovers, and modals must use solid, opaque paper-like surfaces.
+   - Remove obsolete glass-specific CSS tokens and effects rather than leaving dormant glass styling behind.
 
-## 3. Design Goals
+3. **All themes except Carbon**
+   - Carbon is the only theme and is permanently active by default.
+   - Remove Royal, Cyber, Mocha, and Emerald presets and the ability to switch themes.
+   - Remove the theme selector UI and theme-selection persistence from `localStorage`.
+   - Do not show a Carbon selector or a one-option theme menu. The single theme should simply be the site's design system.
+   - Keep one predictable root theme identifier if the current CSS architecture needs it, but it must always resolve to Carbon.
 
-The visual design should help the visitor answer these questions quickly:
+### 2.2 Preserve exactly
 
-1. Who is Dipankar?
-2. What does he build?
-3. What has he actually built?
-4. What is he currently learning or exploring?
-5. How can I inspect his work or contact him?
+The following are not part of the redesign scope and must remain structurally unchanged:
 
-The design should therefore prioritize:
+- React + TypeScript + Vite application architecture.
+- Existing `App` composition and section order:
+  1. Navigation
+  2. Hero
+  3. About
+  4. Projects
+  5. Experience
+  6. Skills
+  7. Education
+  8. Learning
+  9. Contact
+  10. Footer
+- Existing section/component boundaries and data-driven content approach.
+- Current content order, component positioning, container widths, grid structure, card count per row, section spacing, alignment, and responsive layout geometry.
+- Existing navigation destinations, anchors, project interactions/modal behavior, external links, email action, resume action, and mobile navigation behavior.
+- Existing structured data and project/experience content unless a separate content change is explicitly requested.
+- Existing accessibility behavior and responsive breakpoints.
+- Existing non-3D motion only where it is already used, works correctly, and remains subtle. Do not add a new animation framework.
 
-- Typography and hierarchy.
-- Whitespace.
-- Clear section separation.
-- Readable project information.
-- Strong calls to action.
-- Consistent spacing.
-- Responsive behavior.
-- Fast visual comprehension.
+**Do not rearrange, reorder, resize, or redesign the information architecture to imitate the reference screenshot.** Use the reference for material, texture, illustration, and linework only.
 
----
+## 3. Reference Interpretation
 
-## 4. Overall Layout
+Study the reference screenshot for these visual characteristics:
 
-The website should primarily use a **single-page portfolio structure** for V1.
+- Warm off-white paper rather than a flat digital background.
+- Fine paper grain and a lightly aged / natural paper tone.
+- Graphite pencil drawings and low-contrast sketch illustrations.
+- Uneven, hand-drawn card outlines rather than perfectly geometric UI borders.
+- Slightly offset pencil shadows that make cards look drawn on paper.
+- Restrained hand-lettered character while keeping all copy easy to read.
+- A coherent monochrome pencil treatment with a small amount of accent color.
 
-The page should feel like a long, well-organized document rather than a sequence of unrelated screens.
+Do **not** copy the reference site's identity or structure. In particular, do not copy its travel content, mountain-page layout, card grid, navigation arrangement, icon rail, text, labels, or browser chrome. Do not use the whole screenshot as a live page background. It is a style reference, not a production asset.
 
-Recommended order:
+Any added sketch illustration should be original, subtle, locally stored, and placed only where it does not alter the current layout or compete with content. A few contextual pencil accents are better than filling every empty space.
 
-```text
-Navigation
-    ↓
-Hero / Introduction
-    ↓
-About
-    ↓
-Selected Projects
-    ↓
-Experience / Education / Leadership
-    ↓
-Current Focus / Learning
-    ↓
-Skills / Capabilities
-    ↓
-Contact
-    ↓
-Footer
+## 4. Carbon Palette Adapted for Paper
+
+Carbon remains the only palette identity. The warm paper colors below are **surface/material neutrals**, not a second selectable theme.
+
+| Role | Suggested value | Use |
+|---|---:|---|
+| Carbon / primary ink | `#2A2A2A` | Main text, strong outlines, icons, structural marks |
+| Silver graphite | `#C0C0C0` | Secondary strokes, light sketch details, subdued dividers |
+| Crimson accent | `#E10600` | Primary emphasis, active states, selected details, retained red glow |
+| Paper background | `#F2F0E9` | Main page canvas |
+| Paper surface | `#F8F6F0` | Cards, navigation, modal and other content surfaces |
+| Highlight paper | `#FFFEFA` | Small raised surfaces or input interiors where needed |
+| Secondary ink | `#4A4946` | Supporting body copy |
+| Muted graphite | `#706D66` | Metadata and lower-priority copy |
+| Pencil line | `#615D56` | Normal hand-drawn outlines |
+| Light pencil line | `#B8B2A7` | Subtle separators and secondary sketch marks |
+
+Suggested CSS custom properties (adapt names to the existing token system):
+
+```css
+:root,
+[data-theme="carbon"] {
+  color-scheme: light;
+
+  --color-base: #2A2A2A;
+  --color-secondary: #C0C0C0;
+  --color-accent: #E10600;
+  --color-accent-hover: #C90B05;
+
+  --color-background: #F2F0E9;
+  --color-surface: #F8F6F0;
+  --color-surface-elevated: #FFFEFA;
+
+  --color-text-primary: #2A2A2A;
+  --color-text-secondary: #4A4946;
+  --color-text-muted: #706D66;
+  --color-text-inverse: #FFFFFF;
+
+  --color-border: #8A857C;
+  --color-border-strong: #615D56;
+  --color-focus: #E10600;
+
+  --paper-shadow: 2px 3px 0 rgba(42, 42, 42, 0.16),
+                  0 7px 14px rgba(42, 42, 42, 0.07);
+  --paper-shadow-hover: 3px 5px 0 rgba(42, 42, 42, 0.20),
+                        0 9px 18px rgba(42, 42, 42, 0.10),
+                        0 0 13px rgba(225, 6, 0, 0.16);
+  --red-glow: 0 0 8px rgba(225, 6, 0, 0.24),
+              0 0 18px rgba(225, 6, 0, 0.12);
+}
 ```
 
-The exact ordering may be adjusted during implementation if user testing or content hierarchy suggests a better flow, but the page must remain straightforward.
+The values are a coherent starting point, not permission to reduce contrast. Adjust individual tokens after checking actual foreground/background combinations. Normal text must target at least WCAG AA contrast (4.5:1); large text and meaningful UI graphics must meet applicable AA contrast requirements.
 
----
+### Color behavior
 
-## 5. Navigation
+- The overall page should be light paper with dark graphite text.
+- Silver is a supporting pencil/metallic grey, not the default text color on paper.
+- Red is the sole vivid accent. Do not introduce gold, cyan, pink, green, purple, or rainbow gradients.
+- Red glow is a restrained interaction accent, not a permanent neon halo around every component.
+- Avoid large red filled areas. Use red to guide attention, not dominate the page.
 
-### Desktop
+## 5. Paper Background and Texture
 
-Use a compact top navigation inspired by the reference design.
+The whole page should read as a continuous sheet or drawing surface.
 
 Requirements:
 
-- Simple horizontal navigation.
-- Personal mark/name on the left.
-- Section links on the right or center/right area.
-- One clear primary action where appropriate.
-- Navigation remains visually lightweight.
-- Sticky navigation is allowed if it does not consume excessive space.
+- Use a warm off-white paper base (`--color-background`).
+- Add very subtle, fine grain using lightweight CSS gradients or a small local texture asset.
+- Texture must remain low-contrast and must not interfere with text, screenshots, diagrams, or icons.
+- Use a fixed or section-level texture layer only if it does not affect scrolling, hit-testing, rendering performance, or text selection.
+- Keep the same page background treatment through the entire portfolio so sections still feel like one coherent document.
+- Do not use a large photographic paper scan, a full-screen video, an animated particle layer, or a heavy filter.
 
-Suggested links:
+A faint pencil illustration may sit near the outer edges or behind a low-density area. It must not change the existing content bounds or conceal text. On mobile, decorative artwork may be reduced or hidden to preserve reading space.
 
-```text
-Home
-About
-Projects
-Experience
-Contact
-```
+## 6. Pencil Borders and Shadows
 
-GitHub and LinkedIn may appear as icon/text links in the navigation or hero rather than taking up multiple navigation slots.
+**Every existing visible UI border should adopt the pencil-sketch treatment.** This includes, where currently present:
 
-### Mobile
+- Navigation and mobile menu boundaries.
+- Project cards and modal/dialog boundaries.
+- Experience and education entries.
+- Skill groups and tags/chips that already have borders.
+- Buttons, inputs, and other controls.
+- Contact panels and bordered section details.
+- Separators and horizontal rules.
 
-Use a simple mobile navigation pattern.
+### Border character
 
-Avoid oversized navigation panels or elaborate menu animations.
+- Use graphite / pencil-grey lines, not perfect bright-white or glass-specular strokes.
+- Introduce controlled imperfection: slightly uneven stroke weight, tiny corner irregularities, or a very slightly offset secondary stroke.
+- Use irregular but restrained corner radii (for example, small non-identical values) instead of large, smooth pill-like rounding on rectangular surfaces.
+- A second faint outline or pseudo-element may be offset by 1–2px and rotated by a fraction of a degree to suggest a second pencil pass.
+- The imperfect effect must not distort the element's dimensions, hit area, alignment, or layout.
+- Use a short, graphite-like offset shadow beneath the outline. Prefer a directional pencil shadow over the previous large glass elevation shadow.
+- Keep linework delicate enough that dense sections do not become visually noisy.
 
----
+### Implementation guidance
 
-## 6. Hero Section
+Prefer reusable CSS tokens and a shared border treatment. A combination of a subtle solid border, a pseudo-element with an irregular outline, and a small offset shadow is acceptable. Use SVG stroke/path assets only where they provide a clear advantage. Do not rasterize entire UI components to achieve this effect.
 
-The hero is the most important visual area after navigation.
+Do not apply random transforms to the actual card/button boxes. If slight rotation is used, apply it to a decorative outline layer only. The content box and layout geometry must stay fixed.
 
-It should communicate identity immediately, not overwhelm the visitor with information.
+## 7. Red Glow — Preserve the Existing Accent
 
-### Required content
+Retain the previous Carbon red glow character, adapted to the paper design.
 
-- Name.
-- Professional positioning.
-- Core philosophy.
-- Short supporting sentence.
-- Primary action(s).
+Use it selectively for:
 
-The central statement should be visually dominant:
+- Hovered project cards or other clearly interactive cards.
+- Primary CTA hover/active states.
+- Active navigation indication where appropriate.
+- Selected controls and visible keyboard focus states.
+- The project modal's active/interactive edges only if it improves clarity.
 
-> **I learn what the problem needs and build it.**
+The glow should be a soft crimson aura close to the graphite outline. It must not look like a neon gaming interface. Default resting cards should primarily show graphite stroke and pencil shadow, not a strong red glow.
 
-This statement should feel like the portfolio's identity rather than a decorative slogan.
+Keyboard focus must remain visible without relying on glow alone. Preserve a clear focus outline and sufficient contrast.
 
-### Visual behavior
+## 8. Typography
 
-The hero should use strong typography and generous whitespace.
+Typography should retain the current hierarchy and text sizes as closely as possible.
 
-Avoid:
+- Keep body text in a highly readable system sans-serif stack.
+- A restrained hand-lettered/display typeface may be used for selected headings or small labels only if it is already available locally or can be added with an explicit, lightweight, properly licensed font asset.
+- Do not use a novelty handwritten font for long paragraphs, project descriptions, dates, dense metadata, or navigation body copy.
+- Do not make the text imitate the reference's intentionally distorted / placeholder wording. All existing portfolio content must remain accurate and legible.
+- Preserve current heading hierarchy, font sizing, line lengths, and responsive type behavior unless a small adjustment is needed to maintain contrast or prevent overflow.
 
-- Full-screen video backgrounds.
-- Huge animated illustrations.
-- Overly complex hero graphics.
-- Generic stock imagery.
+## 9. Component Appearance
 
-A small visual detail, subtle shape, technical accent, or understated graphic is acceptable if it supports the identity.
+### Navigation
 
----
+- Preserve its current position, dimensions, links, and responsive behavior.
+- Replace glass/blur with an opaque paper surface or the existing paper canvas.
+- Use a graphite hand-drawn lower edge or outline where a border already exists.
+- Preserve a clear active link state; a short crimson pencil underline is acceptable.
+- Do not move navigation items or add the reference's extra icon rail/search controls.
 
-## 7. Typography
+### Hero
 
-Typography should carry most of the visual hierarchy.
+- Preserve the existing hero composition, text alignment, CTA positions, and spacing.
+- Remove the 3D scene entirely.
+- Use the paper texture and, only if it fits without changing geometry, one low-contrast pencil illustration as a supporting detail.
+- Do not add a new full-screen illustration, 3D replacement, or video.
 
-### Characteristics
+### Cards and project details
 
-Use a modern, highly readable sans-serif family.
+- Keep current card size, order, grid, image aspect ratio, content positions, and modal behavior.
+- Use opaque paper surfaces with pencil borders and a restrained graphite shadow.
+- Keep project screenshots crisp and unfiltered; do not put paper texture over screenshot content.
+- Use red accents for actionable links, selected details, or hover feedback only.
 
-Prioritize:
+### Timeline, skills, education, and contact
 
-- Strong heading hierarchy.
-- Comfortable paragraph width.
-- Clear line height.
-- Noticeable difference between heading and body text.
-- Consistent font weights.
+- Preserve current structure and positioning.
+- Apply the same paper/graphite visual language to existing borders and dividers.
+- Keep status and metadata readable. Do not turn every label into a decorative stamp.
 
-### Suggested hierarchy
+### Modal, dropdowns, and mobile menu
 
-```text
-Display / Hero:     very large, bold
-Section heading:    large, bold/semi-bold
-Project title:      medium/large, semi-bold
-Body:               comfortable regular size
-Metadata:           small/medium, subdued
-Labels:             small, medium/semi-bold
-```
+- Use solid paper surfaces; no translucent blur panels.
+- Preserve keyboard behavior, focus management, dismissal behavior, and scroll containment.
+- Keep the same interaction model and approximate dimensions.
 
-Do not use many different font families or decorative display fonts.
+### Buttons and fields
 
-A single primary typeface with a restrained weight system is preferred.
+- Use graphite pencil outlines and a small offset paper shadow.
+- Keep the current button hierarchy and dimensions.
+- Maintain clearly distinguishable primary, secondary, disabled, hover, active, and focus states.
+- Inputs must remain easy to identify against the paper background.
 
----
+## 10. Motion and Interaction
 
-## 8. 5-Preset Color Theme Architecture & Glass Surface Hierarchy
+The new visual identity should not become an animation showcase.
 
-The portfolio implements a dynamic **5-Preset 3-Color Theme Architecture**. Each theme strictly uses all 3 of its assigned colors across frosted glass surfaces, typography/borders, interactive elements, and the live 3D WebGL background (`HeroScene.tsx`):
+- Remove all animation and interaction tied to the 3D scene.
+- Existing non-3D motion may remain if it is already part of the experience and does not alter layout, interfere with input, or reduce accessibility.
+- Prefer small opacity/position transitions, gentle card lift, and brief pencil/red feedback over large transformations.
+- Do not add scroll hijacking, continuous motion, cursor-following doodles, animated grain, or loading theatrics.
+- Respect `prefers-reduced-motion: reduce` and retain normal scrolling and interaction.
+- Keep native mobile scrolling and touch behavior reliable.
 
-### 5 Curated Theme Presets
+## 11. Layout and Responsive Behavior
 
-```text
-1. 'royal' (Default):   #3A0F34 (Deep Purple)   + #DDE3E8 (Light Grey-Blue) + #EAAA00 (Regal Gold)
-2. 'cyber':             #0A0A0A (Cyber Black)   + #007BA7 (Cerulean Cyan)   + #FF2D95 (Neon Pink)
-3. 'mocha':             #6F4E37 (Warm Mocha)    + #E5E4E2 (Platinum Silver) + #E6E0F0 (Pale Lilac)
-4. 'emerald':           #046A38 (Forest Emerald)+ #F9EBD7 (Antique Linen)   + #E34222 (Flame Orange)
-5. 'carbon':            #2A2A2A (Carbon Charcoal)+ #C0C0C0 (Pure Silver)    + #E10600 (Crimson Red)
-```
+The layout is explicitly **locked** for this redesign.
 
-### Color Roles & Semantics Per Theme
+- Preserve the current max-width container, gutters, navbar height, section order, section spacing, grid columns, card proportions, alignment, and placement.
+- Preserve existing breakpoints and mobile stacking rules.
+- Do not copy the reference screenshot's two-column travel card layout.
+- Do not introduce sidebars, new floating navigation, extra sections, or new fixed UI elements.
+- Avoid decorative elements that expand the layout or cause content to shift.
+- No horizontal overflow at mobile, tablet, laptop, or desktop widths.
+- If a sketch decoration conflicts with readability at a smaller viewport, hide or simplify that decoration rather than moving the content.
 
-Every theme triplet maps cleanly into 3 structural roles:
+## 12. Accessibility and Performance
 
-1. **Role 1: Base Background & Authentic Glass Surface (`--color-base` / `--color-background` / `--glass-bg`)**:
-   - Deep foundation color for the HTML `body` and ambient 3D scene lighting.
-   - Calibrated 10px GPU blur on background container (`.global-scene-container`) so 3D background geometries remain smooth without bleeding into wide light clouds.
-   - Deepened frosted glass panels (`0.72 - 0.78` opacity, e.g., `rgba(35, 9, 32, 0.72)` in Royal) eliminating text washout while allowing 3D shapes to softly emerge behind cards.
-   - In Royal: `#3A0F34` | Cyber: `#0A0A0A` | Mocha: `#6F4E37` | Emerald: `#046A38` | Carbon: `#2A2A2A`.
+- Preserve semantic HTML, keyboard access, labels, alt text, and visible focus.
+- Maintain sufficient contrast on the light paper surfaces.
+- Do not encode status or important meaning by color alone.
+- Make decorative pencil art `aria-hidden="true"` and non-interactive.
+- Keep textures and decorative assets lightweight and local.
+- Avoid costly full-page filters, large images, repeated SVG filter effects, or canvas rendering.
+- Keep screenshots and informative images free from overlays that reduce clarity.
 
-2. **Role 2: Primary Text, Glass Specular Borders & 3D Wireframes (`--color-secondary` / `--color-border-strong`)**:
-   - Primary readable typography and card specular borders (`var(--glass-border)`).
-   - 3D wireframe geometric meshes and secondary point light in the WebGL scene.
-   - For Cyber and Carbon, high-contrast tints (`#EAF6FA` and `#F2F2F2`) ensure strict WCAG AAA readability against ultra-dark bases, while `#007BA7` and `#C0C0C0` remain prominent across glass borders, badges, subheadings, and 3D wireframe lines.
-   - In Royal: `#DDE3E8` | Cyber: `#007BA7` (text: `#EAF6FA`) | Mocha: `#E5E4E2` | Emerald: `#F9EBD7` | Carbon: `#C0C0C0` (text: `#F2F2F2`).
+## 13. Design Tokens and CSS Discipline
 
-3. **Role 3: Interactive Accents, Button Fills, Hover Glows & 3D Solids (`--color-accent`)**:
-   - Primary button backgrounds, active nav links, hover states, selection, and focus rings.
-   - Solid 3D geometric meshes (Torus Knot, Icosahedron, Octahedron) and primary directional key light.
-   - Hover border glow on glass cards (`var(--glass-shadow-hover)` and `var(--color-btn-glow)`).
-   - Button text (`--color-btn-primary-text`) is strictly contrasted against the accent fill (e.g., `#3A0F34` in Royal, `#0A0A0A` in Cyber, `#6F4E37` in Mocha, `#F9EBD7` in Emerald, `#FFFFFF` in Carbon) to satisfy WCAG AAA standards.
-   - In Royal: `#EAAA00` | Cyber: `#FF2D95` | Mocha: `#E6E0F0` | Emerald: `#E34222` | Carbon: `#E10600`.
+Centralize paper, ink, graphite, pencil-shadow, red-accent, and focus tokens in the existing variable system. Remove obsolete theme-specific and glass-specific tokens once no longer referenced.
 
-### Live 3D WebGL Background Reactivity
+Do not create a second CSS architecture or rewrite all stylesheets. Reuse existing global and component stylesheets. Keep selectors explicit and scoped; avoid broad overrides that unexpectedly affect unrelated controls.
 
-`HeroScene.tsx` dynamically subscribes to `useTheme()`. Whenever the theme changes:
-- **Ambient & Rim Lights**: Dynamically set to the theme's **Base color** (`color={baseColor}`).
-- **Wireframe Geometries & Secondary Point Light**: Dynamically set to the theme's **Secondary color** (`color={secondaryColor}`).
-- **Solid Geometries, Directional Key Light & Center Glow**: Dynamically set to the theme's **Accent color** (`color={accentColor}`).
-This guarantees that all 3 colors of the triplet are visibly alive in the background on every page.
+## 14. Explicit Anti-Patterns
 
-### Navigation Theme Selector
+Do not introduce:
 
-`ThemeSelector.tsx` renders an Apple VisionOS frosted glass pill button:
-- Displays a 3-color swatch cluster representing the active theme's `base`, `secondary`, and `accent` colors.
-- Clicking the pill opens a keyboard-accessible glass popover (`role="menu"`) previewing all 5 presets with instant one-click switching.
-- Persists user selection to `localStorage` under `'portfolio-color-theme'` and synchronizes `document.documentElement.setAttribute('data-theme', theme)` and `<meta name="theme-color">`.
+- Three.js, WebGL, React Three Fiber, Drei, or any 3D scene.
+- Glassmorphism, blur panels, translucent glass cards, or frosted navigation.
+- Multiple color themes, theme switching, or a theme selector.
+- Neon gamer aesthetics, glowing red outlines on every resting component, or rainbow gradients.
+- Excessive hand-drawn decoration, messy scribbles, or sketch fonts for body copy.
+- A full-page screenshot or stock photo as the background.
+- New sidebars, page sections, navigation elements, or content-grid changes.
+- New dependencies solely for texture, border distortion, illustration, or animation.
 
----
+## 15. Acceptance Criteria
 
-## 9. Spacing and Whitespace
+The redesign is accepted when:
 
-Whitespace is a major part of the design.
-
-Sections should have enough vertical separation to feel distinct without making the page unnecessarily long.
-
-Use a consistent spacing scale throughout the application.
-
-Prefer a predictable progression such as:
-
-```text
-Small gap       → related content
-Medium gap      → component separation
-Large gap       → section separation
-Extra-large     → major page transition
-```
-
-Avoid arbitrary margins and one-off spacing values whenever possible.
-
----
-
-## 10. Content Width and Grid
-
-Use a centered content container with a comfortable maximum width.
-
-The layout should feel similar to a modern editorial or portfolio grid rather than a full-width dashboard.
-
-Recommended principles:
-
-- Keep large text from becoming excessively wide.
-- Use a consistent left/right page margin.
-- Use a responsive multi-column grid for project cards.
-- Collapse gracefully on tablets and mobile devices.
-
-A roughly 1100–1200px desktop content width is appropriate, but implementation may adjust this slightly based on the chosen CSS system.
+1. The page has a clear, warm paper texture and a coherent pencil-sketch visual language.
+2. Cards, controls, navigation boundaries, and existing visible borders use subtle, irregular graphite strokes with restrained pencil shadows.
+3. The Carbon identity is the only available theme; no theme selector or theme persistence remains.
+4. The red accent and its restrained hover/focus glow are retained.
+5. No 3D/WebGL scene or glassmorphism treatment remains.
+6. The current portfolio layout, section order, component architecture, positioning, and responsive geometry are preserved.
+7. Existing content, links, navigation, project modal behavior, and other interactions still work.
+8. Text and project screenshots remain crisp and readable.
+9. Mobile, tablet, laptop, and desktop layouts remain functional without horizontal overflow.
+10. Reduced-motion and keyboard-focus behavior remain accessible.
+11. `npm run build` passes, and the implementation agent reports exactly what was and was not verified.
 
 ---
 
-## 11. Sections
-
-## 11.1 About
-
-The About section should be compact and readable.
-
-Do not create a large wall of biography text.
-
-Use:
-
-- Short paragraphs.
-- Clear subheadings where useful.
-- Small supporting metadata when helpful.
-
-The visual style should make the section feel approachable while remaining professional.
-
----
-
-## 11.2 Projects
-
-Projects are the **primary visual focus of the portfolio**.
-
-The project section should borrow the reference site's clean card/grid approach but adapt it to software projects.
-
-Each project card should provide:
-
-- Project name.
-- Short problem/solution-oriented description.
-- Technology/category metadata.
-- Status where relevant.
-- Visual preview if available.
-- A clear interaction for viewing more details.
-
-### Project card principles
-
-Cards should not become miniature resumes.
-
-The card should answer:
-
-> What is this, and why should I look at it?
-
-Then a project detail view/page can contain the deeper explanation.
-
-### Project status
-
-Use subtle status labels such as:
-
-```text
-Completed
-Ongoing
-Prototype
-Experimental
-Learning
-```
-
-Do not make status labels visually louder than the project itself.
-
----
-
-## 11.3 Experience / Education / Leadership
-
-Use a simple timeline, stacked entry list, or clean two-column layout.
-
-Avoid overly decorative timelines.
-
-Each entry should prioritize:
-
-- Organization.
-- Role.
-- Dates.
-- Concise description.
-- Meaningful responsibilities or outcomes.
-
-The design should make scanning easy.
-
----
-
-## 11.4 Current Focus / Learning
-
-This section should visually communicate that the portfolio is evolving.
-
-It can use a compact list or small cards for current areas such as:
-
-```text
-Currently building
-Currently learning
-Currently exploring
-```
-
-The design must distinguish current exploration from established professional experience.
-
----
-
-## 11.5 Skills / Capabilities
-
-Skills should not dominate the page.
-
-Avoid large walls of technology badges.
-
-Prefer grouped, readable categories such as:
-
-```text
-Programming
-Software Development
-Data & Analytics
-AI / ML
-Databases
-Tools
-```
-
-Technology names should be presented as supporting information, not as the primary visual identity.
-
----
-
-## 11.6 Contact
-
-The contact section should be simple and obvious.
-
-Prioritize:
-
-- Email.
-- GitHub.
-- LinkedIn.
-- Resume.
-
-A functional contact form may be added later, but V1 does not require a backend-powered form.
-
-Avoid making the user complete unnecessary fields just to reach the owner.
-
----
-
-## 12. Buttons and Links
-
-Buttons should be visually simple and consistent.
-
-Use a clear hierarchy:
-
-### Primary
-
-For the most important action, such as:
-
-- View projects.
-- Contact me.
-- View resume.
-
-### Secondary
-
-For supporting actions, such as:
-
-- GitHub.
-- Live demo.
-- Read more.
-
-### Text links
-
-Use for low-priority navigation or inline references.
-
-Buttons should have:
-
-- Clear labels.
-- Comfortable click targets.
-- Obvious hover/focus states.
-- Consistent border radius.
-- No unnecessary visual effects.
-
----
-
-## 13. Cards & Glass Panels
-
-Cards and interactive containers follow an **Apple VisionOS-style frosted glass panel** architecture:
-
-### Panel Specifications (Version 1.8 Calibration):
-- **Background**: Deep card backdrop with high contrast (`var(--color-surface-glass)`, `0.72 - 0.78` opacity across themes; e.g., `rgba(35, 9, 32, 0.72)` in Royal)
-- **Scene GPU Blur**: `10px` direct GPU blur with `saturate(140%)` on the background canvas container
-- **Specular Border**: `1px solid rgba(221, 227, 232, 0.16)`
-- **Inner Highlight & Shadow**: `box-shadow: 0 12px 32px 0 rgba(0, 0, 0, 0.35), inset 0 1px 0 0 rgba(221, 227, 232, 0.16)`
-- **Hover State**: Gentle float-up (`transform: translateY(-4px to -6px) scale(1.015)`), specular gold border transition (`border-color: var(--glass-border-hover)`), and outer glow (`box-shadow: var(--glass-shadow-hover)`)
-
-### Scope of Glass Panels:
-- Selected Projects (`.project-card`)
-- Experience Timeline entries (`.experience-entry`)
-- Skill Groups (`.skill-group`)
-- Education entries (`.education-entry`)
-- Primary Contact CTA (`.contact-primary`)
-- Sticky Navigation header (`.navbar`) and Mobile Drawer (`.mobile-menu`)
-- Project Detail Dialog (`.modal`)
-
-Avoid:
-- Completely opaque surface backgrounds that occlude the background 3D depth layer.
-- Overly strong, muddy shadows that reduce contrast.
-- Rainbow border gradients that violate the 3-color palette.
-
----
-
-## 14. Imagery
-
-Images should serve a purpose.
-
-Preferred imagery:
-
-- Screenshots of real applications.
-- Project interfaces.
-- Architecture diagrams where useful.
-- Relevant technical visuals.
-
-Avoid generic developer stock images.
-
-Project screenshots should be displayed consistently and should not be stretched or distorted.
-
-Images should have appropriate `alt` text.
-
----
-
-## 15. Animation, 3D, and Interaction
-
-Animation should be **fluid, cinematic, and deeply responsive**.
-
-### Motion & Physics Stack:
-- **Global Smooth Scroll**: Powered by `lenis` (`SmoothScrollProvider` in `src/components/motion/SmoothScroll.tsx`) synchronized with the GSAP ticker. Preserves native mobile touch functionality (`touchMultiplier: 1.5`).
-- **Scroll Animations**: `gsap` + `ScrollTrigger` for project cards and experience timeline reveals, subtle scale-up, and parallax shifts as they enter the viewport.
-- **Micro-Interactions & Entrances**: `framer-motion` for staggered hero float-up entrances and magnetic cursor pull (`src/components/motion/Magnetic.tsx`) with `#EAAA00` gold active hover states.
-- **Persistent Global 3D WebGL Layer**: Built with `three`, `@react-three/fiber`, and `@react-three/drei` in `src/sections/Hero/HeroScene.tsx`, mounted at the root level in `src/App.tsx`. Renders floating metallic and wireframe geometric shapes with individual self-spin and scroll-driven tumble. The 3D container `.global-scene-container` uses direct GPU blur `filter: blur(10px) saturate(140%)` for smooth anti-aliased depth without oversized light halos.
-
-### Performance and Accessibility Constraints:
-- Global 3D WebGL canvas must sit securely in the background (`position: fixed; inset: 0; z-index: 0; pointer-events: none;`) with all content floating on top in `.app-wrapper` (`position: relative; z-index: 1;`).
-- WebGL must be wrapped in an ErrorBoundary (`WebGLErrorBoundary`) with graceful CSS fallback if WebGL fails to initialize.
-- Native mouse-wheel and touch scrolling within modals is strictly preserved using `data-lenis-prevent="true"`, `overscroll-behavior: contain`, and bounded `max-height: 85vh`.
-- Strictly respect `prefers-reduced-motion: reduce` by disabling smooth scroll and animations, keeping the layout accessible and functional.
-
----
-
-## 16. Responsive Design
-
-The design must work cleanly across:
-
-- Large desktop.
-- Standard laptop.
-- Tablet.
-- Mobile phone.
-
-Responsive behavior should be designed intentionally rather than simply shrinking the desktop layout.
-
-### Desktop
-
-Use the full grid and spacious composition.
-
-### Tablet
-
-Reduce column counts and horizontal spacing while preserving hierarchy.
-
-### Mobile
-
-Prioritize:
-
-- Readability.
-- Large tap targets.
-- Simple navigation.
-- One-column content flow.
-- Proper image sizing.
-- No horizontal scrolling.
-
-The mobile experience is a first-class layout, not an afterthought.
-
----
-
-## 17. Accessibility
-
-Accessibility is part of the design requirements.
-
-The implementation should include:
-
-- Semantic HTML where applicable.
-- Keyboard navigation.
-- Visible focus states.
-- Adequate color contrast.
-- Descriptive link labels.
-- Alternative text for meaningful images.
-- Respect for reduced-motion preferences.
-- Appropriate heading hierarchy.
-
-Do not sacrifice readability for visual minimalism.
-
----
-
-## 18. Performance Philosophy
-
-The website should feel fast and lightweight.
-
-Design decisions should avoid unnecessary performance costs.
-
-Prefer:
-
-- Optimized images.
-- Limited client-side effects.
-- Small dependency footprint.
-- Lazy loading where appropriate.
-- Simple CSS transitions.
-
-Avoid loading large libraries solely for small decorative effects.
-
----
-
-## 19. Content Tone
-
-The visual design must support a tone that is:
-
-- Confident but not arrogant.
-- Technical but understandable.
-- Honest.
-- Curious.
-- Personal but professional.
-- Growth-oriented.
-
-Avoid marketing-heavy language such as:
-
-- "World-class developer."
-- "10x engineer."
-- "Expert in everything."
-- Unsupported performance claims.
-
-The design should leave enough space for real evidence to speak for itself.
-
----
-
-## 20. What the Design Should NOT Become
-
-The implementation must not drift into a generic developer portfolio aesthetic.
-
-Avoid patterns such as:
-
-- Neon green + black hacker themes.
-- Terminal-as-hero layouts.
-- Endless skill badges.
-- GitHub contribution walls as the main content.
-- Generic AI imagery.
-- Excessive typing animations.
-- Fake system dashboards.
-- 3D developer avatars.
-- Decorative code blocks without purpose.
-- Huge collections of technology logos.
-
-Technical identity should come from **real projects and content**, not decoration.
-
----
-
-## 21. Reference-to-Implementation Rule
-
-Use the approved reference design for **visual direction**, not literal copying.
-
-### Preserve the general feel
-
-- Clean portfolio layout.
-- Strong typography.
-- Generous whitespace.
-- Clear navigation.
-- Structured project grid.
-- Simple CTA treatment.
-- Responsive composition.
-- Professional visual rhythm.
-
-### Change the content model
-
-The portfolio must be redesigned around:
-
-- Software engineering.
-- Applications built.
-- Technical projects.
-- Engineering decisions.
-- Learning and experimentation.
-- Professional growth.
-
-Do not copy:
-
-- The reference site's copy.
-- Its personal branding.
-- Its service descriptions.
-- Its testimonials.
-- Its client statistics.
-- Its placeholder content.
-- Any unrelated freelancer-oriented sections.
-
----
-
-## 22. V1 Visual Priority
-
-When trade-offs are necessary, use this priority order:
-
-```text
-1. Readability
-2. Navigation / usability
-3. Project presentation
-4. Responsive behavior
-5. Accessibility
-6. Consistent spacing and typography
-7. Subtle visual polish
-8. Decorative effects
-```
-
-Decorative effects must never outrank content clarity or functionality.
-
----
-
-## 23. V1 Design Acceptance Criteria
-
-The design is successful when:
-
-- The visitor understands who Dipankar is within a few seconds.
-- The core philosophy is immediately visible.
-- Projects are the strongest evidence of capability.
-- The site does not feel overloaded.
-- The site does not look like a generic developer template.
-- The site looks professional without pretending to be a design showcase.
-- Navigation is obvious.
-- Every major section has clear hierarchy.
-- The site remains comfortable to read on mobile.
-- Animations are subtle rather than distracting.
-- New projects can be added without breaking the visual system.
-- The final implementation feels like an engineer's portfolio rather than a marketing landing page.
-
----
-
-## 24. Design North Star
-
-When a design decision is unclear, return to this principle:
+## 16. Design Principle
 
 > **The website should make the work memorable, not the website itself.**
 
-The design exists to make Dipankar's engineering work easier to understand, explore, and trust.
+The paper-and-pencil treatment is a visual material change, not a reason to change the portfolio's structure or make its content harder to read.

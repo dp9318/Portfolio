@@ -2,8 +2,9 @@
 ## Personal Engineering Portfolio — Dipankar Kumar
 
 **Document:** ARCHITECTURE.md  
-**Version:** 1.0  
-**Status:** Initial architecture specification
+**Version:** 2.0  
+**Status:** V2.0 Architecture specification (Paper & Pencil Redesign)  
+**Date:** 24 November 2026
 
 This document defines the technical structure of the portfolio application.
 

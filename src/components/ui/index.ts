@@ -6,3 +6,4 @@ export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter, 
 export { Tag, type TagProps, type TagVariant, type TagSize } from './Tag';
 export { Link, type LinkProps } from './Link';
 export { Section, Container, Heading, type SectionProps, type ContainerProps, type HeadingProps } from './Section';
+export { ScrollToTop } from './ScrollToTop';

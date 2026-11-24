@@ -42,14 +42,24 @@ export function SkillsSection() {
         Skills reflect current, defensible capabilities rather than every technology I've encountered.
       </div>
 
-      <div className="mt-8">
-        <Heading level={3} variant="subsection">
-          Working Strengths
-        </Heading>
-        <div className="strengths-list">
-          {workingStrengths.map((strength: string, i: number) => (
-            <span key={i} className="strength-chip">{strength}</span>
-          ))}
+      <div className="working-strengths-section">
+        <div className="working-strengths-header">
+          <Heading level={3} variant="subsection" className="working-strengths-title">
+            Working Strengths
+          </Heading>
+          <span className="working-strengths-subtitle">
+            // Core engineering habits &amp; cognitive approach
+          </span>
+        </div>
+        <div className="working-strengths-card">
+          <div className="strengths-list">
+            {workingStrengths.map((strength: string, i: number) => (
+              <span key={i} className="strength-chip">
+                <span className="strength-chip-bullet" aria-hidden="true">&#x25C7;</span>
+                {strength}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </Section>

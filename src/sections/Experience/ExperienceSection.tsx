@@ -34,6 +34,7 @@ export function ExperienceSection() {
             scale: 1,
             duration: 0.8,
             ease: 'power3.out',
+            clearProps: 'transform',
             scrollTrigger: {
               trigger: entry,
               start: 'top 87%',
@@ -41,18 +42,6 @@ export function ExperienceSection() {
             },
           }
         );
-
-        // Subtle parallax response to scroll
-        gsap.to(entry, {
-          y: -10,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: entry,
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: 1.5,
-          },
-        });
       });
     }, sectionRef);
 
@@ -90,46 +79,50 @@ export function ExperienceSection() {
         </div>
 
         {/* Leadership & Community */}
-        <div className="leadership-list" role="list" aria-label="Leadership and community">
-          <Heading level={3} variant="subsection">
+        <div className="leadership-section">
+          <Heading level={3} variant="subsection" className="leadership-heading">
             Community & Leadership
           </Heading>
-          {leadership.map((entry: LeadershipEntry) => (
-            <Card key={entry.id} className="experience-entry" variant="default" role="listitem">
-              <CardContent>
-                <header className="entry-header">
-                  <h3 className="entry-role">{entry.role}</h3>
-                  <div className="entry-meta">
-                    <span className="entry-org">{entry.organization}</span>
-                    <span className="entry-period">{entry.period}</span>
-                  </div>
-                </header>
-                <p className="text-secondary">{entry.description}</p>
-                <ul className="entry-responsibilities">
-                  {entry.contributions.map((contrib: string, i: number) => (
-                    <li key={i}>{contrib}</li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          ))}
+          <div className="leadership-grid" role="list" aria-label="Leadership and community">
+            {leadership.map((entry: LeadershipEntry) => (
+              <Card key={entry.id} className="experience-entry leadership-entry" variant="default" role="listitem">
+                <CardContent>
+                  <header className="entry-header">
+                    <h3 className="entry-role">{entry.role}</h3>
+                    <div className="entry-meta">
+                      <span className="entry-org">{entry.organization}</span>
+                      <span className="entry-period">{entry.period}</span>
+                    </div>
+                  </header>
+                  <p className="entry-description text-secondary">{entry.description}</p>
+                  <ul className="entry-responsibilities">
+                    {entry.contributions.map((contrib: string, i: number) => (
+                      <li key={i}>{contrib}</li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
 
         {/* Achievements */}
         {achievements.length > 0 && (
-          <div className="achievements-list" role="list" aria-label="Achievements">
-            <Heading level={3} variant="subsection">
+          <div className="achievements-section">
+            <Heading level={3} variant="subsection" className="achievements-heading">
               Achievements
             </Heading>
-            {achievements.map((achievement) => (
-              <Card key={achievement.id} className="experience-entry" variant="default" role="listitem">
-                <CardContent>
-                  <h4 className="font-semibold text-primary">{achievement.title}</h4>
-                  <p className="text-secondary mt-1">{achievement.description}</p>
-                  <p className="text-caption text-muted mt-2">{achievement.period}</p>
-                </CardContent>
-              </Card>
-            ))}
+            <div className="achievements-grid" role="list" aria-label="Achievements">
+              {achievements.map((achievement) => (
+                <Card key={achievement.id} className="experience-entry achievement-entry" variant="default" role="listitem">
+                  <CardContent>
+                    <h4 className="achievement-title">{achievement.title}</h4>
+                    <p className="achievement-description text-secondary">{achievement.description}</p>
+                    <p className="achievement-period text-caption text-muted">{achievement.period}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </div>
         )}
       </Section>

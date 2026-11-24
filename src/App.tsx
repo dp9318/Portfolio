@@ -1,6 +1,5 @@
 import { Navigation } from './components/navigation/Navigation'
 import { HeroSection } from './sections/Hero/HeroSection'
-import { AboutSection } from './sections/About/AboutSection'
 import { ProjectsSection } from './sections/Projects/ProjectsSection'
 import { ExperienceSection } from './sections/Experience/ExperienceSection'
 import { SkillsSection } from './sections/Skills/SkillsSection'
@@ -10,18 +9,19 @@ import { ContactSection } from './sections/Contact/ContactSection'
 import { Footer } from './sections/Contact/Footer'
 import { ThemeProvider } from './context/ThemeContext'
 import { SmoothScrollProvider } from './components/motion'
-import { HeroScene } from './sections/Hero/HeroScene'
+import { ScrollToTop } from './components/ui'
 
 function App() {
   return (
     <ThemeProvider>
       <SmoothScrollProvider>
-        {/* Global fixed 3D WebGL background layer */}
-        <div className="global-scene-container" aria-hidden="true">
-          <HeroScene />
+        {/* Continuous Pencil-Drawn Journey Layer (V2.2 - Full Document Scroll Corridor) */}
+        <div className="sketch-journey-container" aria-hidden="true">
+          <div className="sketch-journey-rail sketch-journey-left" />
+          <div className="sketch-journey-rail sketch-journey-right" />
         </div>
-        
-        {/* Content layer floating cleanly on top */}
+
+        {/* Content layer */}
         <div className="app-wrapper">
           <a href="#main-content" className="skip-link">
             Skip to main content
@@ -29,7 +29,6 @@ function App() {
           <Navigation />
           <main id="main-content" tabIndex={-1} style={{ outline: 'none' }}>
             <HeroSection />
-            <AboutSection />
             <ProjectsSection />
             <ExperienceSection />
             <SkillsSection />
@@ -39,6 +38,7 @@ function App() {
           </main>
           <Footer />
         </div>
+        <ScrollToTop />
       </SmoothScrollProvider>
     </ThemeProvider>
   )

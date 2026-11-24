@@ -1,0 +1,21 @@
+<svg width="84" height="64" viewBox="0 0 84 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Hand-drawn brain & persistent memory ledger doodle for RECALL -->
+  <!-- Left hemisphere lobe -->
+  <path d="M 32 18 C 26 12, 16 14, 15 22 C 14 26, 17 29, 15 33 C 13 38, 16 44, 22 45 C 26 46, 29 44, 32 46" stroke="#2E2B27" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Right hemisphere lobe -->
+  <path d="M 34 18 C 40 12, 50 14, 51 22 C 52 26, 49 29, 51 33 C 53 38, 50 44, 44 45 C 40 46, 37 44, 34 46" stroke="#2E2B27" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Central dividing sulcus -->
+  <path d="M 33 16 C 34 24, 32 38, 33 46" stroke="#2E2B27" stroke-width="1.8" stroke-dasharray="3 2"/>
+  <!-- Inner folds & neural synapses -->
+  <path d="M 22 24 C 26 26, 28 22, 31 25" stroke="#54504A" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 20 34 C 25 33, 27 37, 31 35" stroke="#54504A" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 44 24 C 40 26, 38 22, 35 25" stroke="#54504A" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M 46 34 C 41 33, 39 37, 35 35" stroke="#54504A" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Database persistence blocks (SQLite ledger) -->
+  <rect x="56" y="24" width="22" height="7" rx="2" stroke="#2E2B27" stroke-width="1.8" fill="#FAF8F2"/>
+  <rect x="56" y="33" width="22" height="7" rx="2" stroke="#2E2B27" stroke-width="1.8" fill="#FAF8F2"/>
+  <rect x="56" y="42" width="22" height="7" rx="2" stroke="#E10600" stroke-width="1.8" fill="#FAF8F2"/>
+  <path d="M 50 35 L 56 35" stroke="#E10600" stroke-width="1.8" stroke-linecap="round"/>
+  <!-- Pencil hatching shadow under database -->
+  <line x1="59" y1="51" x2="77" y2="51" stroke="#54504A" stroke-width="1.2" stroke-dasharray="2 2"/>
+</svg>

@@ -1,0 +1,294 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 11000" width="340" height="11000" fill="none">
+    
+    <!-- Continuous Spine Ribbon (Right) -->
+    <path d="M 225 0 C 170 120, 280 280, 225 400 C 280 520, 170 680, 225 800 C 170 920, 280 1080, 225 1200 C 280 1320, 170 1480, 225 1600 C 170 1720, 280 1880, 225 2000 C 280 2120, 170 2280, 225 2400 C 170 2520, 280 2680, 225 2800 C 280 2920, 170 3080, 225 3200 C 170 3320, 280 3480, 225 3600 C 280 3720, 170 3880, 225 4000 C 170 4120, 280 4280, 225 4400 C 280 4520, 170 4680, 225 4800 C 170 4920, 280 5080, 225 5200 C 280 5320, 170 5480, 225 5600 C 170 5720, 280 5880, 225 6000 C 280 6120, 170 6280, 225 6400 C 170 6520, 280 6680, 225 6800 C 280 6920, 170 7080, 225 7200 C 170 7320, 280 7480, 225 7600 C 280 7720, 170 7880, 225 8000 C 170 8120, 280 8280, 225 8400 C 280 8520, 170 8680, 225 8800 C 170 8920, 280 9080, 225 9200 C 280 9320, 170 9480, 225 9600 C 170 9720, 280 9880, 225 10000 C 280 10120, 170 10280, 225 10400 C 170 10520, 280 10680, 225 10800 " stroke="#282522" stroke-width="2.2" stroke-dasharray="10 6" opacity="0.50" fill="none" />
+    <path d="M 230 0 C 175 120, 285 280, 230 400 C 285 520, 175 680, 230 800 C 175 920, 285 1080, 230 1200 C 285 1320, 175 1480, 230 1600 C 175 1720, 285 1880, 230 2000 C 285 2120, 175 2280, 230 2400 C 175 2520, 285 2680, 230 2800 C 285 2920, 175 3080, 230 3200 C 175 3320, 285 3480, 230 3600 C 285 3720, 175 3880, 230 4000 C 175 4120, 285 4280, 230 4400 C 285 4520, 175 4680, 230 4800 C 175 4920, 285 5080, 230 5200 C 285 5320, 175 5480, 230 5600 C 175 5720, 285 5880, 230 6000 C 285 6120, 175 6280, 230 6400 C 175 6520, 285 6680, 230 6800 C 285 6920, 175 7080, 230 7200 C 175 7320, 285 7480, 230 7600 C 285 7720, 175 7880, 230 8000 C 175 8120, 285 8280, 230 8400 C 285 8520, 175 8680, 230 8800 C 175 8920, 285 9080, 230 9200 C 285 9320, 175 9480, 230 9600 C 175 9720, 285 9880, 230 10000 C 285 10120, 175 10280, 230 10400 C 175 10520, 285 10680, 230 10800 " stroke="#857F73" stroke-width="1.0" opacity="0.30" fill="none" />
+    
+    <!-- Drafting Tape & Corner Pin (Y: 90 - 220) -->
+    <g opacity="0.82">
+      <polygon points="190,115 285,100 290,126 195,141" stroke="#4D4943" stroke-width="1.5" fill="rgba(240, 235, 220, 0.75)" />
+      <line x1="193" y1="128" x2="287" y2="113" stroke="#857F73" stroke-width="1" stroke-dasharray="4 2" />
+      <circle cx="270" cy="115" r="4" stroke="#282522" stroke-width="1.5" fill="#E10600" />
+      <text x="200" y="165" font-family="'Caveat', cursive" font-size="14" fill="#E10600">// portfolio sheet</text>
+    </g>
+
+    <!-- Fluffy Technical Cloud & Sketched Sun (Y: 280 - 480) -->
+    <g opacity="0.85">
+      <!-- Hand-drawn sun with radiant lines -->
+      <circle cx="265" cy="340" r="16" stroke="#E10600" stroke-width="2" fill="#FAF8F2" />
+      <line x1="265" y1="316" x2="265" y2="306" stroke="#E10600" stroke-width="1.8" />
+      <line x1="265" y1="364" x2="265" y2="374" stroke="#E10600" stroke-width="1.8" />
+      <line x1="241" y1="340" x2="231" y2="340" stroke="#E10600" stroke-width="1.8" />
+      <line x1="289" y1="340" x2="299" y2="340" stroke="#E10600" stroke-width="1.8" />
+      <line x1="248" y1="323" x2="240" y2="315" stroke="#E10600" stroke-width="1.5" />
+      <line x1="282" y1="357" x2="290" y2="365" stroke="#E10600" stroke-width="1.5" />
+      <line x1="248" y1="357" x2="240" y2="365" stroke="#E10600" stroke-width="1.5" />
+      <line x1="282" y1="323" x2="290" y2="315" stroke="#E10600" stroke-width="1.5" />
+      <!-- Cloud puffs overlapping -->
+      <path d="M 180 395 C 180 375, 205 375, 215 385 C 225 365, 260 365, 270 385 C 285 375, 305 385, 305 405 C 315 425, 290 435, 280 435 L 195 435 C 175 435, 175 410, 180 395 Z" 
+            stroke="#282522" stroke-width="2.2" fill="#FAF8F2" />
+      <!-- Rain / data droplets -->
+      <line x1="205" y1="445" x2="200" y2="460" stroke="#4D4943" stroke-width="1.5" stroke-linecap="round" />
+      <line x1="230" y1="445" x2="225" y2="465" stroke="#E10600" stroke-width="1.8" stroke-linecap="round" />
+      <line x1="255" y1="445" x2="250" y2="460" stroke="#4D4943" stroke-width="1.5" stroke-linecap="round" />
+      <line x1="280" y1="445" x2="275" y2="465" stroke="#282522" stroke-width="1.5" stroke-linecap="round" />
+      <text x="210" y="490" font-family="'Caveat', cursive" font-size="13" fill="#4D4943">ambient input</text>
+    </g>
+
+    <!-- Technical Compass Rose / Orientation (Y: 560 - 750) -->
+    <g opacity="0.84">
+      <circle cx="235" cy="650" r="38" stroke="#282522" stroke-width="2" fill="none" />
+      <circle cx="235" cy="650" r="32" stroke="#857F73" stroke-width="1" stroke-dasharray="3 3" fill="none" />
+      <!-- Compass needles -->
+      <polygon points="235,616 242,650 235,644 228,650" stroke="#E10600" stroke-width="1.8" fill="#E10600" />
+      <polygon points="235,684 242,650 235,656 228,650" stroke="#282522" stroke-width="1.8" fill="#FAF8F2" />
+      <polygon points="269,650 235,643 241,650 235,657" stroke="#4D4943" stroke-width="1.5" fill="#FAF8F2" />
+      <polygon points="201,650 235,643 229,650 235,657" stroke="#4D4943" stroke-width="1.5" fill="#FAF8F2" />
+      <text x="231" y="608" font-family="'Architects Daughter', cursive" font-size="12" fill="#E10600">N</text>
+      <text x="231" y="702" font-family="'Architects Daughter', cursive" font-size="11" fill="#282522">S</text>
+      <text x="278" y="654" font-family="'Architects Daughter', cursive" font-size="11" fill="#4D4943">E</text>
+      <text x="186" y="654" font-family="'Architects Daughter', cursive" font-size="11" fill="#4D4943">W</text>
+      <text x="200" y="725" font-family="'Caveat', cursive" font-size="13" fill="#857F73">true bearing: 0 deg</text>
+    </g>
+
+    <!-- Sketched Sticky Note with Checklist (Y: 810 - 1050) -->
+    <g opacity="0.85">
+      <polygon points="185,860 285,850 292,940 192,950" stroke="#282522" stroke-width="2" fill="#FAF8F2" />
+      <!-- Tape on sticky note -->
+      <rect x="220" y="842" width="35" height="15" fill="rgba(240, 230, 210, 0.85)" stroke="#857F73" stroke-width="1" transform="rotate(-4 235 850)" />
+      <!-- Checkbox 1 -->
+      <rect x="200" y="875" width="10" height="10" stroke="#282522" stroke-width="1.5" fill="none" />
+      <polyline points="201,880 205,885 212,874" stroke="#E10600" stroke-width="2" fill="none" />
+      <text x="218" y="884" font-family="'Caveat', cursive" font-size="14" fill="#282522">listen &amp; learn</text>
+      <!-- Checkbox 2 -->
+      <rect x="200" y="897" width="10" height="10" stroke="#282522" stroke-width="1.5" fill="none" />
+      <polyline points="201,902 205,907 212,896" stroke="#E10600" stroke-width="2" fill="none" />
+      <text x="218" y="906" font-family="'Caveat', cursive" font-size="14" fill="#282522">design clean</text>
+      <!-- Checkbox 3 -->
+      <rect x="200" y="919" width="10" height="10" stroke="#282522" stroke-width="1.5" fill="none" />
+      <polyline points="201,924 205,929 212,918" stroke="#E10600" stroke-width="2" fill="none" />
+      <text x="218" y="928" font-family="'Caveat', cursive" font-size="14" fill="#E10600">build it right</text>
+    </g>
+    
+    <!-- CRT / Retro Monitor Display (Y: 1250 - 1700) -->
+    <g opacity="0.82">
+      <!-- Monitor chassis -->
+      <rect x="180" y="1320" width="125" height="95" rx="6" stroke="#282522" stroke-width="2.2" fill="#FAF8F2" />
+      <!-- Inner bezel -->
+      <rect x="190" y="1330" width="105" height="75" rx="3" stroke="#4D4943" stroke-width="1.5" fill="#FFFDF9" />
+      <!-- Stand -->
+      <polygon points="230,1415 255,1415 265,1445 220,1445" stroke="#282522" stroke-width="2" fill="#FAF8F2" />
+      <rect x="210" y="1445" width="65" height="8" rx="2" stroke="#282522" stroke-width="2" fill="#FAF8F2" />
+      <!-- Screen content (graph) -->
+      <polyline points="196,1385 215,1365 235,1375 255,1345 275,1355 290,1338" stroke="#E10600" stroke-width="2" fill="none" />
+      <circle cx="255" cy="1345" r="3" fill="#E10600" />
+      <text x="200" y="1400" font-family="'Courier New', monospace" font-size="9" fill="#4D4943">AQI: 42 (GOOD)</text>
+      <text x="190" y="1475" font-family="'Caveat', cursive" font-size="13" fill="#4D4943">AQIconic GUI</text>
+    </g>
+
+    <!-- Drafting Calipers & Circle Construction (Y: 1850 - 2300) -->
+    <g opacity="0.82">
+      <!-- Compass arms -->
+      <line x1="240" y1="1920" x2="200" y2="2020" stroke="#282522" stroke-width="2.2" stroke-linecap="round" />
+      <line x1="240" y1="1920" x2="280" y2="2020" stroke="#282522" stroke-width="2.2" stroke-linecap="round" />
+      <circle cx="240" cy="1920" r="5" stroke="#282522" stroke-width="2" fill="#E10600" />
+      <!-- Arc drawn by compass -->
+      <path d="M 195 2025 C 220 2050, 260 2050, 285 2025" stroke="#E10600" stroke-width="1.8" stroke-dasharray="5 3" fill="none" />
+      <circle cx="240" cy="2040" r="2" fill="#E10600" />
+      <text x="215" y="2065" font-family="'Caveat', cursive" font-size="13" fill="#857F73">r = 45.0</text>
+    </g>
+
+    <!-- Global Sales Trend Chart & Coordinate Grid (Y: 2500 - 3000) -->
+    <g opacity="0.82">
+      <!-- Grid axes -->
+      <line x1="180" y1="2620" x2="180" y2="2520" stroke="#282522" stroke-width="1.8" />
+      <line x1="180" y1="2620" x2="295" y2="2620" stroke="#282522" stroke-width="1.8" />
+      <!-- Bars -->
+      <rect x="195" y="2585" width="14" height="35" stroke="#4D4943" stroke-width="1.4" fill="#FAF8F2" />
+      <rect x="220" y="2560" width="14" height="60" stroke="#4D4943" stroke-width="1.4" fill="#FAF8F2" />
+      <rect x="245" y="2540" width="14" height="80" stroke="#E10600" stroke-width="1.6" fill="rgba(225, 6, 0, 0.15)" />
+      <rect x="270" y="2525" width="14" height="95" stroke="#282522" stroke-width="1.6" fill="#FAF8F2" />
+      <!-- Trend curve -->
+      <path d="M 202 2585 Q 227 2555, 252 2535 T 277 2520" stroke="#E10600" stroke-width="2" fill="none" />
+      <circle cx="277" cy="2520" r="3.5" fill="#E10600" />
+      <text x="185" y="2640" font-family="'Caveat', cursive" font-size="13" fill="#282522">global sales DAX</text>
+    </g>
+
+    <!-- Precision Optical Target & Reticle (Y: 3200 - 3700) -->
+    <g opacity="0.80">
+      <circle cx="240" cy="3360" r="36" stroke="#282522" stroke-width="1.8" fill="none" />
+      <circle cx="240" cy="3360" r="24" stroke="#4D4943" stroke-width="1.2" fill="none" stroke-dasharray="3 3" />
+      <circle cx="240" cy="3360" r="10" stroke="#E10600" stroke-width="1.5" fill="none" />
+      <line x1="195" y1="3360" x2="285" y2="3360" stroke="#282522" stroke-width="1" />
+      <line x1="240" y1="3315" x2="240" y2="3405" stroke="#282522" stroke-width="1" />
+      <!-- Cross ticks -->
+      <line x1="225" y1="3356" x2="225" y2="3364" stroke="#282522" stroke-width="1" />
+      <line x1="255" y1="3356" x2="255" y2="3364" stroke="#282522" stroke-width="1" />
+      <text x="210" y="3420" font-family="'Courier New', monospace" font-size="10" fill="#E10600">CV.DETECT: 99.4%</text>
+      <text x="215" y="3440" font-family="'Caveat', cursive" font-size="13" fill="#857F73">YOLO bacterial cell</text>
+    </g>
+
+    <!-- Game Controller Doodle & D-Pad (Y: 3900 - 4400) -->
+    <g opacity="0.82">
+      <path d="M 185 4070 C 185 4040, 220 4030, 245 4035 C 270 4030, 305 4040, 305 4070 C 305 4105, 290 4125, 275 4115 C 260 4105, 255 4090, 245 4090 C 235 4090, 230 4105, 215 4115 C 200 4125, 185 4105, 185 4070 Z" 
+            stroke="#282522" stroke-width="2.2" fill="#FAF8F2" />
+      <!-- D-Pad -->
+      <polygon points="208,4055 214,4055 214,4061 220,4061 220,4067 214,4067 214,4073 208,4073 208,4067 202,4067 202,4061 208,4061" stroke="#4D4943" stroke-width="1.2" fill="#4D4943" />
+      <!-- Buttons -->
+      <circle cx="272" cy="4060" r="3" stroke="#E10600" stroke-width="1.5" fill="#E10600" />
+      <circle cx="282" cy="4067" r="3" stroke="#282522" stroke-width="1.5" fill="#FAF8F2" />
+      <circle cx="262" cy="4067" r="3" stroke="#282522" stroke-width="1.5" fill="#FAF8F2" />
+      <circle cx="272" cy="4074" r="3" stroke="#282522" stroke-width="1.5" fill="#FAF8F2" />
+      <text x="205" y="4140" font-family="'Caveat', cursive" font-size="13" fill="#4D4943">v-game telemetry</text>
+    </g>
+
+    <!-- API Microservices Topology (Y: 4650 - 5200) -->
+    <g opacity="0.80">
+      <rect x="220" y="4750" width="50" height="28" rx="3" stroke="#E10600" stroke-width="2" fill="#FAF8F2" />
+      <text x="226" y="4768" font-family="'Courier New', monospace" font-size="10" fill="#E10600">FASTAPI</text>
+      <circle cx="190" cy="4830" r="16" stroke="#282522" stroke-width="1.8" fill="#FAF8F2" />
+      <text x="180" y="4834" font-family="'Courier New', monospace" font-size="8" fill="#282522">REDIS</text>
+      <circle cx="280" cy="4830" r="16" stroke="#282522" stroke-width="1.8" fill="#FAF8F2" />
+      <text x="268" y="4834" font-family="'Courier New', monospace" font-size="8" fill="#282522">POSTGRES</text>
+      <line x1="230" y1="4778" x2="200" y2="4816" stroke="#857F73" stroke-width="1.5" />
+      <line x1="260" y1="4778" x2="275" y2="4815" stroke="#857F73" stroke-width="1.5" />
+    </g>
+    
+    <!-- T-Square & Drafting Angle (Y: 5850 - 6400) -->
+    <g opacity="0.84">
+      <!-- T-head -->
+      <rect x="280" y="5950" width="16" height="120" rx="2" stroke="#282522" stroke-width="2" fill="#FAF8F2" />
+      <!-- Blade extending inward -->
+      <rect x="165" y="5995" width="120" height="24" rx="2" stroke="#282522" stroke-width="2" fill="#FFFDF9" />
+      <!-- Inch ticks on blade -->
+      <line x1="180" y1="5995" x2="180" y2="6004" stroke="#4D4943" stroke-width="1" />
+      <line x1="195" y1="5995" x2="195" y2="6007" stroke="#E10600" stroke-width="1.4" />
+      <line x1="210" y1="5995" x2="210" y2="6004" stroke="#4D4943" stroke-width="1" />
+      <line x1="225" y1="5995" x2="225" y2="6007" stroke="#282522" stroke-width="1.2" />
+      <line x1="240" y1="5995" x2="240" y2="6004" stroke="#4D4943" stroke-width="1" />
+      <line x1="255" y1="5995" x2="255" y2="6007" stroke="#E10600" stroke-width="1.4" />
+      <line x1="270" y1="5995" x2="270" y2="6004" stroke="#4D4943" stroke-width="1" />
+      <text x="180" y="6040" font-family="'Caveat', cursive" font-size="14" fill="#E10600">strict 90 deg lock</text>
+    </g>
+
+    <!-- Precision Micrometer Screw Gauge (Y: 6600 - 7150) -->
+    <g opacity="0.82">
+      <!-- C-Frame -->
+      <path d="M 270 6720 C 210 6720, 210 6810, 270 6810" stroke="#282522" stroke-width="3" fill="none" />
+      <!-- Anvil & Spindle -->
+      <rect x="268" y="6745" width="10" height="8" stroke="#282522" stroke-width="1.5" fill="#FAF8F2" />
+      <rect x="235" y="6745" width="18" height="8" stroke="#282522" stroke-width="1.5" fill="#FAF8F2" />
+      <!-- Thimble & Ratchet -->
+      <rect x="278" y="6740" width="35" height="18" stroke="#282522" stroke-width="2" fill="#FAF8F2" />
+      <line x1="290" y1="6740" x2="290" y2="6758" stroke="#E10600" stroke-width="1.4" />
+      <text x="210" y="6835" font-family="'Caveat', cursive" font-size="13" fill="#4D4943">micrometer scale</text>
+    </g>
+
+    <!-- Flowchart Decision Diamond & Action Block (Y: 7250 - 7550) -->
+    <g opacity="0.80">
+      <polygon points="240,7340 270,7365 240,7390 210,7365" stroke="#282522" stroke-width="2" fill="#FAF8F2" />
+      <text x="228" y="7369" font-family="'Courier New', monospace" font-size="9" fill="#282522">VALID?</text>
+      <line x1="270" y1="7365" x2="295" y2="7365" stroke="#E10600" stroke-width="1.8" />
+      <polyline points="290,7360 296,7365 290,7370" stroke="#E10600" stroke-width="1.8" fill="none" />
+      <text x="275" y="7355" font-family="'Courier New', monospace" font-size="9" fill="#E10600">YES</text>
+    </g>
+    
+    <!-- MANIT Bhopal Historic Clock Tower Silhouette (Y: 7800 - 8350) -->
+    <g opacity="0.85">
+      <!-- Main tower column -->
+      <rect x="220" y="7960" width="38" height="110" stroke="#282522" stroke-width="2" fill="#FAF8F2" />
+      <!-- Tower spire cap -->
+      <polygon points="220,7960 239,7910 258,7960" stroke="#282522" stroke-width="2" fill="#FFFDF9" />
+      <line x1="239" y1="7910" x2="239" y2="7890" stroke="#E10600" stroke-width="2" />
+      <!-- Clock face -->
+      <circle cx="239" cy="7985" r="11" stroke="#282522" stroke-width="1.8" fill="#FFFDF9" />
+      <line x1="239" y1="7985" x2="239" y2="7977" stroke="#E10600" stroke-width="1.6" />
+      <line x1="239" y1="7985" x2="245" y2="7985" stroke="#282522" stroke-width="1.6" />
+      <!-- Foundation arch -->
+      <path d="M 230 8070 C 230 8055, 248 8055, 248 8070" stroke="#282522" stroke-width="1.8" fill="none" />
+      <text x="200" y="8095" font-family="'Architects Daughter', cursive" font-size="12" fill="#282522">MANIT BHOPAL</text>
+      <text x="215" y="8115" font-family="'Caveat', cursive" font-size="13" fill="#E10600">MCA 2025-2028</text>
+    </g>
+
+    <!-- Rutherford-Bohr Scientific Atom (Y: 8550 - 9050) -->
+    <g opacity="0.80">
+      <!-- Nucleus -->
+      <circle cx="240" cy="8760" r="7" stroke="#282522" stroke-width="2" fill="#E10600" />
+      <!-- Orbital ellipses -->
+      <ellipse cx="240" cy="8760" rx="36" ry="12" stroke="#282522" stroke-width="1.5" fill="none" transform="rotate(0 240 8760)" />
+      <ellipse cx="240" cy="8760" rx="36" ry="12" stroke="#4D4943" stroke-width="1.5" fill="none" transform="rotate(60 240 8760)" />
+      <ellipse cx="240" cy="8760" rx="36" ry="12" stroke="#857F73" stroke-width="1.5" fill="none" transform="rotate(-60 240 8760)" />
+      <!-- Electrons -->
+      <circle cx="276" cy="8760" r="2.5" fill="#E10600" />
+      <circle cx="222" cy="8730" r="2.5" fill="#282522" />
+      <circle cx="258" cy="8790" r="2.5" fill="#282522" />
+      <text x="210" y="8820" font-family="'Caveat', cursive" font-size="13" fill="#857F73">first-principles</text>
+    </g>
+
+    <!-- Stack Overflow & GitHub Icon Doodle (Y: 9350 - 9850) -->
+    <g opacity="0.82">
+      <!-- Stack lines floating -->
+      <rect x="220" y="9550" width="40" height="7" rx="1.5" stroke="#282522" stroke-width="1.5" fill="#FAF8F2" />
+      <rect x="221" y="9538" width="40" height="7" rx="1.5" stroke="#282522" stroke-width="1.5" fill="#FAF8F2" transform="rotate(8 221 9538)" />
+      <rect x="225" y="9524" width="40" height="7" rx="1.5" stroke="#282522" stroke-width="1.5" fill="#FAF8F2" transform="rotate(18 225 9524)" />
+      <rect x="232" y="9508" width="40" height="7" rx="1.5" stroke="#E10600" stroke-width="1.5" fill="#FAF8F2" transform="rotate(30 232 9508)" />
+      <text x="210" y="9580" font-family="'Caveat', cursive" font-size="13" fill="#4D4943">continuous learning</text>
+    </g>
+
+    <!-- Graduation Cap / Mortarboard (Y: 9950 - 10250) -->
+    <g opacity="0.84">
+      <polygon points="240,10060 280,10080 240,10100 200,10080" stroke="#282522" stroke-width="2.2" fill="#FAF8F2" />
+      <path d="M 215 10090 L 215 10115 C 215 10125, 265 10125, 265 10115 L 265 10090" stroke="#282522" stroke-width="2" fill="#FFFDF9" />
+      <!-- Tassel with red accent -->
+      <path d="M 240 10080 L 282 10095 L 285 10120" stroke="#E10600" stroke-width="1.8" fill="none" />
+      <circle cx="285" cy="10122" r="3" fill="#E10600" />
+      <text x="215" y="10145" font-family="'Caveat', cursive" font-size="14" fill="#282522">MCA '28</text>
+    </g>
+    
+    <!-- Rocket Launch with Crimson Exhaust Plume (Y: 10350 - 10700) -->
+    <g opacity="0.86">
+      <!-- Rocket hull -->
+      <path d="M 240 10420 C 230 10440, 226 10470, 226 10490 L 254 10490 C 254 10470, 250 10440, 240 10420 Z" 
+            stroke="#282522" stroke-width="2.2" fill="#FAF8F2" />
+      <!-- Porthole window -->
+      <circle cx="240" cy="10455" r="5" stroke="#282522" stroke-width="1.8" fill="#FFFDF9" />
+      <circle cx="240" cy="10455" r="2" fill="#E10600" />
+      <!-- Fins -->
+      <polygon points="226,10475 210,10495 226,10495" stroke="#282522" stroke-width="2" fill="#282522" />
+      <polygon points="254,10475 270,10495 254,10495" stroke="#282522" stroke-width="2" fill="#282522" />
+      <!-- Exhaust engine nozzle -->
+      <rect x="233" y="10490" width="14" height="6" stroke="#282522" stroke-width="1.8" fill="#FAF8F2" />
+      <!-- Crimson fire plumes -->
+      <path d="M 233 10496 C 228 10515, 235 10525, 240 10540 C 245 10525, 252 10515, 247 10496 Z" 
+            stroke="#E10600" stroke-width="2" fill="#E10600" />
+      <line x1="230" y1="10510" x2="220" y2="10530" stroke="#E10600" stroke-width="1.5" stroke-dasharray="4 3" />
+      <line x1="250" y1="10510" x2="260" y2="10530" stroke="#E10600" stroke-width="1.5" stroke-dasharray="4 3" />
+      <text x="215" y="10565" font-family="'Caveat', cursive" font-size="14" fill="#E10600">launch next</text>
+    </g>
+
+    <!-- Saturn with Sketched Elliptical Rings (Y: 10600 - 10850) -->
+    <g opacity="0.82">
+      <!-- Planet globe -->
+      <circle cx="245" cy="10700" r="22" stroke="#282522" stroke-width="2" fill="#FAF8F2" />
+      <!-- Rings -->
+      <ellipse cx="245" cy="10700" rx="46" ry="12" stroke="#4D4943" stroke-width="2" fill="none" transform="rotate(-18 245 10700)" />
+      <ellipse cx="245" cy="10700" rx="52" ry="15" stroke="#857F73" stroke-width="1.2" fill="none" stroke-dasharray="5 3" transform="rotate(-18 245 10700)" />
+      <circle cx="205" cy="10680" r="3" fill="#E10600" />
+      <text x="215" y="10745" font-family="'Caveat', cursive" font-size="13" fill="#4D4943">the cosmos</text>
+    </g>
+
+    <!-- Airmail Envelope with Red Sketched Postmark (Y: 10800 - 10980) -->
+    <g opacity="0.85">
+      <rect x="205" y="10840" width="80" height="52" rx="3" stroke="#282522" stroke-width="2.2" fill="#FFFDF9" />
+      <!-- Envelope fold lines -->
+      <polyline points="205,10840 245,10872 285,10840" stroke="#282522" stroke-width="2" fill="none" />
+      <line x1="205" y1="10892" x2="236" y2="10866" stroke="#857F73" stroke-width="1.2" />
+      <line x1="285" y1="10892" x2="254" y2="10866" stroke="#857F73" stroke-width="1.2" />
+      <!-- Crimson postmark / wavy stamp -->
+      <circle cx="268" cy="10855" r="9" stroke="#E10600" stroke-width="1.6" fill="none" />
+      <line x1="277" y1="10852" x2="295" y2="10852" stroke="#E10600" stroke-width="1.5" />
+      <line x1="277" y1="10857" x2="295" y2="10857" stroke="#E10600" stroke-width="1.5" />
+      <text x="210" y="10920" font-family="'Caveat', cursive" font-size="14" fill="#E10600">let's connect</text>
+    </g>
+    
+</svg>

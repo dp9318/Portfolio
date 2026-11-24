@@ -1,10 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from '../../components/ui';
-import { ThemeSelector } from '../theme/ThemeSelector';
 import { Magnetic, useSmoothScroll } from '../motion';
 
 const navigationLinks = [
-  { href: '#about', label: 'About' },
   { href: '#projects', label: 'Projects' },
   { href: '#experience', label: 'Experience' },
   { href: '#skills', label: 'Skills' },
@@ -131,6 +129,7 @@ export function Navigation() {
       <div className="navbar-container container flex items-center justify-between">
         <Magnetic strength={0.2} activeScale={1.03}>
           <Link href="#hero" className="navbar-brand" aria-label="Dipankar Kumar - Home">
+            <span className="navbar-logo-sketch">DP</span>
             <span className="navbar-name">Dipankar</span>
           </Link>
         </Magnetic>
@@ -148,7 +147,6 @@ export function Navigation() {
               </Link>
             </Magnetic>
           ))}
-          <ThemeSelector placement="desktop" />
         </div>
 
         {/* Mobile Menu Button */}
@@ -200,7 +198,6 @@ export function Navigation() {
           </div>
 
           <div className="mobile-menu-footer">
-            <ThemeSelector placement="mobile" />
             <div className="mobile-social-links flex gap-4">
               {socialLinks.map((link) => (
                 <a
