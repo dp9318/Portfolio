@@ -1165,3 +1165,19 @@ In release v2.4 (24 November 2026), visual styling was elevated to achieve authe
 - Created [ScrollToTop.tsx](file:///d:/proj/Portfolio/src/components/ui/ScrollToTop.tsx) exported from [src/components/ui/index.ts](file:///d:/proj/Portfolio/src/components/ui/index.ts) and mounted in [src/App.tsx](file:///d:/proj/Portfolio/src/App.tsx).
 - Renders a standalone hand-drawn vertical graphite pencil SVG (`34x72` inside a `48x76` accessible hit area, `aria-label="Scroll to top"`, no rectangular/circular button wrapper) with wooden collar, graphite lead tip, integrated crimson upward arrow, metal ferrule, eraser cap, `#scroll-pencil-tooth` displacement, and directional paper drop shadow.
 - Positioned fixed at `right: 24px; bottom: 24px` on desktop and `16px` (+ safe-area insets) on mobile; reveals smoothly above `scrollY >= 380px`, integrates with Lenis (`useSmoothScroll`) and `prefers-reduced-motion`, and verified across all 10 behavioral/responsive checks (`v26-scrolltop-visible.png`, `v26-scrolltop-hover.png`, `v26-scrolltop-mobile.png`).
+
+### RECALL V2.6 Knowledge Base Directory (Project `195081f5-657b-47fc-a578-57ce84464f75`)
+- **Memory 00 (`PORTFOLIO_V2.6_MASTER_INDEX`):** `15eb0956-7070-45ef-a5c5-24bc5697be21`
+- **Memory 01 (`PORTFOLIO_V2.6_ARCHITECTURE`):** `6f2833dd-51ec-49c2-a5fa-a94d36a218f9`
+- **Memory 02 (`PORTFOLIO_V2.6_DIRECTORY`):** `f669af40-6b84-4e5d-964d-055ccfbbbcc5`
+- **Memory 03 (`PORTFOLIO_V2.6_VISUAL_IDENTITY`):** `3321f2bf-9f8d-41b3-aafd-05ef1555515a`
+- **Memory 04 (`PORTFOLIO_V2.6_PAPER_SYSTEM`):** `d3abfd1e-7b75-4dde-8671-a687e43df467`
+- **Memory 05 (`PORTFOLIO_V2.6_GRAPHITE_SYSTEM`):** `f0da1339-a3c5-4d79-9eec-d17a6ccafd4b`
+- **Memory 06 (`PORTFOLIO_V2.6_COMPONENTS`):** `e9305fe3-c7c6-4636-8994-b67ab75eacb4`
+- **Memory 07 (`PORTFOLIO_V2.6_INTERACTIONS`):** `70bef2f9-6863-437f-9abb-8eb01936f3da`
+- **Memory 08 (`PORTFOLIO_V2.6_RESPONSIVE_A11Y`):** `4a289425-fc51-4b38-b9e4-2cfae9f38d27`
+- **Memory 09 (`PORTFOLIO_V2.6_CONTENT`):** `f691c694-6c57-42e0-a031-8fe2874e5bc0`
+- **Memory 10 (`PORTFOLIO_V2.6_ASSETS`):** `151621e0-d84f-4ee2-9197-3ccdf36450d6`
+- **Memory 11 (`PORTFOLIO_V2.6_DEPLOYMENT`):** `8477839b-c0f0-4dc3-965a-cb272509b50f`
+- **Memory 12 (`PORTFOLIO_V2.6_DESIGN_HISTORY`):** `f8427c88-3fac-40d3-8b71-217d8a6579b0`
+- **Memory 13 (`PORTFOLIO_V2.6_RULES`):** `062918a7-09bb-4b9b-bf79-22dec269f136`
