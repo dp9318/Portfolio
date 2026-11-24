@@ -40,18 +40,16 @@ export function ProjectsSection() {
     const ctx = gsap.context(() => {
       const cards = gsap.utils.toArray<HTMLElement>('.project-card');
       cards.forEach((card) => {
-        // Entrance: subtle scale-up and parallax float-up
+        // Entrance: subtle parallax float-up
         gsap.fromTo(
           card,
           {
             opacity: 0,
             y: 40,
-            scale: 0.95,
           },
           {
             opacity: 1,
             y: 0,
-            scale: 1,
             duration: 0.85,
             ease: 'power3.out',
             clearProps: 'transform',
@@ -63,24 +61,6 @@ export function ProjectsSection() {
           }
         );
 
-        // Subtle parallax movement on the card thumbnail
-        const img = card.querySelector('.project-card-image img');
-        if (img) {
-          gsap.fromTo(
-            img,
-            { yPercent: -6 },
-            {
-              yPercent: 6,
-              ease: 'none',
-              scrollTrigger: {
-                trigger: card,
-                start: 'top bottom',
-                end: 'bottom top',
-                scrub: 1.2,
-              },
-            }
-          );
-        }
       });
     }, sectionRef);
 
@@ -116,7 +96,7 @@ export function ProjectsSection() {
     >
       {project.thumbnail && (
         <div className="project-card-image">
-          <img src={project.thumbnail} alt="" loading="lazy" />
+          <img src={project.thumbnail} alt="" loading="lazy" decoding="async" width={540} height={338} />
         </div>
       )}
       <div className="project-card-content">

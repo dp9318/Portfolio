@@ -3,25 +3,40 @@
 
 import type { Project, ProjectsData, ProjectStatus } from './types';
 
-// Project Image Assets
-import recallUiDark from '../assets/images/projects/recall/recall-ui-dark.png';
-import recallUiLight from '../assets/images/projects/recall/recall-ui-light.png';
-import recallArchitecture from '../assets/images/projects/recall/recall-architecture.png';
-import recallHero from '../assets/images/projects/recall/recall-hero.png';
+// Card thumbnails only — WebP, bundled for fast above-the-fold display
+import recallThumb from '../assets/images/projects/recall/recall-ui-dark.webp';
+import aqiconicThumb from '../assets/images/projects/aqiconic/aqiconic01.webp';
+import aiFoodThumb from '../assets/images/projects/ai-food-analyzer/ai-food-analyzer-test01.webp';
+import salesThumb from '../assets/images/projects/video-game-sales-analysis/sales-over-years.webp';
+import epicThumb from '../assets/images/projects/epic-games-clone/epic-games-clone01.webp';
 
-import aqiconic01 from '../assets/images/projects/aqiconic/aqiconic01.png';
-import aqiconic02 from '../assets/images/projects/aqiconic/aqiconic02.png';
-import aqiconic03 from '../assets/images/projects/aqiconic/aqiconic03.png';
-import aqiconic04 from '../assets/images/projects/aqiconic/aqiconic04.png';
-
-import aiFoodAnalyzerTest01 from '../assets/images/projects/ai-food-analyzer/ai-food-analyzer-test01.png';
-
-import salesOverYears from '../assets/images/projects/video-game-sales-analysis/sales-over-years.png';
-import consoleGenre from '../assets/images/projects/video-game-sales-analysis/console-genre.png';
-import regionAndPopularity from '../assets/images/projects/video-game-sales-analysis/region-and-popularity.png';
-import topTiles from '../assets/images/projects/video-game-sales-analysis/top-tiles.png';
-
-import epicGamesClone01 from '../assets/images/projects/epic-games-clone/epic-games-clone01.png';
+// Modal gallery images — public/ paths, not bundled, loaded only when modal opens
+const modalImages = {
+  recall: [
+    '/images/projects/recall/recall-ui-dark.webp',
+    '/images/projects/recall/recall-architecture.webp',
+    '/images/projects/recall/recall-ui-light.webp',
+    '/images/projects/recall/recall-hero.webp',
+  ],
+  aqiconic: [
+    '/images/projects/aqiconic/aqiconic01.webp',
+    '/images/projects/aqiconic/aqiconic02.webp',
+    '/images/projects/aqiconic/aqiconic03.webp',
+    '/images/projects/aqiconic/aqiconic04.webp',
+  ],
+  aiFoodAnalyzer: [
+    '/images/projects/ai-food-analyzer/ai-food-analyzer-test01.webp',
+  ],
+  videoGameSales: [
+    '/images/projects/video-game-sales-analysis/sales-over-years.webp',
+    '/images/projects/video-game-sales-analysis/console-genre.webp',
+    '/images/projects/video-game-sales-analysis/region-and-popularity.webp',
+    '/images/projects/video-game-sales-analysis/top-tiles.webp',
+  ],
+  epicGamesClone: [
+    '/images/projects/epic-games-clone/epic-games-clone01.webp',
+  ],
+};
 
 /* Helper to create status with consistent typing */
 const status = {
@@ -63,8 +78,8 @@ const recall: Project = {
   repositoryUrl: 'https://github.com/dp9318/RECALL',
   demoUrl: undefined,
   documentationUrl: undefined,
-  images: [recallUiDark, recallArchitecture, recallUiLight, recallHero],
-  thumbnail: recallUiDark,
+  images: modalImages.recall,
+  thumbnail: recallThumb,
   startDate: '2024',
   endDate: '2024',
   isCollaborative: true,
@@ -99,8 +114,8 @@ const aqiconic: Project = {
   repositoryUrl: 'https://github.com/dp9318/AQIconic',
   demoUrl: undefined,
   documentationUrl: undefined,
-  images: [aqiconic01, aqiconic02, aqiconic03, aqiconic04],
-  thumbnail: aqiconic01,
+  images: modalImages.aqiconic,
+  thumbnail: aqiconicThumb,
   startDate: '2024',
   endDate: undefined,
   isCollaborative: true,
@@ -135,8 +150,8 @@ const aiFoodAnalyzer: Project = {
   repositoryUrl: 'https://github.com/dp9318/AI-Food-Analyzer',
   demoUrl: undefined,
   documentationUrl: undefined,
-  images: [aiFoodAnalyzerTest01],
-  thumbnail: aiFoodAnalyzerTest01,
+  images: modalImages.aiFoodAnalyzer,
+  thumbnail: aiFoodThumb,
   startDate: '2024',
   endDate: undefined,
   isCollaborative: true,
@@ -170,8 +185,8 @@ const videoGameSales: Project = {
   repositoryUrl: 'https://github.com/dp9318/Game-Sales-Analysis-1971-2024-',
   demoUrl: undefined,
   documentationUrl: undefined,
-  images: [salesOverYears, consoleGenre, regionAndPopularity, topTiles],
-  thumbnail: salesOverYears,
+  images: modalImages.videoGameSales,
+  thumbnail: salesThumb,
   startDate: '2024',
   endDate: '2024',
   isCollaborative: false,
@@ -207,8 +222,8 @@ const epicGamesClone: Project = {
   repositoryUrl: 'https://github.com/dp9318/Epic-Games-Clone',
   demoUrl: undefined,
   documentationUrl: undefined,
-  images: [epicGamesClone01],
-  thumbnail: epicGamesClone01,
+  images: modalImages.epicGamesClone,
+  thumbnail: epicThumb,
   startDate: '2024',
   endDate: undefined,
   isCollaborative: false,

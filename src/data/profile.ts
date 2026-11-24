@@ -2,7 +2,7 @@
 /* ========================================================================== */
 
 import type { Profile, SocialLink } from './types';
-import profilePhotoImg from '../assets/images/profile/profile.png';
+import profilePhotoImg from '../assets/images/profile/profile.webp';
 
 /* Inline SVG Icons - Keys for use in components */
 export const iconKeys = {

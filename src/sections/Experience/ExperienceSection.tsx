@@ -20,18 +20,16 @@ export function ExperienceSection() {
     const ctx = gsap.context(() => {
       const entries = gsap.utils.toArray<HTMLElement>('.experience-entry');
       entries.forEach((entry) => {
-        // Entrance: subtle scale-up and float-up as each entry enters viewport
+        // Entrance: subtle float-up as each entry enters viewport
         gsap.fromTo(
           entry,
           {
             opacity: 0,
             y: 35,
-            scale: 0.96,
           },
           {
             opacity: 1,
             y: 0,
-            scale: 1,
             duration: 0.8,
             ease: 'power3.out',
             clearProps: 'transform',

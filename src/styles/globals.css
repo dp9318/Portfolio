@@ -98,7 +98,7 @@ body {
   pointer-events: none;
 }
 
-/* Desktop (>= 1024px): Continuous illustrated rails in margins and negative spaces */
+  /* Desktop (>= 1024px): Continuous illustrated rails in margins and negative spaces */
 @media (min-width: 1024px) {
   .sketch-journey-left {
     left: 0;
